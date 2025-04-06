@@ -1,0 +1,1 @@
+setup weapon mesh and attachment to hand bone
