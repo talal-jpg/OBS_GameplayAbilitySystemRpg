@@ -1,10 +1,10 @@
 [[ProjectCreationAndVersionControll]]
-[[AuraCharBase]]
-[[CharBlueprintSetup]]
-[AnimationBlueprints]
-[EnhancedInput]
-[AuraPlayerController]
-[AddMovementInput] // in AuraPlayerController class
+[[AuraChararcterBase]]
+[[AnimationBlueprints]]
+[[AuraPlayerController]]
 [GameMode] // add AuraPlayerController class 
 [[EnemyInterface]]
-[[HighlightEnemies]]
+
+
+
+[[GameplayAbilitySystem]]
