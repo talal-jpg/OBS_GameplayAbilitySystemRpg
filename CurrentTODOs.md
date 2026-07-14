@@ -17,6 +17,7 @@ kanban-plugin: board
 - [ ] ablities Gameplay effects
 - [ ] Main Menu and Multiplayer menu / lobby thinking todo
 - [ ] [[Hud]]
+- [ ] While Equiping when the status of the Spell has not yet been updated/ replicated and I equip again , the crash happens??
 
 
 ## InProgress
