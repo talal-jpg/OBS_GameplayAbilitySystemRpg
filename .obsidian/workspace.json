@@ -11,22 +11,14 @@
             "id": "5b3193b278fcfeb3",
             "type": "leaf",
             "state": {
-              "type": "kanban",
+              "type": "markdown",
               "state": {
-                "file": "CurrentTODOs.md",
-                "kanbanViewState": {
-                  "kanban-plugin": "board",
-                  "list-collapse": [
-                    false,
-                    false,
-                    false,
-                    false,
-                    false
-                  ]
-                }
+                "file": "MatchType set to AuraRedo3 , will filter on find with this and show that session.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-trello",
-              "title": "CurrentTODOs"
+              "icon": "lucide-file",
+              "title": "MatchType set to AuraRedo3 , will filter on find with this and show that session"
             }
           }
         ]
@@ -184,15 +176,18 @@
   },
   "active": "5b3193b278fcfeb3",
   "lastOpenFiles": [
-    "Broadcast AbilityInfo bug fixes.md",
+    "LogWhole.md",
+    "MatchType set to AuraRedo3 , will filter on find with this and show that session.md",
+    "LogEndLong.md",
+    "LogShort.md",
     "CurrentTODOs.md",
+    "Broadcast AbilityInfo bug fixes.md",
     "TODOs.md",
     "Checking.md",
     "Indexing.md",
     "GitLearning.md",
     "Rider.md",
     "PasswordForGit.md",
-    "MatchType set to AuraRedo3 , will filter on find with this and show that session.md",
     "while BoostFlying Control rig.md",
     "BeamAbility.md",
     "Improve NS_boost.md",
@@ -208,10 +203,7 @@
     "Pasted image 20260630115551.png",
     "FabMechs.md",
     "GameplayAbilitySystem.md",
-    "Spline Mesh Visual/Mat For Beam Visuals.md",
-    "Spline Mesh Visual/NS For Beam Visuals.md",
     "Spline Mesh Visual",
-    "ControlRig.md",
     "Pasted image 20260702161726.png",
     "Pasted image 20260702161708.png",
     "Pasted image 20260630115022.png",
