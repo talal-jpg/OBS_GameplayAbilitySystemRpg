@@ -1,0 +1,5 @@
+![[overlay initialize]]
+![[Drawing 2025-04-26 19.03.31.excalidraw]]
+[[AuraWidgetControllerBase]]
+[[AuraHud]]
+![[BindWidgetCallbacksToDependenciesAndBroadCastInitialAttribVals]]

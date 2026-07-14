@@ -1,0 +1,1 @@
+- **Entity Query** - A query used by processors that filters archetypes based on fragment and/or tag requirements. The EntityQuery returns batches of fragments without regard to the individual Entity identifiers

@@ -1,0 +1,1 @@
+- **Shared Fragment** - Fragments with data that are shared with multiple entities for memory optimization purposes

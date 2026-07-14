@@ -1,0 +1,1 @@
+- **Trait** - Group fragments together and typically represent Entity features (e.g. Movement, ZoneGraph Navigation, SmartObject User)

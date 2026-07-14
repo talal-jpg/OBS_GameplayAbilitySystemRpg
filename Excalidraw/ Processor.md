@@ -1,0 +1,1 @@
+- **Processor** - Where logic execution occurs in Mass. Processors can change values of a Fragment as well as composition of Entities (adding or removing).

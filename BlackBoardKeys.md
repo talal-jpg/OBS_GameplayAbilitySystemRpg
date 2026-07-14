@@ -1,0 +1,1 @@
+variables on the BlackBoard and Can be declared in services to and can be linked with each other

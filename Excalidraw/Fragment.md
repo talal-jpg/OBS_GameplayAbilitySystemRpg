@@ -1,0 +1,1 @@
+- **Fragment** - Holds the data/state for an Entity in tightly packed arrays (e.g. transform, velocity, current LOD, etc.)

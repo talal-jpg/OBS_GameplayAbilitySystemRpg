@@ -1,0 +1,1 @@
+- **Mass Entity Config** - Asset that defines the Mass agent to spawn by specifying traits of the Entity

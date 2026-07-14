@@ -1,0 +1,5 @@
+[[ShowMessageBasedOnGameplayTagByRetrievingARowFromACustomDataTable]]
+
+
+MyGameplayTagsAndMyAssetManager
+![[MyGameplayTagsSingletonClass]]

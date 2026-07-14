@@ -1,0 +1,197 @@
+{
+  "main": {
+    "id": "8a7df682135656de",
+    "type": "split",
+    "children": [
+      {
+        "id": "7a844db958725685",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3a00db459d9b6b13",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "db97af0a0fb4e80d",
+    "type": "mobile-drawer",
+    "children": [
+      {
+        "id": "c90c953096d2243e",
+        "type": "leaf",
+        "state": {
+          "type": "file-explorer",
+          "state": {
+            "sortOrder": "alphabetical",
+            "autoReveal": false
+          },
+          "icon": "lucide-folder-closed",
+          "title": "Files"
+        }
+      },
+      {
+        "id": "5728bfc5dab7f52f",
+        "type": "leaf",
+        "state": {
+          "type": "search",
+          "state": {
+            "query": "Indexing",
+            "matchingCase": false,
+            "explainSearch": false,
+            "collapseAll": false,
+            "extraContext": false,
+            "sortOrder": "alphabetical"
+          },
+          "icon": "lucide-search",
+          "title": "Search"
+        }
+      },
+      {
+        "id": "3f816a6ccb5ceeda",
+        "type": "leaf",
+        "state": {
+          "type": "tag",
+          "state": {
+            "sortOrder": "frequency",
+            "useHierarchy": true,
+            "showSearch": false,
+            "searchQuery": ""
+          },
+          "icon": "lucide-tags",
+          "title": "Tags"
+        }
+      },
+      {
+        "id": "6217fd4e3d019cab",
+        "type": "leaf",
+        "state": {
+          "type": "bookmarks",
+          "state": {},
+          "icon": "lucide-bookmark",
+          "title": "Bookmarks"
+        }
+      }
+    ],
+    "currentTab": 1
+  },
+  "right": {
+    "id": "b6a0be648472ccfc",
+    "type": "mobile-drawer",
+    "children": [
+      {
+        "id": "65d00ab8ca9bfdd8",
+        "type": "leaf",
+        "state": {
+          "type": "backlink",
+          "state": {
+            "file": "Excalidraw/DataFlow.md",
+            "collapseAll": false,
+            "extraContext": true,
+            "sortOrder": "alphabetical",
+            "showSearch": false,
+            "searchQuery": "",
+            "backlinkCollapsed": false,
+            "unlinkedCollapsed": false
+          },
+          "icon": "links-coming-in",
+          "title": "Backlinks"
+        }
+      },
+      {
+        "id": "fe7e9009390a0af7",
+        "type": "leaf",
+        "state": {
+          "type": "outgoing-link",
+          "state": {
+            "file": "Excalidraw/DataFlow.md",
+            "linksCollapsed": false,
+            "unlinkedCollapsed": true
+          },
+          "icon": "links-going-out",
+          "title": "Outgoing links"
+        }
+      },
+      {
+        "id": "a16d0e00817ef898",
+        "type": "leaf",
+        "state": {
+          "type": "outline",
+          "state": {
+            "followCursor": false,
+            "showSearch": false,
+            "searchQuery": ""
+          },
+          "icon": "lucide-list",
+          "title": "Outline"
+        }
+      }
+    ],
+    "currentTab": 1
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false,
+      "obsidian-excalidraw-plugin:New drawing": false,
+      "obsidian-git:Open Git source control": false,
+      "system3-relay:Relay": false,
+      "obsidian-kanban:Create new board": false
+    }
+  },
+  "active": "3a00db459d9b6b13",
+  "lastOpenFiles": [
+    "GameplayAbilitySystem.md",
+    "Gas unreal.md",
+    "Spell menu spend spell points.md",
+    "Spell menu.md",
+    "SpellMenu.md",
+    "Indexing.md",
+    "Excalidraw/DataFlow.md",
+    "/Excalidraw/SpellMenu.md",
+    "/Excalidraw",
+    "ReplicatedSplineCrowd.md",
+    "techArtInspiration/Inspiration.md",
+    "/techArtInspiration/Inspiration.md",
+    "techArtInspiration/Resources.md",
+    "Excalidraw/MulticastDeath with Dissolve.md",
+    "EnemyDeath.md",
+    "/techArtInspiration/Resources.md",
+    "/Indexing.md",
+    "/HitMessageOnEnemy.md",
+    "/GameplayAbilitySystem.md",
+    "/ExecCalculation.md",
+    "/Excalidraw/customExecutionCalculationClass.md",
+    "/Excalidraw/MulticastDeath with Dissolve.md",
+    "/Excalidraw/FloatingDamageText.md",
+    "Excalidraw/FloatingDamageText.md",
+    "/EnemyHitReact.md",
+    "/EnemyDeath.md",
+    "/Damage.md",
+    "techArtInspiration",
+    "/techArtInspiration",
+    "Pasted image 20260223093925.png",
+    "/Pasted image 20260223093925.png",
+    "HandWrittenNotes/Replicated Swarm_260219_192108 (2).pdf",
+    "HandWrittenNotes/Notes_260217_173605 (1).pdf",
+    "HandWrittenNotes/Notes_260125_183811 (1).pdf",
+    "HandWrittenNotes/Notes_260121_092421 (2).pdf",
+    "HandWrittenNotes/Notes_260114_132227 (2).pdf",
+    "HandWrittenNotes/Exec Calc_260215_170351 (2).pdf",
+    "HandWrittenNotes/Ability Activation in GAS Predictively_260216_230542 (2).pdf"
+  ]
+}

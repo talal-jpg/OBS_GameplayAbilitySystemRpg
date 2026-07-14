@@ -1,0 +1,1 @@
+has a test pawn to test out a EQS

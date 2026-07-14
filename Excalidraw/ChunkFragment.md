@@ -1,0 +1,1 @@
+- **Chunk Fragment** - Fragments that are applied to a chunk of Entities in an Archetype. Often used for state or cached values for the chunk of entities such as if any entity in the chunk is visible or the last time the chunk of entities was "ticked".

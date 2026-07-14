@@ -1,0 +1,4 @@
+uses AuraEffectActor to introduce gameplayEffects
+![[AuraEffectActor]]
+ClampHealthManaInPreAttributeChange
+MakeStructBasedOnDataFromPostGameplayEffectExecute

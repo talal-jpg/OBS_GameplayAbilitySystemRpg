@@ -1,0 +1,1 @@
+Base it on DealDamageWithinRadiusFunc
