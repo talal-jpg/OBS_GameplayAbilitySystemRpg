@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Checking.md",
+                "file": "TODOs.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Checking"
+              "title": "TODOs"
             }
           }
         ]
@@ -176,10 +176,10 @@
   },
   "active": "5b3193b278fcfeb3",
   "lastOpenFiles": [
+    "Checking.md",
     "TODOs.md",
     "Indexing.md",
     "GitLearning.md",
-    "Checking.md",
     "Rider.md",
     "PasswordForGit.md",
     "CurrentTODOs.md",
