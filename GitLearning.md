@@ -31,3 +31,16 @@ git lfs -track names of all files to be tracked with lfs// adds .gitattributes w
 
 
 ![[lookingAroundInpreviousCommits]]
+
+
+
+
+**CompletelyResetHistory**
+Option 1 — Completely reset history (recommended for your case)
+rm -rf .git
+git init
+git add .
+git commit -m "Initial commit"
+git branch -M master
+git remote add origin https://github.com/talal-jpg/OBS_GameplayAbilitySystemRpg.git
+git push -u origin master --force
