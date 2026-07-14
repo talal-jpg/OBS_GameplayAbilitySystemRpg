@@ -18,6 +18,7 @@ kanban-plugin: board
 - [ ] Main Menu and Multiplayer menu / lobby thinking todo
 - [ ] [[Hud]]
 - [ ] While Equiping when the status of the Spell has not yet been updated/ replicated and I equip again , the crash happens??
+- [ ] //TODO hit trace and target location for arms and loc while flyboosting should be 2 different vars
 
 
 ## InProgress
