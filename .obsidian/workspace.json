@@ -11,10 +11,14 @@
             "id": "5b3193b278fcfeb3",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "TODOs.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "TODOs"
             }
           }
         ]
@@ -172,6 +176,7 @@
   },
   "active": "5b3193b278fcfeb3",
   "lastOpenFiles": [
+    "Indexing.md",
     "GitLearning.md",
     "Checking.md",
     "TODOs.md",
@@ -179,7 +184,6 @@
     "PasswordForGit.md",
     "CurrentTODOs.md",
     "MatchType set to AuraRedo3 , will filter on find with this and show that session.md",
-    "Indexing.md",
     "while BoostFlying Control rig.md",
     "BeamAbility.md",
     "Improve NS_boost.md",
