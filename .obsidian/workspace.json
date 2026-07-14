@@ -74,7 +74,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "db5b63f5286aec32",
@@ -156,7 +157,6 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "obsidian-kanban:Create new board": false,
       "bases:Create new base": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
@@ -166,7 +166,8 @@
       "command-palette:Open command palette": false,
       "obsidian-excalidraw-plugin:New drawing": false,
       "obsidian-git:Open Git source control": false,
-      "system3-relay:Relay": false
+      "system3-relay:Relay": false,
+      "obsidian-kanban:Create new board": false
     }
   },
   "active": "5b3193b278fcfeb3",
