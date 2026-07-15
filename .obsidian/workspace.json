@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MatchType set to AuraRedo3 , will filter on find with this and show that session.md",
+                "file": "TODOs.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "MatchType set to AuraRedo3 , will filter on find with this and show that session"
+              "title": "TODOs"
             }
           }
         ]
@@ -176,15 +176,16 @@
   },
   "active": "5b3193b278fcfeb3",
   "lastOpenFiles": [
+    "Minimum viable product for a demo.md",
+    "TODOs.md",
     "CurrentTODOs.md",
+    "Indexing.md",
     "MatchType set to AuraRedo3 , will filter on find with this and show that session.md",
     "LogWhole.md",
     "LogEndLong.md",
     "LogShort.md",
     "Broadcast AbilityInfo bug fixes.md",
-    "TODOs.md",
     "Checking.md",
-    "Indexing.md",
     "GitLearning.md",
     "Rider.md",
     "PasswordForGit.md",
@@ -196,7 +197,6 @@
     "AttributesAndAbilities.md",
     "Excalidraw/AbilityInfo Data flow.md",
     "twoSteamGameInstances.md",
-    "Minimum viable product for a demo.md",
     "Multiplayer MenuSetup Thinking todo.md",
     "GunShoot.md",
     "Beam.md",
