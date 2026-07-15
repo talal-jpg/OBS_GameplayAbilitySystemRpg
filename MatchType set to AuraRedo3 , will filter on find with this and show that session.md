@@ -12,3 +12,5 @@ DriverClassName="/Script/OnlineSubsystemSteam.SteamNetDriver" for legacy
 DriverClassName="/Script/SteamSockets.SteamSocketsNetDriver" &&
 [/Script/SteamSockets.SteamSocketsNetDriver]
 NetConnectionClassName="/Script/SteamSockets.SteamSocketsNetConnection" for   5.8 newer steam sockets
+
+investigate client travel on joinSession
