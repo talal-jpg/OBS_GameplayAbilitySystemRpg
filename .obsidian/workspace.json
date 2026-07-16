@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "ef697ee602fb326b",
+        "id": "f50ff63a255428ac",
         "type": "tabs",
         "children": [
           {
-            "id": "bbd616ae206aac39",
+            "id": "f76664d6cee4464b",
             "type": "leaf",
             "state": {
               "type": "kanban",
@@ -169,6 +169,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "obsidian-kanban:Create new board": false,
       "bases:Create new base": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
@@ -178,36 +179,35 @@
       "command-palette:Open command palette": false,
       "obsidian-excalidraw-plugin:New drawing": false,
       "obsidian-git:Open Git source control": false,
-      "system3-relay:Relay": false,
-      "obsidian-kanban:Create new board": false
+      "system3-relay:Relay": false
     }
   },
-  "active": "bbd616ae206aac39",
+  "active": "f76664d6cee4464b",
   "lastOpenFiles": [
-    "Ability aoe melee attack with two handed axe anim.md",
+    "VM making.md",
     "CurrentTODOs.md",
     "TODOs.md",
     "Indexing.md",
+    "while BoostFlying Control rig.md",
     "AbilityInfo.md",
-    "VM making.md",
-    "Minimum viable product for a demo.md",
+    "Ability aoe melee attack with two handed axe anim.md",
     "MatchType set to AuraRedo3 , will filter on find with this and show that session.md",
-    "LogWhole.md",
-    "LogEndLong.md",
     "LogShort.md",
-    "Broadcast AbilityInfo bug fixes.md",
-    "Checking.md",
+    "LogWhole.md",
     "GitLearning.md",
+    "LogEndLong.md",
+    "Checking.md",
     "Rider.md",
     "PasswordForGit.md",
-    "while BoostFlying Control rig.md",
     "BeamAbility.md",
     "Improve NS_boost.md",
     "Damage delay only when done to a client.md",
     "Hud.md",
     "AttributesAndAbilities.md",
+    "Broadcast AbilityInfo bug fixes.md",
     "Excalidraw/AbilityInfo Data flow.md",
     "twoSteamGameInstances.md",
+    "Minimum viable product for a demo.md",
     "Multiplayer MenuSetup Thinking todo.md",
     "GunShoot.md",
     "Pasted image 20260630115551.png",
