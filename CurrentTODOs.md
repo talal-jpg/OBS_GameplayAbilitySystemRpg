@@ -8,6 +8,10 @@ kanban-plugin: board
 
 - [ ] hosting char starts with default move mode on client because enters and sets move mode before client game starts
 - [ ] Direct join (joining via a known IP or Steam friend) when appropriate.
+- [ ] [[AbilityInfo]]
+- [ ] [[Ability aoe melee attack with two handed axe anim]]
+- [ ] And ground melee attack??
+- [ ] Rockets ability with Projectile Component??
 
 
 ## backLog

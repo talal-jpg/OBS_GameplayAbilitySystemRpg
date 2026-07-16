@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "002584717e019175",
+        "id": "ef697ee602fb326b",
         "type": "tabs",
         "children": [
           {
-            "id": "5b3193b278fcfeb3",
+            "id": "bbd616ae206aac39",
             "type": "leaf",
             "state": {
               "type": "kanban",
@@ -182,13 +182,15 @@
       "obsidian-kanban:Create new board": false
     }
   },
-  "active": "5b3193b278fcfeb3",
+  "active": "bbd616ae206aac39",
   "lastOpenFiles": [
-    "VM making.md",
+    "Ability aoe melee attack with two handed axe anim.md",
     "CurrentTODOs.md",
     "TODOs.md",
-    "Minimum viable product for a demo.md",
     "Indexing.md",
+    "AbilityInfo.md",
+    "VM making.md",
+    "Minimum viable product for a demo.md",
     "MatchType set to AuraRedo3 , will filter on find with this and show that session.md",
     "LogWhole.md",
     "LogEndLong.md",
@@ -208,9 +210,7 @@
     "twoSteamGameInstances.md",
     "Multiplayer MenuSetup Thinking todo.md",
     "GunShoot.md",
-    "Beam.md",
     "Pasted image 20260630115551.png",
-    "FabMechs.md",
     "Spline Mesh Visual",
     "Pasted image 20260702161726.png",
     "Pasted image 20260702161708.png",

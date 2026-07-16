@@ -1,0 +1,7 @@
+Ability_Status_ Eligible
+Ability_Status_Locked
+Ability_Status_Unlocked
+Ability_Status_Equipped
+
+Level through AbilityTag
+Different Abilty tag for upgraded level
