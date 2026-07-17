@@ -53,3 +53,5 @@ namei -l /media/talal/vm
 ```
 
 
+
+callMyJoin(Exec) custom func wrapper in cont or char class that calls subsystem func 
