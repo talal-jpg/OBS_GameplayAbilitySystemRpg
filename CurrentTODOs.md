@@ -16,6 +16,7 @@ kanban-plugin: board
 
 ## backLog
 
+- [ ] MultiCastRollEvent checks for velocity and only roll if greater thn ,even when called might not execute
 - [ ] WhileJumpPressed Charge jump and Jump based on that, mesh space additive anim for charging jump?
 - [ ] [[AttributesAndAbilities]]
 - [ ] ablities Gameplay effects
@@ -27,12 +28,13 @@ kanban-plugin: board
 
 ## InProgress
 
-- [ ] [[MatchType set to AuraRedo3 , will filter on find with this and show that session]]
+- [ ] [[while BoostFlying Control rig]] ^2jxoq4
+- [ ] HexPlatform Spawn Only on Server , events only on server with multicast
 - [ ] gunShootBulletNs
 - [ ] [[BeamAbility]]
-- [ ] [[while BoostFlying Control rig]] ^2jxoq4
-- [ ] MultiCastRollEvent checks for velocity and only roll if greater thn ,even when called might not execute
-- [ ] [[VM making]]
+- [ ] Respawn func
+- [ ] Die implementation
+- [ ] level up implementation
 
 
 ## Completed
@@ -52,6 +54,8 @@ kanban-plugin: board
 - [ ] [[Improve NS_boost]]
 - [ ] [[Broadcast AbilityInfo bug fixes]]
 - [ ] ServerSpendSpellPoints both ability can also be the same , if euiped in both slots , need fix
+- [ ] [[VM making]]
+- [ ] [[MatchType set to AuraRedo3 , will filter on find with this and show that session]]
 - [ ] While flying if boosting orient to rotation in pitch as well??? , not working as well
 
 
