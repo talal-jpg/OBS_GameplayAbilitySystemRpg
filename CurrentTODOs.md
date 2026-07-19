@@ -37,6 +37,7 @@ kanban-plugin: board
 - [ ] Die implementation
 - [ ] level up implementation
 - [ ] bothControllerAndCharDoingTraces
+- [ ] need to understand cr physics solver better
 
 
 ## Completed
