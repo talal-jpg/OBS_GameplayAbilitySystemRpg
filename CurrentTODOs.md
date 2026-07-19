@@ -38,7 +38,7 @@ kanban-plugin: board
 - [ ] gunShootBulletNs
 - [ ] [[BeamAbility]]
 - [ ] Respawn func
-- [ ] Die implementation
+- [ ] Die implementation , TODO Thinking ,with Tag?
 - [ ] level up implementation
 - [ ] need to understand cr physics solver better
 
