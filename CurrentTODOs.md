@@ -29,12 +29,14 @@ kanban-plugin: board
 ## InProgress
 
 - [ ] [[while BoostFlying Control rig]] ^2jxoq4
+- [ ] customHitTraceChannel
 - [ ] HexPlatform Spawn Only on Server , events only on server with multicast
 - [ ] gunShootBulletNs
 - [ ] [[BeamAbility]]
 - [ ] Respawn func
 - [ ] Die implementation
 - [ ] level up implementation
+- [ ] bothControllerAndCharDoingTraces
 
 
 ## Completed
