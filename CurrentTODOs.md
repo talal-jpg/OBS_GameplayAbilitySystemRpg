@@ -28,6 +28,7 @@ kanban-plugin: board
 
 ## InProgress
 
+- [ ] UdemyFirstPerson Project explore
 - [ ] [[while BoostFlying Control rig]] ^2jxoq4
 - [ ] bothControllerAndCharDoingTraces
 - [ ] customHitTraceChannel
@@ -38,7 +39,6 @@ kanban-plugin: board
 - [ ] Die implementation
 - [ ] level up implementation
 - [ ] need to understand cr physics solver better
-- [ ] GunRotateWhileShooting
 
 
 ## Completed
@@ -61,6 +61,7 @@ kanban-plugin: board
 - [ ] [[VM making]]
 - [ ] [[MatchType set to AuraRedo3 , will filter on find with this and show that session]]
 - [ ] While flying if boosting orient to rotation in pitch as well??? , not working as well
+- [ ] GunRotateWhileShooting
 
 
 ## ScrappedIdeas
