@@ -26,13 +26,13 @@ kanban-plugin: board
 - [ ] //TODO hit trace and target location for arms and loc while flyboosting should be 2 different vars
 - [ ] Damage Numbers via GameExecCalc , adding via Niagara DC
 - [ ] 
-- [ ] GA_Boost , Cd only comit when in air
 - [ ] svo pathfinding tut c+++
+- [ ] UdemyFirstPerson Project explore
 
 
 ## InProgress
 
-- [ ] UdemyFirstPerson Project explore
+- [ ] GA_Boost , Cd only comit when in air
 - [ ] Find Anim For Boost when in air and beam when in air
 - [ ] Die implementation , TODO Thinking ,with Tag?
 - [ ] [[while BoostFlying Control rig]] ^2jxoq4
