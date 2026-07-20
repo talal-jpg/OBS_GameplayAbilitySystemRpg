@@ -31,6 +31,7 @@ kanban-plugin: board
 
 ## InProgress
 
+- [ ] svo pathfinding tut c+++
 - [ ] UdemyFirstPerson Project explore
 - [ ] Find Anim For Boost when in air and beam when in air
 - [ ] Die implementation , TODO Thinking ,with Tag?
