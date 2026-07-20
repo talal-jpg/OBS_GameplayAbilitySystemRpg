@@ -27,11 +27,11 @@ kanban-plugin: board
 - [ ] Damage Numbers via GameExecCalc , adding via Niagara DC
 - [ ] 
 - [ ] GA_Boost , Cd only comit when in air
+- [ ] svo pathfinding tut c+++
 
 
 ## InProgress
 
-- [ ] svo pathfinding tut c+++
 - [ ] UdemyFirstPerson Project explore
 - [ ] Find Anim For Boost when in air and beam when in air
 - [ ] Die implementation , TODO Thinking ,with Tag?
@@ -44,6 +44,7 @@ kanban-plugin: board
 - [ ] Respawn func
 - [ ] level up implementation
 - [ ] need to understand cr physics solver better
+- [ ] [[MultiplayerTestingBugs]]
 
 
 ## Completed
