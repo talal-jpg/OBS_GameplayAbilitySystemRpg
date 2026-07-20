@@ -26,11 +26,14 @@ kanban-plugin: board
 - [ ] //TODO hit trace and target location for arms and loc while flyboosting should be 2 different vars
 - [ ] Damage Numbers via GameExecCalc , adding via Niagara DC
 - [ ] 
+- [ ] GA_Boost , Cd only comit when in air
 
 
 ## InProgress
 
 - [ ] UdemyFirstPerson Project explore
+- [ ] Find Anim For Boost when in air and beam when in air
+- [ ] Die implementation , TODO Thinking ,with Tag?
 - [ ] [[while BoostFlying Control rig]] ^2jxoq4
 - [ ] bothControllerAndCharDoingTraces
 - [ ] customHitTraceChannel
@@ -38,7 +41,6 @@ kanban-plugin: board
 - [ ] gunShootBulletNs
 - [ ] [[BeamAbility]]
 - [ ] Respawn func
-- [ ] Die implementation , TODO Thinking ,with Tag?
 - [ ] level up implementation
 - [ ] need to understand cr physics solver better
 
