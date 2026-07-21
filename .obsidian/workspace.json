@@ -4,29 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "f50ff63a255428ac",
+        "id": "ef697ee602fb326b",
         "type": "tabs",
         "children": [
           {
-            "id": "f76664d6cee4464b",
+            "id": "bbd616ae206aac39",
             "type": "leaf",
             "state": {
-              "type": "kanban",
+              "type": "markdown",
               "state": {
-                "file": "CurrentTODOs.md",
-                "kanbanViewState": {
-                  "kanban-plugin": "board",
-                  "list-collapse": [
-                    false,
-                    false,
-                    false,
-                    false,
-                    false
-                  ]
-                }
+                "file": "TODOs.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-trello",
-              "title": "CurrentTODOs"
+              "icon": "lucide-file",
+              "title": "TODOs"
             }
           }
         ]
@@ -169,7 +161,6 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "obsidian-kanban:Create new board": false,
       "bases:Create new base": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
@@ -179,36 +170,37 @@
       "command-palette:Open command palette": false,
       "obsidian-excalidraw-plugin:New drawing": false,
       "obsidian-git:Open Git source control": false,
-      "system3-relay:Relay": false
+      "system3-relay:Relay": false,
+      "obsidian-kanban:Create new board": false
     }
   },
-  "active": "f76664d6cee4464b",
+  "active": "bbd616ae206aac39",
   "lastOpenFiles": [
-    "MultiplayerTestingBugs.md",
-    "while BoostFlying Control rig.md",
     "CurrentTODOs.md",
     "TODOs.md",
     "Indexing.md",
-    "LogShort.md",
-    "MatchType set to AuraRedo3 , will filter on find with this and show that session.md",
+    "AttributesAndAbilities.md",
+    "MultiplayerTestingBugs.md",
     "VM making.md",
-    "AbilityInfo.md",
     "Ability aoe melee attack with two handed axe anim.md",
+    "AbilityInfo.md",
+    "Minimum viable product for a demo.md",
+    "MatchType set to AuraRedo3 , will filter on find with this and show that session.md",
     "LogWhole.md",
-    "GitLearning.md",
     "LogEndLong.md",
+    "LogShort.md",
+    "Broadcast AbilityInfo bug fixes.md",
     "Checking.md",
+    "GitLearning.md",
     "Rider.md",
     "PasswordForGit.md",
+    "while BoostFlying Control rig.md",
     "BeamAbility.md",
     "Improve NS_boost.md",
     "Damage delay only when done to a client.md",
     "Hud.md",
-    "AttributesAndAbilities.md",
-    "Broadcast AbilityInfo bug fixes.md",
     "Excalidraw/AbilityInfo Data flow.md",
     "twoSteamGameInstances.md",
-    "Minimum viable product for a demo.md",
     "Multiplayer MenuSetup Thinking todo.md",
     "Pasted image 20260630115551.png",
     "Spline Mesh Visual",
