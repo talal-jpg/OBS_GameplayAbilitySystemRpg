@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "ef697ee602fb326b",
+        "id": "fd957ea700c55fd5",
         "type": "tabs",
         "children": [
           {
-            "id": "bbd616ae206aac39",
+            "id": "0718c12b5211b32a",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "TODOs.md",
+                "file": "ControlRig.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "TODOs"
+              "title": "ControlRig"
             }
           }
         ]
@@ -161,6 +161,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "obsidian-kanban:Create new board": false,
       "bases:Create new base": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
@@ -170,37 +171,36 @@
       "command-palette:Open command palette": false,
       "obsidian-excalidraw-plugin:New drawing": false,
       "obsidian-git:Open Git source control": false,
-      "system3-relay:Relay": false,
-      "obsidian-kanban:Create new board": false
+      "system3-relay:Relay": false
     }
   },
-  "active": "bbd616ae206aac39",
+  "active": "0718c12b5211b32a",
   "lastOpenFiles": [
     "CurrentTODOs.md",
+    "MultiplayerTestingBugs.md",
+    "while BoostFlying Control rig.md",
     "TODOs.md",
     "Indexing.md",
-    "AttributesAndAbilities.md",
-    "MultiplayerTestingBugs.md",
-    "VM making.md",
-    "Ability aoe melee attack with two handed axe anim.md",
-    "AbilityInfo.md",
-    "Minimum viable product for a demo.md",
-    "MatchType set to AuraRedo3 , will filter on find with this and show that session.md",
-    "LogWhole.md",
-    "LogEndLong.md",
     "LogShort.md",
-    "Broadcast AbilityInfo bug fixes.md",
-    "Checking.md",
+    "MatchType set to AuraRedo3 , will filter on find with this and show that session.md",
+    "VM making.md",
+    "AbilityInfo.md",
+    "Ability aoe melee attack with two handed axe anim.md",
+    "LogWhole.md",
     "GitLearning.md",
+    "LogEndLong.md",
+    "Checking.md",
     "Rider.md",
     "PasswordForGit.md",
-    "while BoostFlying Control rig.md",
     "BeamAbility.md",
     "Improve NS_boost.md",
     "Damage delay only when done to a client.md",
     "Hud.md",
+    "AttributesAndAbilities.md",
+    "Broadcast AbilityInfo bug fixes.md",
     "Excalidraw/AbilityInfo Data flow.md",
     "twoSteamGameInstances.md",
+    "Minimum viable product for a demo.md",
     "Multiplayer MenuSetup Thinking todo.md",
     "Pasted image 20260630115551.png",
     "Spline Mesh Visual",
