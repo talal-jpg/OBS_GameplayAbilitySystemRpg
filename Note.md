@@ -1,0 +1,1 @@
+if hr follows onlyonly the legal contract and thesalary increment letter and doesnt care aobut the discussion in the meeting as well as ap update , whyhave i not been paid the rent since august 2023  or did hr look for an  appartment for me and notified me ?

@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "AnimaTodos.md",
+                "file": "Note.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "AnimaTodos"
+              "title": "Note"
             }
           }
         ]
@@ -177,9 +177,10 @@
   "active": "bbd616ae206aac39",
   "lastOpenFiles": [
     "TODOs.md",
-    "AnimaTodos.md",
-    "CurrentTODOs.md",
+    "Note.md",
     "Indexing.md",
+    "CurrentTODOs.md",
+    "AnimaTodos.md",
     "AttributesAndAbilities.md",
     "MultiplayerTestingBugs.md",
     "VM making.md",
@@ -201,7 +202,6 @@
     "Damage delay only when done to a client.md",
     "Hud.md",
     "Excalidraw/AbilityInfo Data flow.md",
-    "twoSteamGameInstances.md",
     "Pasted image 20260630115551.png",
     "Spline Mesh Visual",
     "Pasted image 20260702161726.png",
