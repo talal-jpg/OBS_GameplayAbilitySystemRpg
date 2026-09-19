@@ -5,6 +5,7 @@
 [GameMode] // add AuraPlayerController class 
 [[EnemyHitInterface]]
 [[GameplayAbilitySystem]]
+[[HexPlatform]]
 
 [[networking]]
 [[commonui]]
