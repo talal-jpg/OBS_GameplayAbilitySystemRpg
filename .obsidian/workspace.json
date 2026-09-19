@@ -20,8 +20,21 @@
               "icon": "lucide-file",
               "title": "Indexing"
             }
+          },
+          {
+            "id": "b1925a83397c0d37",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "Excalidraw/HexPlatformWithISMs.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "HexPlatformWithISMs"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -174,11 +187,22 @@
       "obsidian-kanban:Create new board": false
     }
   },
-  "active": "0718c12b5211b32a",
+  "active": "b1925a83397c0d37",
   "lastOpenFiles": [
-    "HexPlatform.md",
-    "Pasted image 20260919134306.png",
     "Indexing.md",
+    "HexPlatformISMs.md",
+    "Excalidraw/HexPlatformWithISMs.md",
+    "Pasted Image 20260919173455_800.png",
+    "Pasted Image 20260919173317_309.png",
+    "Pasted Image 20260919173244_012.png",
+    "Pasted Image 20260919173207_038.png",
+    "Pasted Image 20260919173140_902.png",
+    "Pasted Image 20260919173034_163.png",
+    "Pasted Image 20260919172945_432.png",
+    "Pasted Image 20260919172924_968.png",
+    "Pasted Image 20260919172833_704.png",
+    "Pasted Image 20260919172759_861.png",
+    "HexPlatform.md",
     "ControlRig.md",
     "Note.md",
     "AnimaTodos.md",
@@ -200,17 +224,7 @@
     "BeamAbility.md",
     "Improve NS_boost.md",
     "Damage delay only when done to a client.md",
-    "Hud.md",
-    "AttributesAndAbilities.md",
-    "Pasted image 20260630115551.png",
     "Spline Mesh Visual",
-    "Pasted image 20260702161726.png",
-    "Pasted image 20260702161708.png",
-    "Pasted image 20260630115022.png",
-    "Pasted image 20260624124234.png",
-    "Pasted image 20260624123930.png",
-    "Pasted image 20260605164623.png",
-    "Pasted image 20260223093925.png",
     "techArtInspiration",
     "HandWrittenNotes/Exec Calc_260215_170351 (2).pdf",
     "HandWrittenNotes/Replicated Swarm_260219_192108 (2).pdf",
@@ -219,7 +233,6 @@
     "HandWrittenNotes/Notes_260121_092421 (2).pdf",
     "HandWrittenNotes/Notes_260125_183811 (1).pdf",
     "HandWrittenNotes/Notes_260217_173605 (1).pdf",
-    "HandWrittenNotes",
-    "Pasted Image 20260126164716_791.png"
+    "HandWrittenNotes"
   ]
 }

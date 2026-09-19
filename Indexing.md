@@ -6,6 +6,7 @@
 [[EnemyHitInterface]]
 [[GameplayAbilitySystem]]
 [[HexPlatform]]
+[[HexPlatformISMs]]
 
 [[networking]]
 [[commonui]]
