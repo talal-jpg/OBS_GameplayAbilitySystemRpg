@@ -4,25 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "fd957ea700c55fd5",
+        "id": "ef697ee602fb326b",
         "type": "tabs",
         "children": [
           {
-            "id": "0718c12b5211b32a",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Indexing.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Indexing"
-            }
-          },
-          {
-            "id": "b1925a83397c0d37",
+            "id": "bbd616ae206aac39",
             "type": "leaf",
             "state": {
               "type": "excalidraw",
@@ -33,8 +19,7 @@
               "title": "HexPlatformWithISMs"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -187,11 +172,11 @@
       "obsidian-kanban:Create new board": false
     }
   },
-  "active": "b1925a83397c0d37",
+  "active": "bbd616ae206aac39",
   "lastOpenFiles": [
-    "Indexing.md",
     "HexPlatformISMs.md",
-    "Excalidraw/HexPlatformWithISMs.md",
+    "Indexing.md",
+    "Pasted image 20260919134306.png",
     "Pasted Image 20260919173455_800.png",
     "Pasted Image 20260919173317_309.png",
     "Pasted Image 20260919173244_012.png",
@@ -201,29 +186,29 @@
     "Pasted Image 20260919172945_432.png",
     "Pasted Image 20260919172924_968.png",
     "Pasted Image 20260919172833_704.png",
-    "Pasted Image 20260919172759_861.png",
     "HexPlatform.md",
-    "ControlRig.md",
-    "Note.md",
-    "AnimaTodos.md",
-    "CurrentTODOs.md",
-    "MultiplayerTestingBugs.md",
-    "while BoostFlying Control rig.md",
-    "TODOs.md",
-    "LogShort.md",
-    "MatchType set to AuraRedo3 , will filter on find with this and show that session.md",
-    "VM making.md",
-    "AbilityInfo.md",
-    "Ability aoe melee attack with two handed axe anim.md",
-    "LogWhole.md",
-    "GitLearning.md",
-    "LogEndLong.md",
-    "Checking.md",
-    "Rider.md",
-    "PasswordForGit.md",
-    "BeamAbility.md",
-    "Improve NS_boost.md",
-    "Damage delay only when done to a client.md",
+    "Excalidraw/HexPlatformWithISMs.md",
+    "GameplayAbilitySystem.md",
+    "FleshingOutGameplayAbilities.md",
+    "AttributeMenu.md",
+    "Attributes.md",
+    "GameplayTags.md",
+    "ShowMessageBasedOnGameplayTagByRetrievingARowFromACustomDataTable.md",
+    "GameplayEffects.md",
+    "RpgGameUi.md",
+    "Excalidraw/overlay initialize.md",
+    "AttributeSet.md",
+    "Excalidraw/Drawing 2025-04-13 13.20.14.excalidraw.md",
+    "AbilitySystemComponent.md",
+    "EnemyHitInterface.md",
+    "pureVirtualFunctions.md",
+    "AuraPlayerController.md",
+    "CursorTrace.md",
+    "set mouse input defaults at begin play.md",
+    "AddMovementInput.md",
+    "EnhancedInput.md",
+    "AnimationBlueprints.md",
+    "AuraABP.md",
     "Spline Mesh Visual",
     "techArtInspiration",
     "HandWrittenNotes/Exec Calc_260215_170351 (2).pdf",
