@@ -7,6 +7,7 @@
 [[GameplayAbilitySystem]]
 [[HexPlatform]]
 [[HexPlatformISMs]]
+[[MultiplayerMenu2]]
 
 [[networking]]
 [[commonui]]
