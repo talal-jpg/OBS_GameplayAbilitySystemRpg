@@ -142,3 +142,5 @@ PlayerController
 
 
 
+Hexagon env by Ghalian
+https://80.lv/articles/technical-challenges-of-game-environment-production?utm_source=Pinterest&utm_medium=organic
