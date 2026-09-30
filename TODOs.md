@@ -1,5 +1,4 @@
 [[CurrentTODOs]]
-[[AnimaTodos]]
 
 ~~[[Minimum viable product for a demo]]~~
 
