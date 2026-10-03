@@ -11,22 +11,14 @@
             "id": "0718c12b5211b32a",
             "type": "leaf",
             "state": {
-              "type": "kanban",
+              "type": "markdown",
               "state": {
-                "file": "CurrentTODOs.md",
-                "kanbanViewState": {
-                  "kanban-plugin": "board",
-                  "list-collapse": [
-                    false,
-                    false,
-                    false,
-                    false,
-                    false
-                  ]
-                }
+                "file": "Aura Spell Menu Flow.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-trello",
-              "title": "CurrentTODOs"
+              "icon": "lucide-file",
+              "title": "Aura Spell Menu Flow"
             }
           }
         ]
@@ -186,8 +178,14 @@
   },
   "active": "0718c12b5211b32a",
   "lastOpenFiles": [
-    "TODOs.md",
+    "SpellMenuFixWithClaude.md",
+    "Aura Spell Menu Flow.md",
+    "Untitled.base",
     "Indexing.md",
+    "Untitled 1.base",
+    "Untitled 2.base",
+    "CurrentTODOs.md",
+    "TODOs.md",
     "MultiplayerMenu2.md",
     "Excalidraw/HexPlatformWithISMs.md",
     "HexPlatformISMs.md",
@@ -205,7 +203,6 @@
     "ControlRig.md",
     "Note.md",
     "AnimaTodos.md",
-    "CurrentTODOs.md",
     "MultiplayerTestingBugs.md",
     "while BoostFlying Control rig.md",
     "LogShort.md",
@@ -220,17 +217,12 @@
     "Rider.md",
     "PasswordForGit.md",
     "BeamAbility.md",
-    "Improve NS_boost.md",
-    "Damage delay only when done to a client.md",
     "Spline Mesh Visual",
     "techArtInspiration",
     "HandWrittenNotes/Exec Calc_260215_170351 (2).pdf",
     "HandWrittenNotes/Replicated Swarm_260219_192108 (2).pdf",
     "HandWrittenNotes/Ability Activation in GAS Predictively_260216_230542 (2).pdf",
     "HandWrittenNotes/Notes_260114_132227 (2).pdf",
-    "HandWrittenNotes/Notes_260121_092421 (2).pdf",
-    "HandWrittenNotes/Notes_260125_183811 (1).pdf",
-    "HandWrittenNotes/Notes_260217_173605 (1).pdf",
-    "HandWrittenNotes"
+    "HandWrittenNotes/Notes_260121_092421 (2).pdf"
   ]
 }

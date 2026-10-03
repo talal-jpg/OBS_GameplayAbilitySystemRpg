@@ -8,6 +8,7 @@
 [[HexPlatform]]
 [[HexPlatformISMs]]
 [[MultiplayerMenu2]]
+[[SpellMenuFixWithClaude]]
 
 [[networking]]
 [[commonui]]
