@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "TODOs.md",
+                "file": "Indexing.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "TODOs"
+              "title": "Indexing"
             }
           }
         ]
@@ -176,9 +176,9 @@
   },
   "active": "bbd616ae206aac39",
   "lastOpenFiles": [
+    "TODOs.md",
     "CurrentTODOs.md",
     "BeamAbility.md",
-    "TODOs.md",
     "Indexing.md",
     "ControlRig.md",
     "hex_layout_preview_zigzag.png",
