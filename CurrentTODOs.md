@@ -33,30 +33,30 @@ kanban-plugin: board
 ## InProgress
 
 - [ ] GA_Boost , Cd only comit when in air
-- [ ] Find Anim For Boost when in air and beam when in air
-- [ ] Die implementation , TODO Thinking ,with Tag?
-- [ ] [[while BoostFlying Control rig]] ^2jxoq4
+- [ ] Die implementation , TODO Thinking ,with PS var bIsDead
 - [ ] bothControllerAndCharDoingTraces
 - [ ] customHitTraceChannel
-- [ ] HexPlatform Spawn Only on Server , events only on server with multicast
-- [ ] gunShootBulletNs
 - [ ] [[BeamAbility]]
 - [ ] Respawn func
 - [ ] level up implementation
-- [ ] need to understand cr physics solver better
 - [ ] [[MultiplayerTestingBugs]]
 
 
 ## Completed
 
 - [ ] boostToRollSetControlRotAndActorRot
+- [ ] Find Anim For Boost when in air and beam when in air
 - [ ] [[AbilityActivationFromServerToClient]]
 - [ ] [[Set SimProxyTargetLoc In CharClass]]
+- [ ] [[while BoostFlying Control rig]] ^2jxoq4
 - [ ] Boost flying Traversal
 - [ ] [[boost niagara System, make own]]
 - [ ] only move forward when boosting and flying
+- [ ] HexPlatform Spawn Only on Server , events only on server with multicast
 - [ ] server char not showing move anims on client
 - [ ] input only reps from client to server so if any thing needs to be done on all clients on input release then ,can play montage with AT will handle replication auto
+- [ ] need to understand cr physics solver better
+- [ ] gunShootBulletNs
 - [ ] While dropping in abp calling multicast_roll might cause bug if pressed shift while falling? does cause
 - [ ] ControlRigHitReacts
 - [ ] [[Damage delay only when done to a client]]
