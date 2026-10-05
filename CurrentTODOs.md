@@ -6,6 +6,7 @@ kanban-plugin: board
 
 ## TBD
 
+- [ ] WhileJumpPressed Charge jump and Jump based on that, mesh space additive anim for charging jump?
 - [ ] hosting char starts with default move mode on client because enters and sets move mode before client game starts
 - [ ] Direct join (joining via a known IP or Steam friend) when appropriate.
 - [ ] [[AbilityInfo]]
@@ -17,13 +18,9 @@ kanban-plugin: board
 ## backLog
 
 - [ ] MultiCastRollEvent checks for velocity and only roll if greater thn ,even when called might not execute
-- [ ] WhileJumpPressed Charge jump and Jump based on that, mesh space additive anim for charging jump?
 - [ ] [[Hud]]
 - [ ] [[AttributesAndAbilities]]
 - [ ] ablities Gameplay effects
-- [ ] Main Menu and Multiplayer menu / lobby thinking todo
-- [ ] While Equiping when the status of the Spell has not yet been updated/ replicated and I equip again , the crash happens??
-- [ ] //TODO hit trace and target location for arms and loc while flyboosting should be 2 different vars
 - [ ] Damage Numbers via GameExecCalc , adding via Niagara DC
 - [ ] Something wrong with data channels in 5.8?
 - [ ] svo pathfinding tut c+++
@@ -44,6 +41,9 @@ kanban-plugin: board
 
 ## Completed
 
+- [ ] Main Menu and Multiplayer menu / lobby thinking todo
+- [ ] //TODO hit trace and target location for arms and loc while flyboosting should be 2 different vars
+- [ ] While Equiping when the status of the Spell has not yet been updated/ replicated and I equip again , the crash happens??
 - [ ] boostToRollSetControlRotAndActorRot
 - [ ] Find Anim For Boost when in air and beam when in air
 - [ ] [[AbilityActivationFromServerToClient]]
