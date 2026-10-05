@@ -205,3 +205,23 @@ flowchart TD
 Equipping into an occupied slot does not swap. The ability that was there loses its slot and goes back to Unlocked. Reliable RPCs to the same actor arrive in order, so the client clears the slot before it refills it.
 
 All paths are under `Source/Aura/`. Line numbers match commit a63041a on redo3.
+
+The PCG graph now spawns natural-looking platform streams. I've saved it, and the old version is backed up as `PCG_SplineIHexPlatformsFromSpline_Backup` in the same folder. I need one decision from you about `StartupMap`, below.
+
+**What it spawns per 100 m path segment:**
+
+- **Three streams of big platforms:** a centre stream (grid 11–12) every 50 m on the path, plus left and right streams (grid 6–9) 42–48 m out. The side streams randomly skip about 15% of their spots.
+- **Height:** big platforms vary smoothly by up to ±4 m. Each ring of smaller platforms steps up or down by up to half its gap, so every bridge stays under the 30° limit.
+- **Medium platforms (grid 3–5)** around every big one, on all sides including front and back.
+- **Small platforms (grid 1–2)** around the medium ones.
+
+**Bridges and overlaps:** I simulated your level's path (seed 17.31). Its bends are tight, a quarter of it under 36 m radius, so fixed sizes would overlap. Big platforms now shrink to fit when a neighbour or the segment border is close. Each segment also checks the platforms and bridges already in the world, so it never overlaps an earlier segment.
+
+I tested it on the four tightest real segments (19–22): 41 platforms, no overlaps (smallest gap 2.8 m), and all of them within bridge reach of each other. The preview is attached. Bridges are only built in play, and I didn't run Play-In-Editor, so a playtest is still worth doing.
+
+**Decision needed:** an editor Save All at 08:26 (not one of my saves) wrote 2 of my test volumes and 35 test platforms into `StartupMap.umap`. They sit far below the play area (about y 4 km, z −400 m). I've already removed them from the open level, so saving the level clears them. Should I save StartupMap now?
+
+- **Yes (recommended):** I save just that level.
+- **No:** you save it yourself.
+
+Nothing is c![[hex_layout_preview_zigzag.png]]ommitted. Your C++ hex changes and NS_MuzzleFlash are untouched.
