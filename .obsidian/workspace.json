@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "TODOs.md",
+                "file": "05-10-2026.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "TODOs"
+              "title": "05-10-2026"
             }
           }
         ]
@@ -80,8 +80,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "db5b63f5286aec32",
@@ -178,8 +177,8 @@
   },
   "active": "0718c12b5211b32a",
   "lastOpenFiles": [
-    "05-10-2026.md",
     "TODOs.md",
+    "05-10-2026.md",
     "Indexing.md",
     "Aura Spell Menu Flow.md",
     "hex_layout_preview_zigzag.png",

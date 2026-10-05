@@ -1,3 +1,5 @@
 {
-  "cssTheme": "Dracula Official"
+  "cssTheme": "Dracula Official",
+  "showViewHeader": false,
+  "showRibbon": false
 }
