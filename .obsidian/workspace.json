@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Indexing.md",
+                "file": "05-10-2026.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Indexing"
+              "title": "05-10-2026"
             }
           }
         ]
@@ -177,9 +177,10 @@
   "active": "bbd616ae206aac39",
   "lastOpenFiles": [
     "TODOs.md",
+    "05-10-2026.md",
+    "Indexing.md",
     "CurrentTODOs.md",
     "BeamAbility.md",
-    "Indexing.md",
     "ControlRig.md",
     "hex_layout_preview_zigzag.png",
     "Untitled.base",
@@ -205,7 +206,6 @@
     "GameIdeas.md",
     "ToBeSortedIdeas.md",
     "RewardingXPAndLevelingup.md",
-    "Excalidraw/HandleIncomingXP.md",
     "Pasted image 20260919134306.png",
     "Pasted Image 20260919173455_800.png",
     "Pasted Image 20260919173317_309.png",
