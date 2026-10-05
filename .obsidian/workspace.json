@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "05-10-2026.md",
+                "file": "Indexing.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "05-10-2026"
+              "title": "Indexing"
             }
           }
         ]
@@ -80,7 +80,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "db5b63f5286aec32",
@@ -178,16 +179,23 @@
   "active": "0718c12b5211b32a",
   "lastOpenFiles": [
     "TODOs.md",
-    "05-10-2026.md",
+    "CurrentTODOs.md",
     "Indexing.md",
-    "Aura Spell Menu Flow.md",
-    "hex_layout_preview_zigzag.png",
+    "MultiplayerMenu2.md",
     "SpellMenuFixWithClaude.md",
+    "Aura Spell Menu Flow.md",
+    "networking.md",
+    "commonui.md",
+    "MassEntity.md",
+    "NoteTakingGameDesign.md",
+    "GameIdeas.md",
+    "MadMechFuryRoad.md",
+    "Excalidraw/BrainStorm_v1.md",
+    "05-10-2026.md",
+    "hex_layout_preview_zigzag.png",
     "Untitled.base",
     "Untitled 1.base",
     "Untitled 2.base",
-    "CurrentTODOs.md",
-    "MultiplayerMenu2.md",
     "Excalidraw/HexPlatformWithISMs.md",
     "HexPlatformISMs.md",
     "Pasted Image 20260919173455_800.png",
@@ -209,13 +217,6 @@
     "MatchType set to AuraRedo3 , will filter on find with this and show that session.md",
     "VM making.md",
     "AbilityInfo.md",
-    "Ability aoe melee attack with two handed axe anim.md",
-    "LogWhole.md",
-    "GitLearning.md",
-    "LogEndLong.md",
-    "Checking.md",
-    "Rider.md",
-    "PasswordForGit.md",
     "Spline Mesh Visual",
     "techArtInspiration",
     "HandWrittenNotes/Exec Calc_260215_170351 (2).pdf",
