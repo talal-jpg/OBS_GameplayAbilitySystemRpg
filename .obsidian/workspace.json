@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "05-10-2026.md",
+                "file": "Indexing.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "05-10-2026"
+              "title": "Indexing"
             }
           }
         ]
@@ -177,6 +177,7 @@
   "active": "bbd616ae206aac39",
   "lastOpenFiles": [
     "TODOs.md",
+    "05-10-2026.md",
     "Indexing.md",
     "GameplayAbilitySystem.md",
     "FabMechs.md",
@@ -185,7 +186,6 @@
     "MadMechFuryRoad.md",
     "TODO.MadMechFuryRoad.md",
     "ControlRig.md",
-    "05-10-2026.md",
     "MultiplayerMenu2.md",
     "SpellMenuFixWithClaude.md",
     "Aura Spell Menu Flow.md",
