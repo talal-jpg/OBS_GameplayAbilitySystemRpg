@@ -26,4 +26,3 @@
 [[TODOs]]
 
 [[techArtInspiration/Resources]]
-[[techArtInspiration/Inspiration]]
