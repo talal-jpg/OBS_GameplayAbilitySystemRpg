@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "GameplayAbilitySystem.md",
+                "file": "05-10-2026.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "GameplayAbilitySystem"
+              "title": "05-10-2026"
             }
           }
         ]
@@ -176,10 +176,11 @@
   },
   "active": "bbd616ae206aac39",
   "lastOpenFiles": [
-    "FabMechs.md",
-    "GameplayAbilitySystem.md",
-    "Mechs.md",
+    "TODOs.md",
     "Indexing.md",
+    "GameplayAbilitySystem.md",
+    "FabMechs.md",
+    "Mechs.md",
     "GameIdeas.md",
     "MadMechFuryRoad.md",
     "TODO.MadMechFuryRoad.md",
@@ -190,7 +191,6 @@
     "Aura Spell Menu Flow.md",
     "techArtInspiration/Resources.md",
     "techArtInspiration/Inspiration.md",
-    "TODOs.md",
     "ToBeSortedIdeas.md",
     "CurrentTODOs.md",
     "Hud.md",
