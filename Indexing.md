@@ -15,6 +15,7 @@
 [[MassEntity]]
 
 [[NoteTakingGameDesign]]
+[[GFXRefs]]
 
 [[ControlRig]]
 
