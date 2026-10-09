@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "GFXRefs.md",
+                "file": "05-10-2026.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "GFXRefs"
+              "title": "05-10-2026"
             }
           }
         ]
@@ -176,14 +176,14 @@
   },
   "active": "bbd616ae206aac39",
   "lastOpenFiles": [
-    "borderlands-Environment.jpg",
-    "moodRefOnly_nightblueLanternYellow.jpg",
-    "minimalSplashScreenMech 1.png",
-    "minimalSplashScreenMech.png",
-    "Pasted image 20261009153609.png",
+    "TODOs.md",
     "Indexing.md",
     "GFXRefs.md",
-    "TODOs.md",
+    "moodRefOnly_nightblueLanternYellow.jpg",
+    "minimalSplashScreenMech.png",
+    "minimalSplashScreenMech 1.png",
+    "borderlands-Environment.jpg",
+    "Pasted image 20261009153609.png",
     "05-10-2026.md",
     "GameplayAbilitySystem.md",
     "FabMechs.md",
@@ -214,7 +214,6 @@
     "Pasted Image 20260919173455_800.png",
     "Pasted Image 20260919173317_309.png",
     "Pasted Image 20260919173244_012.png",
-    "Pasted Image 20260919173207_038.png",
     "Spline Mesh Visual",
     "techArtInspiration",
     "HandWrittenNotes/Exec Calc_260215_170351 (2).pdf",
