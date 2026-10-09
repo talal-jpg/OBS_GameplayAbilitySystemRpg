@@ -4,4 +4,4 @@ https://www.youtube.com/watch?v=XTniifi2xNE
 
 https://www.youtube.com/watch?v=h4Sv5TQa4I4
 
-![[minimalSplashScreenMech 1.png]]
+![[minimalSplashScreenMech 1.png]]![[moodRefOnly_nightblueLanternYellow.jpg]]![[borderlands-Environment.jpg]]
