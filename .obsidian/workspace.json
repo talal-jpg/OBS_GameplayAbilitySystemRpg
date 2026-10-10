@@ -11,14 +11,20 @@
             "id": "bbd616ae206aac39",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "kanban",
               "state": {
-                "file": "TODOs.md",
-                "mode": "source",
-                "source": false
+                "file": "TODOs2.md",
+                "kanbanViewState": {
+                  "kanban-plugin": "board",
+                  "list-collapse": [
+                    false,
+                    false,
+                    false
+                  ]
+                }
               },
-              "icon": "lucide-file",
-              "title": "TODOs"
+              "icon": "lucide-trello",
+              "title": "TODOs2"
             }
           }
         ]
@@ -179,21 +185,29 @@
   },
   "active": "bbd616ae206aac39",
   "lastOpenFiles": [
-    "().md",
-    "TODOs.md",
-    "05-10-2026.md",
-    "TODOs2.md",
     "BeamImpactOnPlayer.md",
     "add the postprocess.md",
+    "GettingHitPlayerFrames.md",
+    "TODOs2.md",
+    "PP , CamShake for Beam Casting player.md",
+    "CastingPlayerFrames.md",
+    "Pasted image 20261010091743.png",
+    "Pasted image 20261010091720.png",
+    "Pasted image 20261010091635.png",
+    "Pasted image 20261010091610.png",
+    "Pasted image 20261010091551.png",
+    "Pasted image 20261010091306.png",
+    "Pasted image 20261010091247.png",
+    "Pasted image 20261010091222.png",
+    "Pasted image 20261010091206.png",
+    "Pasted image 20261010091124.png",
+    "TODOs.md",
+    "05-10-2026.md",
+    "().md",
     "CurrentTODOs.md",
     "CurrentTodos2.md",
     "Indexing.md",
     "GFXRefs.md",
-    "moodRefOnly_nightblueLanternYellow.jpg",
-    "minimalSplashScreenMech.png",
-    "minimalSplashScreenMech 1.png",
-    "borderlands-Environment.jpg",
-    "Pasted image 20261009153609.png",
     "GameplayAbilitySystem.md",
     "FabMechs.md",
     "Mechs.md",
@@ -206,18 +220,9 @@
     "Aura Spell Menu Flow.md",
     "techArtInspiration/Resources.md",
     "techArtInspiration/Inspiration.md",
-    "ToBeSortedIdeas.md",
-    "Hud.md",
-    "MultiplayerTestingBugs.md",
-    "BeamAbility.md",
-    "hex_layout_preview_zigzag.png",
     "Untitled.base",
     "Untitled 2.base",
     "Untitled 1.base",
-    "Pasted image 20260919134306.png",
-    "Pasted Image 20260919173455_800.png",
-    "Pasted Image 20260919173317_309.png",
-    "Pasted Image 20260919173244_012.png",
     "Spline Mesh Visual",
     "techArtInspiration",
     "HandWrittenNotes/Exec Calc_260215_170351 (2).pdf",
