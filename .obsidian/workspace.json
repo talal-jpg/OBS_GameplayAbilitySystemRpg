@@ -11,20 +11,14 @@
             "id": "bbd616ae206aac39",
             "type": "leaf",
             "state": {
-              "type": "kanban",
+              "type": "markdown",
               "state": {
-                "file": "TODOs2.md",
-                "kanbanViewState": {
-                  "kanban-plugin": "board",
-                  "list-collapse": [
-                    false,
-                    false,
-                    false
-                  ]
-                }
+                "file": "TODOs.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-trello",
-              "title": "TODOs2"
+              "icon": "lucide-file",
+              "title": "TODOs"
             }
           }
         ]
@@ -185,12 +179,17 @@
   },
   "active": "bbd616ae206aac39",
   "lastOpenFiles": [
+    "05-10-2026.md",
+    "TODOs.md",
+    "CurrentTODOs.md",
+    "TODOs2.md",
+    "Indexing.md",
+    "GFXRefs.md",
+    "PP , CamShake for Beam Casting player.md",
+    "CastingPlayerFrames.md",
     "BeamImpactOnPlayer.md",
     "add the postprocess.md",
     "GettingHitPlayerFrames.md",
-    "TODOs2.md",
-    "PP , CamShake for Beam Casting player.md",
-    "CastingPlayerFrames.md",
     "Pasted image 20261010091743.png",
     "Pasted image 20261010091720.png",
     "Pasted image 20261010091635.png",
@@ -201,13 +200,8 @@
     "Pasted image 20261010091222.png",
     "Pasted image 20261010091206.png",
     "Pasted image 20261010091124.png",
-    "TODOs.md",
-    "05-10-2026.md",
     "().md",
-    "CurrentTODOs.md",
     "CurrentTodos2.md",
-    "Indexing.md",
-    "GFXRefs.md",
     "GameplayAbilitySystem.md",
     "FabMechs.md",
     "Mechs.md",
