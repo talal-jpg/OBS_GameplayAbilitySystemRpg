@@ -1,4 +1,6 @@
 [[CurrentTODOs]]
+[[TODOs2]]
+
 [[05-10-2026]]
 ~~[[Minimum viable product for a demo]]~~
 
