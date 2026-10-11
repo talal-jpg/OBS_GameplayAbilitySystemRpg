@@ -18,11 +18,8 @@ kanban-plugin: board
 ## backLog
 
 - [ ] MultiCastRollEvent checks for velocity and only roll if greater thn ,even when called might not execute
-- [ ] [[Hud]]
 - [ ] [[AttributesAndAbilities]]
 - [ ] ablities Gameplay effects
-- [ ] Damage Numbers via GameExecCalc , adding via Niagara DC
-- [ ] Something wrong with data channels in 5.8?
 - [ ] svo pathfinding tut c+++
 - [ ] UdemyFirstPerson Project explore
 
@@ -44,6 +41,9 @@ kanban-plugin: board
 - [ ] Main Menu and Multiplayer menu / lobby thinking todo
 - [ ] //TODO hit trace and target location for arms and loc while flyboosting should be 2 different vars
 - [ ] While Equiping when the status of the Spell has not yet been updated/ replicated and I equip again , the crash happens??
+- [ ] [[Hud]]
+- [ ] Damage Numbers via GameExecCalc , adding via Niagara DC
+- [ ] Something wrong with data channels in 5.8?
 - [ ] boostToRollSetControlRotAndActorRot
 - [ ] Find Anim For Boost when in air and beam when in air
 - [ ] [[AbilityActivationFromServerToClient]]

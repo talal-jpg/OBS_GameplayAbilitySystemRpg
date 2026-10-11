@@ -6,9 +6,6 @@ kanban-plugin: board
 
 ## Backlog
 
-- [ ] [[BeamImpactOnPlayer]]
-- [ ] [[PP , CamShake for Beam Casting player]]
-- [ ] Improve On the Made PP Mat and Impact fx
 
 
 ## InProgresss
@@ -17,6 +14,9 @@ kanban-plugin: board
 
 ## Done
 
+- [ ] [[PP , CamShake for Beam Casting player]]
+- [ ] [[BeamImpactOnPlayer]]
+- [ ] Improve On the Made PP Mat and Impact fx
 
 
 
