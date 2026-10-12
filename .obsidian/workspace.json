@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Indexing.md",
+                "file": "GFXRefs.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Indexing"
+              "title": "GFXRefs"
             }
           }
         ]
@@ -176,9 +176,10 @@
   },
   "active": "bbd616ae206aac39",
   "lastOpenFiles": [
+    "Pasted image 20261012165346.png",
+    "Indexing.md",
     "GFXRefs.md",
     "Pasted image 20261012145930.png",
-    "Indexing.md",
     "TODOs.md",
     "CurrentTODOs.md",
     "AbilityInfo.md",

@@ -8,5 +8,7 @@ https://www.youtube.com/watch?v=h4Sv5TQa4I4
 bullet Impact fx only
 https://www.youtube.com/watch?v=9gHI2hyCjv8
 
+![[Pasted image 20261012165346.png]]
+
 ![[minimalSplashScreenMech 1.png]]![[moodRefOnly_nightblueLanternYellow.jpg]]![[borderlands-Environment.jpg]]
 ![[Pasted image 20261012145930.png]]
