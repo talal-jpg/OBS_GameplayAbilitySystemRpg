@@ -11,10 +11,14 @@
             "id": "e5cd5d3f5fbf77c8",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "StoneBridge.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "StoneBridge"
             }
           }
         ]
@@ -172,8 +176,12 @@
   },
   "active": "e5cd5d3f5fbf77c8",
   "lastOpenFiles": [
-    "Indexing.md",
+    "Pasted image 20261013152943.png",
+    "Pasted image 20261013152324.png",
+    "Pasted image 20261013152313.png",
     "GFXRefs.md",
+    "StoneBridge.md",
+    "Indexing.md",
     "Pasted image 20261013150944.png",
     "TODOs.md",
     "12-10-2026.md",
@@ -189,8 +197,6 @@
     "Pasted image 20261010091635.png",
     "Pasted image 20261010091610.png",
     "Pasted image 20261010091551.png",
-    "Pasted image 20261010091306.png",
-    "Pasted image 20261010091247.png",
     "PP , CamShake for Beam Casting player.md",
     "GettingHitPlayerFrames.md",
     "CastingPlayerFrames.md",
@@ -206,7 +212,6 @@
     "MultiplayerMenu2.md",
     "SpellMenuFixWithClaude.md",
     "Aura Spell Menu Flow.md",
-    "techArtInspiration/Resources.md",
     "Untitled.base",
     "Untitled 2.base",
     "Untitled 1.base",
