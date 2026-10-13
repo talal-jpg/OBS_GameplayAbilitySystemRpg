@@ -24,7 +24,7 @@ https://www.youtube.com/watch?v=9gHI2hyCjv8
 
 
 
-
+![[Pasted image 20261013150944.png]]
 
 
 ![[Pasted image 20261012165346.png]]
