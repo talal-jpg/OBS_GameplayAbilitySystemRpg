@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "GFXRefs.md",
+                "file": "TODOs.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "GFXRefs"
+              "title": "TODOs"
             }
           }
         ]
@@ -176,11 +176,12 @@
   },
   "active": "bbd616ae206aac39",
   "lastOpenFiles": [
+    "12-10-2026.md",
+    "TODOs.md",
     "Indexing.md",
     "GFXRefs.md",
     "Pasted image 20261012165346.png",
     "Pasted image 20261012145930.png",
-    "TODOs.md",
     "CurrentTODOs.md",
     "AbilityInfo.md",
     "TODOs2.md",
