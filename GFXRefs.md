@@ -19,8 +19,11 @@ https://www.youtube.com/watch?v=9gHI2hyCjv8
 
 [[StoneBridge]]
 
-beam ref from slash morbid metal at 47 sec
+beam ref from slash morbid metal at 47 sec to 49
 https://www.youtube.com/watch?v=je-Du7OYV8o
+
+Dynamic Electricity on Character
+https://www.youtube.com/watch?v=8obgGB5A8YA
 
 
 
