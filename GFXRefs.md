@@ -19,6 +19,8 @@ https://www.youtube.com/watch?v=9gHI2hyCjv8
 
 [[StoneBridge]]
 
+beam ref from slash morbid metal at 47 sec
+https://www.youtube.com/watch?v=je-Du7OYV8o
 
 
 
