@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "TODOs.md",
+                "file": "GFXRefs.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "TODOs"
+              "title": "GFXRefs"
             }
           }
         ]
@@ -176,12 +176,12 @@
   },
   "active": "e5cd5d3f5fbf77c8",
   "lastOpenFiles": [
-    "CurrentTODOs.md",
+    "Indexing.md",
     "TODOs.md",
+    "CurrentTODOs.md",
     "TODOs2.md",
     "05-10-2026.md",
     "12-10-2026.md",
-    "Indexing.md",
     "GFXRefs.md",
     "StoneBridge.md",
     "Pasted image 20261013152943.png",
