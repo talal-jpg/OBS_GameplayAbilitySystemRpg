@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "GFXRefs.md",
+                "file": "Indexing.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "GFXRefs"
+              "title": "Indexing"
             }
           }
         ]
@@ -176,8 +176,10 @@
   },
   "active": "e5cd5d3f5fbf77c8",
   "lastOpenFiles": [
-    "PlatformRefs.md",
     "GFXRefs.md",
+    "Indexing.md",
+    "TODOs.md",
+    "PlatformRefs.md",
     "propsLayoutOnPlatformRef1.jpg",
     "propsLayoutOnPlatformRef2.jpg",
     "propsLayoutOnPlatformRef3.jpg",
@@ -186,8 +188,6 @@
     "propsLayoutOnPlatformRef6_shardB.jpg",
     "propsLayoutOnPlatformRef_typeA_1.jpg",
     "propsLayoutOnPlatformRef_typeA_2.jpg",
-    "Indexing.md",
-    "TODOs.md",
     "Pasted image 20261016085707.png",
     "12-10-2026.md",
     "05-10-2026.md",

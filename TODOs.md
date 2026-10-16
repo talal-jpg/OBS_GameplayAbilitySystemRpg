@@ -9,3 +9,5 @@ CheckLead func being called every .2 sec in platforms . should be only called wh
 
 **Adding removing physics bodies dynamically UE forum**
 https://forums.unrealengine.com/t/adding-and-removing-physics-bodies-in-control-rig-dynamically/2714511
+
+path from bridge edge to another bridge edge. 
