@@ -1,3 +1,4 @@
+![[Pasted image 20261016182003.png]]
 ![[propsLayoutOnPlatformRef_typeA_2.jpg]]
 
 ![[propsLayoutOnPlatformRef_typeA_1.jpg]]
