@@ -37,3 +37,4 @@ https://www.youtube.com/watch?v=8obgGB5A8YA
 ![[minimalSplashScreenMech 1.png]]![[moodRefOnly_nightblueLanternYellow.jpg]]![[borderlands-Environment.jpg]]
 ![[Pasted image 20261012145930.png]]
 ![[Pasted image 20261009153609.png]]
+![[Pasted image 20261016085707.png]]
