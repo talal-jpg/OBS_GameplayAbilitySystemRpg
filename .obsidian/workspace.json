@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "GFXRefs.md",
+                "file": "Indexing.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "GFXRefs"
+              "title": "Indexing"
             }
           }
         ]
@@ -176,8 +176,10 @@
   },
   "active": "e5cd5d3f5fbf77c8",
   "lastOpenFiles": [
-    "Indexing.md",
     "TODOs.md",
+    "Pasted image 20261022155258.png",
+    "Indexing.md",
+    "GFXRefs.md",
     "CurrentTODOs.md",
     "BeamAbility.md",
     "21-10-2026.md",
@@ -185,7 +187,6 @@
     "12-10-2026.md",
     "TODOs2.md",
     "19-10-2026.md",
-    "GFXRefs.md",
     "PlatformRefs.md",
     "Pasted image 20261016182003.png",
     "SpellMenuFixWithClaude.md",
@@ -197,7 +198,6 @@
     "propsLayoutOnPlatformRef6_shardB.jpg",
     "propsLayoutOnPlatformRef_typeA_1.jpg",
     "propsLayoutOnPlatformRef_typeA_2.jpg",
-    "Pasted image 20261016085707.png",
     "AttributesAndAbilities.md",
     "AbilityInfo.md",
     "StoneBridge.md",
@@ -211,7 +211,6 @@
     "FabMechs.md",
     "Mechs.md",
     "GameIdeas.md",
-    "MadMechFuryRoad.md",
     "Untitled.base",
     "Untitled 2.base",
     "Untitled 1.base",
