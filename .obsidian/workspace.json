@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Indexing.md",
+                "file": "TODOs.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Indexing"
+              "title": "TODOs"
             }
           }
         ]
@@ -176,10 +176,10 @@
   },
   "active": "e5cd5d3f5fbf77c8",
   "lastOpenFiles": [
-    "TODOs.md",
-    "Pasted image 20261022155258.png",
     "Indexing.md",
+    "TODOs.md",
     "GFXRefs.md",
+    "Pasted image 20261022155258.png",
     "CurrentTODOs.md",
     "BeamAbility.md",
     "21-10-2026.md",
