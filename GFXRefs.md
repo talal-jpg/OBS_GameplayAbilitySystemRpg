@@ -4,6 +4,9 @@ https://www.youtube.com/watch?v=XTniifi2xNE
 
 https://www.youtube.com/watch?v=h4Sv5TQa4I4
 
+Lightning realtime fx ref
+https://youtu.be/34On6Cqactc?si=ra6FUe6Ekp1PQz6n
+
 ~~death char fx at 25;39~~
 respawn char fx at 22;00
 Loadscreen tunnel at 52;36
