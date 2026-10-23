@@ -36,4 +36,6 @@ Show K/D counter.
 Export and setup Thruster mesh
 Export and setup Air Explo mesh
 
+make a NS , and spawn the thruster mesh make it bend in the direction of moving in such a way that is seems the character is being pushed by it
+
 
