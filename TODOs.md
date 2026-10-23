@@ -1,6 +1,9 @@
 [[CurrentTODOs]]
 [[TODOs2]]
 
+HandDrawn Stylized fx
+https://youtu.be/9K5WVq8v1L4?si=Bprgvkx5XoYWWGFW
+
 [[12-10-2026]]
 [[05-10-2026]]
 [[21-10-2026]]
