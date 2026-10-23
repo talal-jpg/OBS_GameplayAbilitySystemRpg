@@ -33,6 +33,7 @@ right hand up and shoot grapling hook , hang by right hand and shoot by left
 Show Leading Player/s.
 Show K/D counter.
 
-
+Export and setup Thruster mesh
+Export and setup Air Explo mesh
 
 
