@@ -41,3 +41,10 @@ make a NS , and spawn the thruster mesh make it bend in the direction of moving 
 
 **beam**
 make billowy smoke mesh and thunder NS spawn in the dir of N of mesh + Dir of beam normed
+
+**pathwayOnPlatforms**
+make a  spline out of the point locations , subdivide according to bending and place/copy created points . (points create in patterns as pathway pattern)
+
+**bottomBridge**
+stamp same points on top of bottom bridge
+fix end tiles stretching on bottomBr
