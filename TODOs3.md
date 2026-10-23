@@ -48,3 +48,7 @@ make a  spline out of the point locations , subdivide according to bending and p
 **bottomBridge**
 stamp same points on top of bottom bridge
 fix end tiles stretching on bottomBr
+BottomBr GCs of the bottom part , make way less fracture pieces.
+
+for the instances that are further away than threshold, either a , Vertex animated texture with time at which it is spawned at or a instanced static mesh with all frames and frame number in vertex color and animate with time.
+a sim of props falling with frame number in vertex color (can do in UE also?)****
