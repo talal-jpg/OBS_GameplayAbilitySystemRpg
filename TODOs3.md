@@ -19,7 +19,7 @@ right hand up and shoot grapling hook , hang by right hand and shoot by left
 Gameplay:
 Each shot fired , update only if fatal , elim data. from FPSTut
 every Leader update , set leader on GameState. 
-go to FPSTut github , it sends shot fired data on each shot , I want to replicate the elim data only if the player was eliminated .
+go to FPSTut github , it sends shot fired data on each shot?, I want to replicate the elim data only if the player was eliminated .
 list out the data being sent and let me choose .
 
 OnFatal ,Xp give , Level update, Ability unlock.
