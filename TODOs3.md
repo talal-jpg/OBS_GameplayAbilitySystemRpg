@@ -52,3 +52,9 @@ BottomBr GCs of the bottom part , make way less fracture pieces.
 
 for the instances that are further away than threshold, either a , Vertex animated texture with time at which it is spawned at or a instanced static mesh with all frames and frame number in vertex color and animate with time.
 a sim of props falling with frame number in vertex color (can do in UE also?)****
+
+
+cloud sprites material multiply by tex sampled by uv  , offset by particle index
+
+grapple disconnect thresh inc , range dec
+
