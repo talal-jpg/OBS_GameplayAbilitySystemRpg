@@ -14,6 +14,7 @@ https://www.youtube.com/watch?v=br4lhl6UAPk&t=897s
 
 Borderlands4 night time mood
 https://www.youtube.com/watch?v=IHTCnpCLCPs
+![[Pasted image 20261025073620.png]]
 
 ~~Last fx for respawning~~
 ~~https://www.youtube.com/watch?v=yDVRzh_TDVc~~

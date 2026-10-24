@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "c1e05c0ba84ecc91",
+        "id": "ef697ee602fb326b",
         "type": "tabs",
         "children": [
           {
-            "id": "e5cd5d3f5fbf77c8",
+            "id": "9cf030f9966545c0",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "TODOs3.md",
+                "file": "GFXRefs.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "TODOs3"
+              "title": "GFXRefs"
             }
           }
         ]
@@ -41,7 +41,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -95,7 +97,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Minimum viable product for a demo.md",
+                "file": "TODOs.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,7 +107,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Minimum viable product for a demo"
+              "title": "Backlinks"
             }
           },
           {
@@ -143,16 +145,17 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "AttributeMenu.md",
+                "file": "TODOs.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of AttributeMenu"
+              "title": "Outline"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -174,44 +177,44 @@
       "obsidian-kanban:Create new board": false
     }
   },
-  "active": "e5cd5d3f5fbf77c8",
+  "active": "9cf030f9966545c0",
   "lastOpenFiles": [
-    "TODOs.md",
-    "TODOs3.md",
+    "Pasted image 20261025073620.png",
+    "PlatformRefs.md",
+    "GFXRefs.md",
     "Indexing.md",
-    "CurrentTODOs.md",
-    "12-10-2026.md",
+    "TODOs3.md",
+    "Pasted image 20261012145930.png",
+    "TODOs.md",
+    "Pasted image 20261022155258.png",
     "21-10-2026.md",
     "19-10-2026.md",
-    "05-10-2026.md",
-    "GFXRefs.md",
-    "Pasted image 20261022155258.png",
-    "BeamAbility.md",
-    "TODOs2.md",
-    "PlatformRefs.md",
-    "Pasted image 20261016182003.png",
-    "SpellMenuFixWithClaude.md",
-    "propsLayoutOnPlatformRef1.jpg",
-    "propsLayoutOnPlatformRef2.jpg",
-    "propsLayoutOnPlatformRef3.jpg",
-    "propsLayoutOnPlatformRef4.jpg",
-    "propsLayoutOnPlatformRef5_shardB.jpg",
-    "propsLayoutOnPlatformRef6_shardB.jpg",
-    "propsLayoutOnPlatformRef_typeA_1.jpg",
-    "propsLayoutOnPlatformRef_typeA_2.jpg",
-    "AttributesAndAbilities.md",
-    "AbilityInfo.md",
     "StoneBridge.md",
-    "add the postprocess.md",
+    "propsLayoutOnPlatformRef_typeA_2.jpg",
+    "propsLayoutOnPlatformRef_typeA_1.jpg",
+    "propsLayoutOnPlatformRef6_shardB.jpg",
+    "propsLayoutOnPlatformRef5_shardB.jpg",
+    "propsLayoutOnPlatformRef4.jpg",
+    "propsLayoutOnPlatformRef3.jpg",
+    "propsLayoutOnPlatformRef2.jpg",
+    "propsLayoutOnPlatformRef1.jpg",
+    "05-10-2026.md",
+    "12-10-2026.md",
+    "Note.md",
+    "TODOs2.md",
+    "CurrentTODOs.md",
     "PP , CamShake for Beam Casting player.md",
-    "GettingHitPlayerFrames.md",
     "CastingPlayerFrames.md",
     "BeamImpactOnPlayer.md",
+    "add the postprocess.md",
+    "GettingHitPlayerFrames.md",
     "().md",
+    "CurrentTodos2.md",
     "GameplayAbilitySystem.md",
     "FabMechs.md",
     "Mechs.md",
     "GameIdeas.md",
+    "MadMechFuryRoad.md",
     "Untitled.base",
     "Untitled 2.base",
     "Untitled 1.base",

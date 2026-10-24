@@ -53,6 +53,7 @@ BottomBr GCs of the bottom part , make way less fracture pieces.
 for the instances that are further away than threshold, either a , Vertex animated texture with time at which it is spawned at or a instanced static mesh with all frames and frame number in vertex color and animate with time.
 a sim of props falling with frame number in vertex color (can do in UE also?)****
 
+also add a ISM for instances further than 50m , bottom and top and custom prop on ISM that sends time at which it is activated and speed , Ill add a Static Mesh with all the frames and a frame number in vertex color , to play a baked anim for further away instances . and can you export a baked simulation for the tile prop in fbx or usd that I can import in Houdini and make a similar static mesh with all the frames + frame number ?
 
 cloud sprites material multiply by tex sampled by uv  , offset by particle index
 
