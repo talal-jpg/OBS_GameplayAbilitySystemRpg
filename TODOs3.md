@@ -45,6 +45,9 @@ make billowy smoke mesh and thunder NS spawn in the dir of N of mesh + Dir of be
 **pathwayOnPlatforms**
 make a  spline out of the point locations , subdivide according to bending and place/copy created points . (points create in patterns as pathway pattern)
 
+PathWays converge to a square shape in middle , shape to pentagon or hexagon depending on number of pathways.
+![[Pasted image 20261027162703.png]]
+
 **bottomBridge**
 stamp same points on top of bottom bridge
 fix end tiles stretching on bottomBr
@@ -58,4 +61,5 @@ also add a ISM for instances further than 50m , bottom and top and custom prop o
 cloud sprites material multiply by tex sampled by uv  , offset by particle index
 
 grapple disconnect thresh inc , range dec
+
 
