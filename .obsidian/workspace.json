@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ReplicatedSplineCrowd.md",
+                "file": "TODOs4.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ReplicatedSplineCrowd"
+              "title": "TODOs4"
             }
           }
         ]
@@ -176,15 +176,17 @@
   },
   "active": "e5cd5d3f5fbf77c8",
   "lastOpenFiles": [
-    "GameplayAbilitySystem.md",
+    "TODOs.md",
+    "TODOs4.md",
     "Indexing.md",
+    "ReplicatedSplineCrowd.md",
+    "GameplayAbilitySystem.md",
     "networking.md",
     "MassEntity.md",
     "NoteTakingGameDesign.md",
     "ControlRig.md",
     "GameIdeas.md",
     "TODOs3.md",
-    "TODOs.md",
     "21-10-2026.md",
     "05-10-2026.md",
     "12-10-2026.md",
@@ -210,8 +212,6 @@
     "StoneBridge.md",
     "add the postprocess.md",
     "PP , CamShake for Beam Casting player.md",
-    "GettingHitPlayerFrames.md",
-    "CastingPlayerFrames.md",
     "Untitled.base",
     "Untitled 2.base",
     "Untitled 1.base",
