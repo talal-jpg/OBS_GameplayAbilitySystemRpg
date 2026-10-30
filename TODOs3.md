@@ -8,7 +8,6 @@
 ~~scatter tree , house , then clouds / atmospherics.~~
 
 **GameP**
-Game mode configure to respawn , on the platform just ahead of the platform , the leading player is on , spawn respawn fx .
 
 the rules will be in attrib set post ge exec etc. will have to deal damage will death by falling too.
 game state will hold state .
