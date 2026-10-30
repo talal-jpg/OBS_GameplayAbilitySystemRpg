@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "TODOs3.md",
+                "file": "TODOs.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "TODOs3"
+              "title": "TODOs"
             }
           }
         ]
@@ -176,10 +176,12 @@
   },
   "active": "e5cd5d3f5fbf77c8",
   "lastOpenFiles": [
+    "smallIslandsPillarShape.md",
+    "Pasted image 20261030181100.png",
     "TODOs.md",
-    "TODOs4.md",
-    "TODOs3.md",
     "Indexing.md",
+    "TODOs3.md",
+    "TODOs4.md",
     "ReplicatedSplineCrowd.md",
     "GameplayAbilitySystem.md",
     "networking.md",
@@ -206,12 +208,9 @@
     "propsLayoutOnPlatformRef3.jpg",
     "propsLayoutOnPlatformRef4.jpg",
     "propsLayoutOnPlatformRef5_shardB.jpg",
-    "propsLayoutOnPlatformRef6_shardB.jpg",
     "AttributesAndAbilities.md",
     "AbilityInfo.md",
     "StoneBridge.md",
-    "add the postprocess.md",
-    "PP , CamShake for Beam Casting player.md",
     "Untitled.base",
     "Untitled 2.base",
     "Untitled 1.base",
