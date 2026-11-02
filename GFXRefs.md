@@ -1,6 +1,13 @@
 iceshader ref artstation
 https://denisblinov.artstation.com/projects/30WG2
 
+GlacialRock shader
+https://www.pinterest.com/pin/1128151775443226807/
+
+IceCavernShader
+https://www.pinterest.com/pin/1128151775443227142/
+
+
 graffiti slashes
 https://www.youtube.com/watch?v=5Om2l8lMMNk
 
