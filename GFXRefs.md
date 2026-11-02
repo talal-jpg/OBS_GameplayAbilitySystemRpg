@@ -7,6 +7,9 @@ https://www.artstation.com/artwork/6avvdn?utm_source=Pinterest&utm_medium=organi
 GlacialRock shader
 https://www.pinterest.com/pin/1128151775443226807/
 
+IceBergShader
+https://www.artstation.com/artwork/qw2Qa?utm_source=Pinterest&utm_medium=organic
+
 IceCavernShader
 https://www.pinterest.com/pin/1128151775443227142/
 
