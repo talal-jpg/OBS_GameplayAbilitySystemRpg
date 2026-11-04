@@ -1,4 +1,4 @@
-organize the bottom pilalr mat with coment boxes and named reroutes and make a document for it .
+organize the bottom pilar mat with coment boxes and named reroutes and make a document for it .
 implement snow build up with respect to the size of the platform
 and compress to bits if possible all the data being fed to the instances.
 snow buildup under and on sides of path way (overrides the snow buildup of sides ) , but is a bit less in height
