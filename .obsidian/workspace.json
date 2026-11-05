@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "GFXRefs.md",
+                "file": "Indexing.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "GFXRefs"
+              "title": "Indexing"
             }
           }
         ]
@@ -176,21 +176,24 @@
   },
   "active": "e5cd5d3f5fbf77c8",
   "lastOpenFiles": [
-    "horizon fish like burrower.md",
+    "TODOs.md",
+    "TODOs5.md",
+    "TODOs4.md",
+    "TODOs3.md",
+    "TODOs2.md",
+    "CurrentTODOs.md",
+    "AbilityInfo.md",
+    "BeamAbility.md",
+    "Indexing.md",
     "GFXRefs.md",
+    "horizon fish like burrower.md",
     "Pasted image 20261105103817.png",
     "graffiti slashes.md",
-    "Indexing.md",
-    "TODOs.md",
-    "TODOs3.md",
-    "TODOs4.md",
-    "TODOs5.md",
     "smallIslandsPillarShape.md",
     "Pasted image 20261104123906.png",
     "Pasted image 20261104123852.png",
     "Pasted image 20261104123818.png",
     "Pasted image 20261104123723.png",
-    "TODOs2.md",
     "Pasted image 20261030181100.png",
     "ReplicatedSplineCrowd.md",
     "GameplayAbilitySystem.md",
@@ -202,12 +205,10 @@
     "21-10-2026.md",
     "05-10-2026.md",
     "12-10-2026.md",
-    "CurrentTODOs.md",
     "Pasted image 20261027162703.png",
     "Pasted image 20261025073620.png",
     "19-10-2026.md",
     "Pasted image 20261022155258.png",
-    "BeamAbility.md",
     "PlatformRefs.md",
     "Pasted image 20261016182003.png",
     "SpellMenuFixWithClaude.md",

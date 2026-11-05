@@ -1,6 +1,6 @@
-**Menu**
-1.menu system , all options available in FFW , list them , and then implement.
-1.follow the existing bind widget , and widget switcher convention.
+~~**Menu**~~
+~~1.menu system , all options available in FFW , list them , and then implement.~~
+~~1.follow the existing bind widget , and widget switcher convention.~~
 
 ~~**Environment**~~
 ~~export pilar 2 mesh from Hou.~~
@@ -57,7 +57,7 @@ make billowy smoke mesh and thunder NS spawn in the dir of N of mesh + Dir of be
 
 ~~also add a ISM for instances further than 50m , bottom and top and custom prop on ISM that sends time at which it is activated and speed , Ill add a Static Mesh with all the frames and a frame number in vertex color , to play a baked anim for further away instances . and can you export a baked simulation for the tile prop in fbx or usd that I can import in Houdini and make a similar static mesh with all the frames + frame number ?~~
 
-cloud sprites material multiply by tex sampled by uv  , offset by particle index
+~~cloud sprites material multiply by tex sampled by uv  , offset by particle index~~
 
 grapple disconnect thresh inc , range dec
 

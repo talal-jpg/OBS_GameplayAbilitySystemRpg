@@ -8,16 +8,13 @@ kanban-plugin: board
 
 - [ ] WhileJumpPressed Charge jump and Jump based on that, mesh space additive anim for charging jump?
 - [ ] hosting char starts with default move mode on client because enters and sets move mode before client game starts
-- [ ] Direct join (joining via a known IP or Steam friend) when appropriate.
 - [ ] [[AbilityInfo]]
-- [ ] [[Ability aoe melee attack with two handed axe anim]]
 - [ ] And ground melee attack??
 - [ ] Rockets ability with Projectile Component??
 
 
 ## backLog
 
-- [ ] MultiCastRollEvent checks for velocity and only roll if greater thn ,even when called might not execute
 - [ ] [[AttributesAndAbilities]]
 - [ ] ablities Gameplay effects
 - [ ] svo pathfinding tut c+++
@@ -26,18 +23,21 @@ kanban-plugin: board
 
 ## InProgress
 
-- [ ] GA_Boost , Cd only comit when in air
-- [ ] Die implementation , TODO Thinking ,with PS var bIsDead
+- [ ] [[Ability aoe melee attack with two handed axe anim]]
+- [ ] Respawn func
 - [ ] bothControllerAndCharDoingTraces
 - [ ] customHitTraceChannel
-- [ ] [[BeamAbility]]
-- [ ] Respawn func
 - [ ] level up implementation
-- [ ] [[MultiplayerTestingBugs]]
+- [ ] GA_Boost , Cd only comit when in air
 
 
 ## Completed
 
+- [ ] Direct join (joining via a known IP or Steam friend) when appropriate.
+- [ ] [[MultiplayerTestingBugs]]
+- [ ] [[BeamAbility]]
+- [ ] Die implementation , TODO Thinking ,with PS var bIsDead
+- [ ] MultiCastRollEvent checks for velocity and only roll if greater thn ,even when called might not execute
 - [ ] Main Menu and Multiplayer menu / lobby thinking todo
 - [ ] //TODO hit trace and target location for arms and loc while flyboosting should be 2 different vars
 - [ ] While Equiping when the status of the Spell has not yet been updated/ replicated and I equip again , the crash happens??
