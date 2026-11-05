@@ -21,8 +21,7 @@ IceCavernShader
 https://www.pinterest.com/pin/1128151775443227142/
 
 
-graffiti slashes
-https://www.youtube.com/watch?v=5Om2l8lMMNk
+[[graffiti slashes]]
 
 [[PlatformRefs]]
 https://www.youtube.com/watch?v=6nYYJRNpBCE
