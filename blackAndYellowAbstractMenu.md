@@ -1,3 +1,4 @@
+make black yellow blueish from second last ref?
 ![[Pasted image 20261118144735.jpg]][
 
 ![This may contain: an abstract painting with black, yellow and white stars in the center on a yellow background](https://i.pinimg.com/236x/16/50/34/1650349031e4b650999e8d2aeea578a2.jpg)
@@ -49,3 +50,8 @@
 
 
 ](https://www.pinterest.com/pin/839921399306246135/)
+
+
+
+![[Pasted image 20261009153609.png]]
+![[Pasted image 20261016085707.png]]
