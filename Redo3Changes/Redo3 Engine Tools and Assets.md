@@ -77,7 +77,7 @@ flowchart TD
     BL["Blender 4.5.3 + Blender MCP"] --> SHIP["SM_Airship.fbx and comic ink textures"]
     HOU["Houdini HexPillarSetup scene"] --> EXPLO["AirExplo_ftc mesh"]
     CLOUD["build_mech_sentinel.py (Blender in the cloud)"] --> SENT["SourceArt/MechSentinel/Export FBX files"]
-    SHIP --> IMP["Imported into /Game, placed in StartupMap"]
+    SHIP --> IMP["Imported into /Game; airship and explosion placed in StartupMap"]
     EXPLO --> IMP
     SENT --> IMP
     IMP --> GIT["Topic commits on redo3 (Fab packs and backups left out)"]
@@ -102,14 +102,14 @@ flowchart TD
 | 47 | `r.DynamicGlobalIlluminationMethod` | 0 (None) | 2 (Screen Space GI) | In UE 5.8: 0 None, 1 Lumen, 2 Screen Space GI (deprecated). Lumen GI was not on at any point since the baseline. |
 | 48 | `r.ReflectionMethod` | 1 | 1 | Lumen reflections |
 | 49 | `r.Shadow.Virtual.Enable` | 1 | 1 | With Nanite on, the sun now uses virtual shadow maps instead of cascades. With Nanite off, 5.8 also turns them off. |
-| 52 | `r.Nanite.ProjectEnabled` | True | False (since the first commit `dbd916d`) | The project-wide Nanite switch |
+| 52 | `r.Nanite.ProjectEnabled` | True | False (since `dbd916d`, 2026-07-03, before the baseline) | The project-wide Nanite switch |
 | 53 | `r.Lumen.FinalGatherMethod` | 0 | not set | added with the GI change |
 | 56 | `sg.GlobalIlluminationQuality` | 1 | not set | pinned in `[ConsoleVariables]` |
 | 57 | `sg.ReflectionQuality` | 1 | not set | pinned in `[ConsoleVariables]` |
 
 Lines 90 to 93 are older and unchanged: Linux targets `SF_VULKAN_SM5` and `SF_VULKAN_SM6` (the editor runs SM6, which Nanite needs) and `bGenerateNaniteFallbackMeshes=True`.
 
-**The "Where Nanite is disabled" research (2026-10-17 to 10-18).** Talal asked "where have I disabled nanite, in my settings, tell me all the places", then where he had disabled Lumen. A read-only session on his PC searched every config file, saved override, device profile, plugin config, the `.uproject`, the Target and Build files and the user-level UE 5.8 settings. The only Nanite switch was `DefaultEngine.ini:52` `r.Nanite.ProjectEnabled=False`, present since the first commit and confirmed in the editor log. Other lines mention Nanite without disabling it: the SM5 and SM6 targets, `bGenerateNaniteFallbackMeshes=True`, and `bBuildNanite=True` in `EditorPerProjectUserSettings.ini` (new meshes import with Nanite). Config precedence was checked too: `Saved/Config` overrides `Default*.ini`, and `ConsoleVariables.ini` and device profiles override both, but none of them set a Nanite cvar. Per-asset Nanite flags were left out of the list: earlier that day the "Overlapping Geometry Collections" thread had turned Nanite off on its 18 new tile prop GCs, which have no fallback mesh, because collapsing props looked like they vanished (see [[Redo3 Hex Tile Props]]).
+**The "Where Nanite is disabled" research (2026-10-17 to 10-18).** Talal asked "where have I disabled nanite, in my settings, tell me all the places", then where he had disabled Lumen. A read-only session on his PC searched every config file, saved override, device profile, plugin config, the `.uproject`, the Target and Build files and the user-level UE 5.8 settings. The only Nanite switch was `DefaultEngine.ini:52` `r.Nanite.ProjectEnabled=False`, present since `dbd916d` (2026-07-03, before the baseline) and confirmed in the editor log. Other lines mention Nanite without disabling it: the SM5 and SM6 targets, `bGenerateNaniteFallbackMeshes=True`, and `bBuildNanite=True` in `EditorPerProjectUserSettings.ini` (new meshes import with Nanite). Config precedence was checked too: `Saved/Config` overrides `Default*.ini`, and `ConsoleVariables.ini` and device profiles override both, but none of them set a Nanite cvar. Per-asset Nanite flags were left out of the list: earlier that day the "Overlapping Geometry Collections" thread had turned Nanite off on its 18 new tile prop GCs, which have no fallback mesh, because collapsing props looked like they vanished (see [[Redo3 Hex Tile Props]]).
 
 For Lumen, the first answer wrongly said GI method 2 is Lumen. The thread struck it through and corrected it: in UE 5.8 (`EngineTypes.h:454`) 2 is Screen Space GI, so line 47 is what kept Lumen GI off, and the log shows the SSGI deprecation warning. The thread also noted that `r.ReflectionMethod=1` gives Lumen reflections, which are meant to be used with Lumen GI.
 
@@ -128,7 +128,7 @@ Side effects that other pages cover:
 
 ## Vulkan: the swapchain crash and the VRAM eviction slowdown
 
-The editor runs on Linux under X11 with the i3 window manager, on an RTX 4060 with 8 GB. `e5d0fec` adds a new `[SystemSettings]` section at the end of `Config/DefaultEngine.ini`, with a comment above each setting:
+The editor runs on Linux under X11 with the i3 window manager, on an RTX 4060 with 8 GB. `e5d0fec` adds a new `[SystemSettings]` section at the end of `Config/DefaultEngine.ini`, with a comment above each workaround (one comment covers both pool settings):
 
 | Line | Setting | Why |
 |---|---|---|
@@ -217,7 +217,7 @@ PCG Static Mesh Spawners creating collision bodies cost 2.3 s in total, and the 
 - **Set Material Attributes pins.** The node only adds the pin for a new `AttributeSetTypes` entry while a material editor shows it.
 - **Root node position.** `UMaterial::EditorX` and `EditorY` are plain `UPROPERTY()`s that Python cannot read or write, and the editor refuses the console SET command.
 
-The six `Aura.Mat*` commands came from the "Fix and extend the hex ink lines" thread (2026-10-25 to 11-06), whose rules from Talal included using comment boxes and named reroutes. They also run on material functions: a shared loader returns the expression collection of either a `UMaterial` or a `UMaterialFunction`, and a shared finish step calls `PreEditChange`, `PostEditChange` and `MarkPackageDirty`. That thread also hit two editor crashes from Python calls: a SIGSEGV in `UMaterialEditingLibrary::GetMaterialPropertyInputNode`, and an assert on a PNG export of an EXR. Its script `pt_guard.py` blocks both calls. It lives on Talal's PC, not in the repo. A crash watchdog relaunched the editor and was paused whenever Talal used it.
+The six `Aura.Mat*` commands came from the "Fix and extend the hex ink lines" thread (2026-10-25 to 11-06), whose rules from Talal included using comment boxes and named reroutes. The four comment and reroute commands also run on material functions: a shared loader returns the expression collection of either a `UMaterial` or a `UMaterialFunction`. `MatSetAttributeInput` and `MatSetRootPos` load only a `UMaterial`. A shared finish step calls `PreEditChange`, `PostEditChange` and `MarkPackageDirty` for five of the six; `MatSetRootPos` skips it and only calls `Modify` and `MarkPackageDirty`. That thread also hit two editor crashes from Python calls: a SIGSEGV in `UMaterialEditingLibrary::GetMaterialPropertyInputNode`, and an assert on a PNG export of an EXR. Its script `pt_guard.py` blocks both calls. It lives on Talal's PC, not in the repo. A crash watchdog relaunched the editor and was paused whenever Talal used it.
 
 ## Plugins, modules and Mass config
 
@@ -230,7 +230,7 @@ Plugins enabled in `Aura.uproject` since the baseline:
 | `MassGameplay` | `8dce75b` (2026-11-15 14:14) | Mass modules for the Mech Sentinel swarm ([[MechSentinel Index]]) |
 | `PCGNiagaraInterop` | `cd6db8b` (2026-11-15 batch) | PCG and Niagara data exchange. No thread records a graph that uses it ([[Redo3 Hex Platform PCG]]). |
 
-`ControlRigDynamics` was already on at the baseline. The unmerged Burrower branch adds `ControlRigPhysics` ([[Redo3 Burrower]]).
+`ControlRigDynamics` was already on at the baseline. The Burrower added `ControlRigPhysics` (`a414ca9`, merged in PR #8, [[Redo3 Burrower]]).
 
 `Source/Aura/Aura.Build.cs` dependencies added since the baseline:
 
@@ -243,7 +243,7 @@ Plugins enabled in `Aura.uproject` since the baseline:
 | `CoreOnline` (private) | `f2ddd92` (2026-10-30) | The clang build fix for MainMenu3 |
 | `MassEntity`, `MassCore`, `MassCommon`, `MassSpawner`, `MassSimulation`, `MassLOD`, `MassReplication` (public) | `8dce75b` | The swarm code in `Source/Aura/*/MechSwarm` |
 
-The Burrower branch would add `AIModule`.
+The Burrower added `AIModule` (private, `a414ca9`, merged in PR #8).
 
 `Config/DefaultMass.ini` is new (`6d1bd6b`, 2026-11-15 21:30). The UE 5.8.2 `UMassReplicationProcessor` runs a query it never registered, and the Mass processing queue (`mass.UseProcessingQueue`, on by default) asserts on that as soon as a client connects. The file sets `bAutoRegisterWithProcessingPhases=False` on `/Script/MassReplication.MassReplicationProcessor` and `True` on `/Script/Aura.MechSentinelReplicationProcessor`, which does the same work with a registered query. Its comment says to remove both sections once the engine is fixed. See [[MechSentinel Replication and Multiplayer]].
 
@@ -360,7 +360,7 @@ See [[Redo3 Branches and PRs]].
 
 ## How it changed
 
-- **2026-10-04** (context, not on this page's list): Talal's `9c04634` enables `AllToolsets` and `ModelContextProtocol`, the editor MCP server that later threads use.
+- **2026-10-04** (context): Talal's `9c04634` enables `AllToolsets` and `ModelContextProtocol`, the editor MCP server that later threads use.
 - **2026-10-10 11:28** `b9a224f`: Update StartupMap. The minimap thread committed it with Talal's other local work.
 - **2026-10-13 to 11-01**: the "Beam and gunshot Niagara effects" thread writes `Aura.ClearConnectedRootConstants` for `M_MasterMechDissolve` on Talal's PC (uncommitted; the exact day is not recorded).
 - **2026-10-17 to 10-18**: the "Where Nanite is disabled" research. Nanite was off at `DefaultEngine.ini:52`, and Lumen GI was off at line 47 (method 2 is SSGI, after a wrong first answer that was struck through). The `ENOSPC` build failure was a disk full of apport core dumps. No project files were changed.
@@ -370,7 +370,7 @@ See [[Redo3 Branches and PRs]].
 - **2026-10-20**: first CPU profile, 60.8 ms per frame, physics and debris bound.
 - **2026-10-22**: Talal's uncommitted switch to Nanite on. Vulkan allocation failures start in the 12:00 editor session.
 - **2026-10-23**: second CPU profile, 184 ms per frame and GPU-memory bound. The second-run lag report explains the VRAM eviction redirect, and Talal confirms it with `r.Vulkan.EvictionLimitPercentage 100`. The 07:11 crash is the Dataflow editor teardown assert. The eviction and pool cvars go into his `DefaultEngine.ini` (uncommitted).
-- **2026-10-24**: the LOD analysis (Nanite off at that point) and the optimisation pass, with GPU time roughly halved. The DPMS crash is found and avoided with `xset`.
+- **2026-10-24 to 10-25**: the LOD analysis (Nanite off at that point) and the optimisation pass, with GPU time roughly halved. The DPMS crash is found and avoided with `xset`.
 - **2026-10-25 to 11-06**: the "Fix and extend the hex ink lines" thread writes the six `Aura.Mat*` commands and uses them on its materials (uncommitted).
 - **2026-10-30 to 10-31**: Blender MCP is set up and the airship is modelled, then imported into `/Game/Assets/MyShip` on 10-31 (uncommitted).
 - **About 2026-11-01**: Nanite on for the bottom pillar snow displacement (dated on [[Redo3 Hex Look and Atmosphere]]).

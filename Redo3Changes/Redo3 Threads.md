@@ -2,12 +2,14 @@
 
 # Threads
 
-AuraRedo3 · 54 project threads · 2026-10-04 to 2026-11-21
+AuraRedo3 · 54 project threads · 2026-10-04 to 2026-11-22
 
 Every thread in the AuraRedo3 project, oldest first: what Talal asked for, what the thread did, the commits it made or that carry its work, the artifacts and files it produced, and what was left open. Threads that only answered a question or tested something are here too, because their findings often shaped the code. The topic pages explain the systems; this page is the record of who did what and when.
 
 > [!note] Where the work landed
 > Many threads worked in Talal's local working copy and did not commit. Their changes reached GitHub in the 2026-11-15 batch made by [[Redo3 Threads#Push local changes to GitHub|Push local changes to GitHub]], so their commits are stamped 2026-11-15 14:18 even when the work was done weeks earlier. Each thread below says where its work landed.
+
+Thread titles are given as they were when these notes were written; a thread can be renamed later. These notes themselves were written by the thread "Document all changes since Claude started", which is not listed below.
 
 ## Mind map
 
@@ -139,7 +141,7 @@ mindmap
 | 2026-10-31 | [[Redo3 Threads#Restore narrower v1 bottom bridge\|Restore narrower v1 bottom bridge]] | [[Redo3 Hex Bridges\|Hex Bridges]] | 2 |  |  |
 | 2026-10-31 | [[Redo3 Threads#Build material from ArtStation reference\|Build material from ArtStation reference]] | [[Redo3 Hex Pillars and Breaking\|Hex Pillars and Breaking]] | 4 | 3 | 32 |
 | 2026-11-01 | [[Redo3 Threads#Spawn separate small platform actor on top\|Spawn separate small platform actor on top]] | [[Redo3 Hex Platform PCG\|Hex Platform PCG]] | 1 |  |  |
-| 2026-11-05 | [[Redo3 Threads#Model, rig and export the burrower creature\|Model, rig and export the burrower creature]] | [[Redo3 Burrower\|Burrower]] | 5 | 1 | 94 |
+| 2026-11-05 | [[Redo3 Threads#Model, rig and export the burrower creature\|Model, rig and export the burrower creature]] | [[Redo3 Burrower\|Burrower]] | 8 | 1 | 94 |
 | 2026-11-15 | [[Redo3 Threads#Make hex platform bottom pillars breakable\|Make hex platform bottom pillars breakable]] | [[Redo3 Hex Pillars and Breaking\|Hex Pillars and Breaking]] | 0 |  |  |
 | 2026-11-15 | [[Redo3 Threads#Respawn players ahead of leader\|Respawn players ahead of leader]] | [[Redo3 Mech Character\|Mech Character]] | 3 | 1 |  |
 | 2026-11-15 | [[Redo3 Threads#Push local changes to GitHub\|Push local changes to GitHub]] | Project housekeeping | 35 |  |  |
@@ -196,7 +198,7 @@ Pages: [[Redo3 Hex Path and Ranking]], [[Redo3 Spell Menu Fixes]]
 > - `45f0aa8` Validate spell point spending on the server (described) · [[Redo3 Spell Menu Fixes]]
 > - `17605e3` Add growing hex path, PCG platform segments and bridge subsystem (described) · [[Redo3 Hex Path and Ranking]], [[Redo3 Hex Bridges]], [[Redo3 Hex Platform PCG]]
 > - `9c04634` NS_beamChargeFx.uasset, NS_beam and MainMenu2 Graffiti UI. (described) · [[Redo3 Beam and Gun FX]], [[Redo3 Menus and Settings]]
-> - `e7a2588` Rewrite hex bridge pairing, replicate platforms reliably, rank players by path distance, add Niagara damage numbers and muzzle smoke (later commit of the uncommitted collapse work) · [[Redo3 Hex Path and Ranking]], [[Redo3 Hex Bridges]], [[Redo3 Beam and Gun FX]], [[Redo3 Menus and Settings]]
+> - `e7a2588` Rewrite hex bridge pairing, replicate platforms reliably, rank players by path distance, add Niagara damage numbers and muzzle smoke (later commit of the uncommitted collapse work) · [[Redo3 Hex Path and Ranking]], [[Redo3 Hex Bridges]], [[Redo3 Beam and Gun FX]], [[Redo3 Menus and Settings]], [[Redo3 Hex Platform PCG]]
 
 **Left open.**
 
@@ -265,7 +267,7 @@ Pages: [[Redo3 Hex Path and Ranking]], [[Redo3 Hex Bridges]]
 > - Known limitation: the path spline is never trimmed, so closest-point lookups along it get slower as a run goes on.
 
 > [!abstract] Commits (2)
-> - `e7a2588` Rewrite hex bridge pairing, replicate platforms reliably, rank players by path distance, add Niagara damage numbers and muzzle smoke (later commit that contains the mapped collapse and cull changes) · [[Redo3 Hex Path and Ranking]], [[Redo3 Hex Bridges]], [[Redo3 Beam and Gun FX]], [[Redo3 Menus and Settings]]
+> - `e7a2588` Rewrite hex bridge pairing, replicate platforms reliably, rank players by path distance, add Niagara damage numbers and muzzle smoke (later commit that contains the mapped collapse and cull changes) · [[Redo3 Hex Path and Ranking]], [[Redo3 Hex Bridges]], [[Redo3 Beam and Gun FX]], [[Redo3 Menus and Settings]], [[Redo3 Hex Platform PCG]]
 > - `9c04634` NS_beamChargeFx.uasset, NS_beam and MainMenu2 Graffiti UI. (base the edits were replayed on) · [[Redo3 Beam and Gun FX]], [[Redo3 Menus and Settings]]
 
 **Artifacts.**
@@ -296,7 +298,7 @@ Pages: [[Redo3 Hex Path and Ranking]]
 > - The consent card did not appear for Talal because his computer was not connected to Remote Control yet.
 
 > [!abstract] Commits (1)
-> - `e7a2588` Rewrite hex bridge pairing, replicate platforms reliably, rank players by path distance, add Niagara damage numbers and muzzle smoke (later commit that holds the collapse fix this thread meant to test) · [[Redo3 Hex Path and Ranking]], [[Redo3 Hex Bridges]], [[Redo3 Beam and Gun FX]], [[Redo3 Menus and Settings]]
+> - `e7a2588` Rewrite hex bridge pairing, replicate platforms reliably, rank players by path distance, add Niagara damage numbers and muzzle smoke (later commit that holds the collapse fix this thread meant to test) · [[Redo3 Hex Path and Ranking]], [[Redo3 Hex Bridges]], [[Redo3 Beam and Gun FX]], [[Redo3 Menus and Settings]], [[Redo3 Hex Platform PCG]]
 
 **Left open.**
 
@@ -332,7 +334,7 @@ Pages: [[Redo3 Hex Platform PCG]], [[Redo3 Hex Path and Ranking]]
 > - Relayed rule from the leaders thread: any new grid-affecting property override on the spawn nodes must also be Replicated with COND_InitialOnly in AMyHexPlatform, and actor tags such as HexLower and HexUpper do not replicate, so clients must not rely on them.
 
 > [!abstract] Commits (2)
-> - `e7a2588` Rewrite hex bridge pairing, replicate platforms reliably, rank players by path distance, add Niagara damage numbers and muzzle smoke (PCG_SplineIHexPlatformsFromSpline plus the _Backup and _BeforeSplineDistance copies) · [[Redo3 Hex Path and Ranking]], [[Redo3 Hex Bridges]], [[Redo3 Beam and Gun FX]], [[Redo3 Menus and Settings]]
+> - `e7a2588` Rewrite hex bridge pairing, replicate platforms reliably, rank players by path distance, add Niagara damage numbers and muzzle smoke (PCG_SplineIHexPlatformsFromSpline plus the _Backup and _BeforeSplineDistance copies) · [[Redo3 Hex Path and Ranking]], [[Redo3 Hex Bridges]], [[Redo3 Beam and Gun FX]], [[Redo3 Menus and Settings]], [[Redo3 Hex Platform PCG]]
 > - `b1f17f2` Update the hex platform PCG graphs (later graph update; removed the old PCG_SplineIHexPlatformsFromSpline_Backup) · [[Redo3 Hex Platform PCG]]
 
 **Files in the shared folder.**
@@ -372,7 +374,7 @@ Pages: [[Redo3 Beam and Gun FX]]
 > - Because the system resets on every shot, fire rates faster than about 0.7 s cut the previous shot's smoke short; the session offered to move the smoke into its own fire-and-forget system per shot.
 
 > [!abstract] Commits (1)
-> - `e7a2588` Rewrite hex bridge pairing, replicate platforms reliably, rank players by path distance, add Niagara damage numbers and muzzle smoke (NS_MuzzleFlash, NS_MuzzleFlash_Backup, M_SmokeRibbon_Wisp; the same commit also adds NS_GunWispySmoke, which this thread does not mention) · [[Redo3 Hex Path and Ranking]], [[Redo3 Hex Bridges]], [[Redo3 Beam and Gun FX]], [[Redo3 Menus and Settings]]
+> - `e7a2588` Rewrite hex bridge pairing, replicate platforms reliably, rank players by path distance, add Niagara damage numbers and muzzle smoke (NS_MuzzleFlash, NS_MuzzleFlash_Backup, M_SmokeRibbon_Wisp; the same commit also adds NS_GunWispySmoke, which this thread does not mention) · [[Redo3 Hex Path and Ranking]], [[Redo3 Hex Bridges]], [[Redo3 Beam and Gun FX]], [[Redo3 Menus and Settings]], [[Redo3 Hex Platform PCG]]
 
 **Left open.**
 
@@ -411,7 +413,7 @@ Pages: [[Redo3 Beam and Gun FX]]
 > - Backups: NDC_DamageNumbers_Backup and NS_DamageNumbers_Backup (taken before Talal's reader fix, so it has the old reader).
 
 > [!abstract] Commits (1)
-> - `e7a2588` Rewrite hex bridge pairing, replicate platforms reliably, rank players by path distance, add Niagara damage numbers and muzzle smoke · [[Redo3 Hex Path and Ranking]], [[Redo3 Hex Bridges]], [[Redo3 Beam and Gun FX]], [[Redo3 Menus and Settings]]
+> - `e7a2588` Rewrite hex bridge pairing, replicate platforms reliably, rank players by path distance, add Niagara damage numbers and muzzle smoke · [[Redo3 Hex Path and Ranking]], [[Redo3 Hex Bridges]], [[Redo3 Beam and Gun FX]], [[Redo3 Menus and Settings]], [[Redo3 Hex Platform PCG]]
 
 **Left open.**
 
@@ -449,7 +451,7 @@ Pages: [[Redo3 Hex Path and Ranking]], [[Redo3 Hex Platform PCG]]
 > - The editor module was not built by this thread; Talal's own rebuild at 21:32 local loaded the code, and his PIE log showed both players' landings reaching it.
 
 > [!abstract] Commits (1)
-> - `e7a2588` Rewrite hex bridge pairing, replicate platforms reliably, rank players by path distance, add Niagara damage numbers and muzzle smoke (contains this thread's SplineDistance, MyGameState ranking and replication fixes) · [[Redo3 Hex Path and Ranking]], [[Redo3 Hex Bridges]], [[Redo3 Beam and Gun FX]], [[Redo3 Menus and Settings]]
+> - `e7a2588` Rewrite hex bridge pairing, replicate platforms reliably, rank players by path distance, add Niagara damage numbers and muzzle smoke (contains this thread's SplineDistance, MyGameState ranking and replication fixes) · [[Redo3 Hex Path and Ranking]], [[Redo3 Hex Bridges]], [[Redo3 Beam and Gun FX]], [[Redo3 Menus and Settings]], [[Redo3 Hex Platform PCG]]
 
 **Left open.**
 
@@ -488,7 +490,7 @@ Pages: [[Redo3 Hex Bridges]]
 > - Work was paused several times by the account usage limit on 2026-10-06.
 
 > [!abstract] Commits (1)
-> - `e7a2588` Rewrite hex bridge pairing, replicate platforms reliably, rank players by path distance, add Niagara damage numbers and muzzle smoke · [[Redo3 Hex Path and Ranking]], [[Redo3 Hex Bridges]], [[Redo3 Beam and Gun FX]], [[Redo3 Menus and Settings]]
+> - `e7a2588` Rewrite hex bridge pairing, replicate platforms reliably, rank players by path distance, add Niagara damage numbers and muzzle smoke · [[Redo3 Hex Path and Ranking]], [[Redo3 Hex Bridges]], [[Redo3 Beam and Gun FX]], [[Redo3 Menus and Settings]], [[Redo3 Hex Platform PCG]]
 
 **Artifacts.**
 
@@ -524,7 +526,7 @@ Pages: [[Redo3 Hex Path and Ranking]]
 > - The next day commit 3c75a1c (another thread) replaced the 0.1 s looping timer with a one-shot timer re-armed after every chain, whose interval goes from CollapseIntervalAtLead (5 s) at the lead's SplineDistance down to CollapseIntervalFarBehind (1.5 s) at CollapseFalloffDistance behind it, with FirstCollapseDelay 0.5 s and SmallPlatformFirstCollapseDelay 20 s for platforms of SmallPlatformMaxTiles (15) tiles or fewer.
 
 > [!abstract] Commits (2)
-> - `e7a2588` Rewrite hex bridge pairing, replicate platforms reliably, rank players by path distance, add Niagara damage numbers and muzzle smoke (contains the code described) · [[Redo3 Hex Path and Ranking]], [[Redo3 Hex Bridges]], [[Redo3 Beam and Gun FX]], [[Redo3 Menus and Settings]]
+> - `e7a2588` Rewrite hex bridge pairing, replicate platforms reliably, rank players by path distance, add Niagara damage numbers and muzzle smoke (contains the code described) · [[Redo3 Hex Path and Ranking]], [[Redo3 Hex Bridges]], [[Redo3 Beam and Gun FX]], [[Redo3 Menus and Settings]], [[Redo3 Hex Platform PCG]]
 > - `3c75a1c` Collapse platforms faster the further behind the lead they are (later change by another thread to the same timing) · [[Redo3 Hex Path and Ranking]]
 
 **Left open.**
@@ -555,7 +557,7 @@ Pages: [[Redo3 Hex Bridges]], [[Redo3 Hex Path and Ranking]], [[Redo3 Hex Platfo
 > - bDrawDebug was not part of this commit because DefaultGame.ini had not changed since 17605e3; the message mentions it is still on.
 
 > [!abstract] Commits (1)
-> - `e7a2588` Rewrite hex bridge pairing, replicate platforms reliably, rank players by path distance, add Niagara damage numbers and muzzle smoke · [[Redo3 Hex Path and Ranking]], [[Redo3 Hex Bridges]], [[Redo3 Beam and Gun FX]], [[Redo3 Menus and Settings]]
+> - `e7a2588` Rewrite hex bridge pairing, replicate platforms reliably, rank players by path distance, add Niagara damage numbers and muzzle smoke · [[Redo3 Hex Path and Ranking]], [[Redo3 Hex Bridges]], [[Redo3 Beam and Gun FX]], [[Redo3 Menus and Settings]], [[Redo3 Hex Platform PCG]]
 
 **Left open.**
 
@@ -627,7 +629,7 @@ Pages: [[Redo3 Hex Path and Ranking]]
 > [!abstract] Commits (4)
 > - `cbd8c04` Activate hex platforms up to the ranking leader's distance · [[Redo3 Hex Path and Ranking]]
 > - `3c75a1c` Collapse platforms faster the further behind the lead they are · [[Redo3 Hex Path and Ranking]]
-> - `b95b254` Far platforms activate with faster rate , till lead player platform all platforms activate, GA_GrappleSwing_v1 (Talal's redo3 commit with the same changes) · [[Redo3 Hex Path and Ranking]], [[Redo3 Grapple Swing]]
+> - `b95b254` Far platforms activate with faster rate , till lead player platform all platforms activate, GA_GrappleSwing_v1 (Talal's redo3 commit with the same changes) · [[Redo3 Hex Path and Ranking]], [[Redo3 Grapple Swing]], [[Redo3 Hex Platform PCG]]
 > - `dc10778` Merge origin/claude/project-thread-8o9mos into redo3 (records the branch as merged)
 
 **Files in the shared folder.**
@@ -2156,17 +2158,17 @@ Pages: [[Redo3 Hex Platform PCG]]
 
 ## Model, rig and export the burrower creature
 
-Started 2026-11-05 · last activity 2026-11-21
+Started 2026-11-05 · last activity 2026-11-22
 
 Pages: [[Redo3 Burrower]], [[Redo3 Hex Pillars and Breaking]]
 
 **Asked for.** Talal pointed to his vault note "horizon fish like burrower", which holds the brief and reference images, and asked the thread to start; he then asked for the brief and references to be copied into the thread. The work grew in stages: a segmented model for Houdini, then a rig with an FBX export, then the creature in Unreal. In Unreal it is a C++ enemy deriving from MyEnemyChar that spawns behind each player, follows them, uses GAS, ragdolls on death, and cuts hex tiles with its rotor. The video reference is YouTube _Fp2nJuU7Q0 at 5:40.
 
-**What it did.** Modelling (11-05 to 11-06, Blender in the cloud): a burrower of 45 meshes, about 1.24M triangles, with no legs or claws (ref5_exclude_legs). It is split three ways: 7 coarse, 21 medium and 45 fine parts. The Houdini export Burrower_houdini.usdc carries a name primvar, seg_coarse/seg_medium/seg_fine strings, seg_*_id ints and 73 GeomSubset groups such as L1_1_Head, L2_1_1_DrillMaw and L3_1_1_1_CutterRotor, under prim paths /Burrower/L1_..., Y-up, in metres, head on +X. 24 final renders were made. Rig (11-11): 5 joints (maw, head|fore, fore|mid, mid|hind, hind|tail), with segments classed as 29 hard, 12 soft and 4 mixed. Burrower_rig.fbx is Y-up, in metres, with no leaf bones. It was checked with two FBX readers and a round trip accurate to 0.005 mm, and the soft gap at a 10 degree bend went from 47 cm to 8 cm. Unreal (11-21): SourceArt/Burrower/Burrower_UE.fbx is in centimetres with 71 bones: root to J0_Head..J4_Tail, root to Rotor, and 8 pipe chains on J1_Forequarters, described in Burrower_rig_info.json. The C++ adds ABurrowerCharacter (an AMyEnemyChar), UBurrowerSpawnSubsystem, UBurrowerSettings, UBurrowerAnimInstance, and AMyHexPlatform::ActivateTilesInWorldBox / CouldWorldBoxTouchTiles. The editor assets are SK_Burrower, SKEL_Burrower, PA_Burrower, CR_Burrower, ABP_Burrower and BP_Burrower in /Game/Assets/Enemies/Burrower. A PIE run with a listen server and 1 client passed every check.
+**What it did.** Modelling (11-05 to 11-06, Blender in the cloud): a burrower of 45 meshes, about 1.24M triangles, with no legs or claws (ref5_exclude_legs). It is split three ways: 7 coarse, 21 medium and 45 fine parts. The Houdini export Burrower_houdini.usdc carries a name primvar, seg_coarse/seg_medium/seg_fine strings, seg_*_id ints and 73 GeomSubset groups such as L1_1_Head, L2_1_1_DrillMaw and L3_1_1_1_CutterRotor, under prim paths /Burrower/L1_..., Y-up, in metres, head on +X. 24 final renders were made. Rig (11-11): 5 joints (maw, head|fore, fore|mid, mid|hind, hind|tail), with segments classed as 29 hard, 12 soft and 4 mixed. Burrower_rig.fbx is Y-up, in metres, with no leaf bones. It was checked with two FBX readers and a round trip accurate to 0.005 mm, and the soft gap at a 10 degree bend went from 47 cm to 8 cm. Unreal (11-21): SourceArt/Burrower/Burrower_UE.fbx is in centimetres with 71 bones: root to J0_Head..J4_Tail, root to Rotor, and 8 pipe chains on J1_Forequarters, described in Burrower_rig_info.json. The C++ adds ABurrowerCharacter (an AMyEnemyChar), UBurrowerSpawnSubsystem, UBurrowerSettings, UBurrowerAnimInstance, and AMyHexPlatform::ActivateTilesInWorldBox / CouldWorldBoxTouchTiles. The editor assets are SK_Burrower, SKEL_Burrower, PA_Burrower, CR_Burrower, ABP_Burrower and BP_Burrower in /Game/Assets/Enemies/Burrower. A PIE run with a listen server and 1 client passed every check. On 2026-11-22, after Talal asked to pull and update redo3 locally too, it merged the new redo3 into the branch (dacbbda), pushed a harness fix (dbdf818), opened and merged PR #8 (2c7d311), and brought Talal's local AuraRedo3 up to the new redo3.
 
-**Where the work is.** claude/project-thread-78otz4 (tip 9727f1d, 5 commits on top of 21ba7cc). Not merged into redo3; a PR was offered.
+**Where the work is.** claude/project-thread-78otz4 (5 commits on top of 21ba7cc, then the merge dacbbda and dbdf818). Merged into redo3 as PR #8 (2c7d311) on 2026-11-22.
 
-**Outcome.** Built and tested in PIE (a listen server and a client) on the unmerged branch claude/project-thread-78otz4. Not in redo3.
+**Outcome.** Done. Built and tested in PIE (a listen server and a client), then merged into redo3 in PR #8 (2c7d311) after redo3 with PR #7 was merged into the branch (dacbbda, no conflicts, 9 of 9 PIE checks passed again). Talal's local AuraRedo3 was fast-forwarded to redo3 with his uncommitted changes kept, and the editor rebuilt. The thread was resolved on 2026-11-22.
 
 > [!info]- How it works
 > - UBurrowerSpawnSubsystem (server) spawns one Burrower behind each player after SpawnInterval and re-arms after it dies. The class comes from UBurrowerSettings (Project Settings > Game > Burrower; DefaultGame.ini sets BurrowerClass = BP_Burrower and +DirectoriesToAlwaysCook=/Game/Assets/Enemies/Burrower).
@@ -2187,12 +2189,15 @@ Pages: [[Redo3 Burrower]], [[Redo3 Hex Pillars and Breaking]]
 > - UE 5.8 quirks: RigVMFunction_MathFloatSin/Cos resolve to the double permutation, fixed in bw_cr_helpers. The ABP "Use Pin" boxes had to be ticked through the SlateInspector, because CustomPinProperties.bShowPin cannot be set from Python. An open ABP editor crashed UE at shutdown, so quit_and_release.sh closes the Burrower asset editors first.
 > - Code review: 10 findings were fixed before the build.
 
-> [!abstract] Commits (5)
-> - `7fa2585` Burrower: UE skeletal mesh FBX with root, Rotor and pipe bone chains · [[Redo3 Burrower]] · Burrower branch
-> - `a414ca9` Burrower: character, per-player spawner, rotor tile cutting, anim instance, editor docs · [[Redo3 Burrower]] · Burrower branch
-> - `5d5f2bc` Burrower: import SK_Burrower, PA_Burrower, settings, editor scripts · [[Redo3 Burrower]] · Burrower branch
-> - `a52a516` Burrower: CR_Burrower, ABP_Burrower, BP_Burrower · [[Redo3 Burrower]] · Burrower branch
-> - `9727f1d` Burrower: PIE tested; Control Rig ragdoll on (fallback off) · [[Redo3 Burrower]] · Burrower branch
+> [!abstract]- Commits (8)
+> - `7fa2585` Burrower: UE skeletal mesh FBX with root, Rotor and pipe bone chains · [[Redo3 Burrower]]
+> - `a414ca9` Burrower: character, per-player spawner, rotor tile cutting, anim instance, editor docs · [[Redo3 Burrower]]
+> - `5d5f2bc` Burrower: import SK_Burrower, PA_Burrower, settings, editor scripts · [[Redo3 Burrower]]
+> - `a52a516` Burrower: CR_Burrower, ABP_Burrower, BP_Burrower · [[Redo3 Burrower]]
+> - `9727f1d` Burrower: PIE tested; Control Rig ragdoll on (fallback off) · [[Redo3 Burrower]]
+> - `dacbbda` Merge redo3 (PR #7) into the Burrower branch
+> - `dbdf818` Burrower harness: never leave stale inbox requests behind · [[Redo3 Burrower]]
+> - `2c7d311` Merge pull request #8 from talal-jpg/claude/project-thread-78otz4
 
 **Artifacts.**
 
@@ -2209,11 +2214,11 @@ Pages: [[Redo3 Burrower]], [[Redo3 Hex Pillars and Breaking]]
 
 **Left open.**
 
-- Merge the branch into redo3 (a PR was offered, not opened).
 - The corpse falls through the tiles (reported as an open issue in the thread).
 - The J2 bend limit (vent housing hits the back pack above about 2 degrees); a 6th joint was suggested.
 - Burrower_UE.fbx is a plain git blob, not in LFS.
 - M_Burrower_Grey is on every material slot; no final material yet.
+- The _BurrowerWork copy and the _AuraRedo3_backup_20261121T224938Z backup on Talal's PC can be deleted once he is happy with the merge.
 
 ## Make hex platform bottom pillars breakable
 
@@ -2354,7 +2359,7 @@ Pages: [[Redo3 Engine Tools and Assets]], [[Redo3 Hex Look and Atmosphere]], [[R
 
 ## Spawn scaling waves on path segments
 
-Started 2026-11-15 · last activity 2026-11-21
+Started 2026-11-15 · last activity 2026-11-22
 
 Pages: [[MechSentinel Index]], [[Redo3 Hex Path and Ranking]], [[Redo3 Beam and Gun FX]]
 
@@ -2362,7 +2367,7 @@ Pages: [[MechSentinel Index]], [[Redo3 Hex Path and Ranking]], [[Redo3 Beam and 
 
 **What it did.** PR #3 (merged as dc0567d on 11-15) built the Mech Sentinel swarm: Mass _Copy versions of movement, 3D avoidance, smooth orientation, LOD and ISM representation; UMechSentinelAttributeSet with UExecCalc_SentinelDamage (armor) and a flyweight proxy ASC (MechSentinelGASProxy); MechSentinelTags (State.Sentinel.Stunned, Dead); a shared targeting board fragment; behaviour, combat and client processors; UMechSentinelHitCapsuleComponent and UMechSentinelCombatLibrary for hits; replication through MechSentinelReplicatedAgent (a fast array), MechSentinelClientBubble and MechSentinelReplicator; AMechSentinelWaveSpawner with replicated wave state; UMechSentinelSwarmRules held by AMyGameMode; MyMechEntitySystemReadme.md. It also brought in a Blender low-poly head (1212 triangles, 8 sockets Tentacle_00..07), a far LOD, a tentacle and a claw tip, and NS_MechSentinelTentacles (a CPU ribbon tube fed by user parameters) driven by C++ verlet chains. PR #6 (merged as 21ba7cc on 11-16) fixed the listen server crash with its own UMechSentinelReplicationProcessor and Config/DefaultMass.ini, rewrote the tentacle flow (time-corrected verlet, tested at 15 to 240 fps), added built-in damage effects (MechSentinelDefaultEffects) so that GA_GunShoot damages sentinels, and added the demo assets L_MechSentinelDemo, DA_MechSentinelConfig, DA_MechSentinelSwarmRules, BP_MechSentinelDemoGameMode, GE_SentinelDamage, GE_SentinelAttack, GE_SentinelStun and M_MechSentinelBody/Eyes. PR #7 (merged as 68dd9e7 on 11-21) added the AttackDamage link, a wave per path segment at its 4 top corners, endless per-wave curves, self-buffs, UMechSentinelObstacleSubsystem with 3D platform avoidance, the StartupMap setup and buff-visual scripts, the 4 saved assets, and StartupMap with one path lane. The thread also merged PR #4 (098c3ca) and PR #5 (25efc1e) into redo3, updated Talal's AuraRedo3 to 68dd9e7 and rebuilt AuraEditor, and pushed the vault docs (MechSentinelSwarm folder, MechSentinel Index plus 11 pages) as vault commit e5766e2.
 
-**Where the work is.** claude/project-thread-mwyd6w. PR #3 (merged as dc0567d), PR #6 (merged as 21ba7cc), PR #7 (merged as 68dd9e7). This thread also merged PR #4 (098c3ca) and PR #5 (25efc1e). Vault docs: OBS_GameplayAbilitySystemRpg master, commit e5766e2.
+**Where the work is.** claude/project-thread-mwyd6w. PR #3 (merged as dc0567d), PR #6 (merged as 21ba7cc), PR #7 (merged as 68dd9e7). This thread also merged PR #4 (098c3ca) and PR #5 (25efc1e). Vault docs: OBS_GameplayAbilitySystemRpg master, commit e5766e2. Later work: PR #9 from claude/project-thread-8slvix (Mech Sentinel damage numbers through the Niagara data channel, commit 72e821e), opened 2026-11-22 07:32 and not merged when these notes were written. The thread is now titled "sentinel swarm waves".
 
 **Outcome.** Done. The swarm with segment waves, the damage link, curves, self-buffs, 3D platform avoidance and the StartupMap setup is in redo3 at 68dd9e7. Talal's AuraRedo3 was updated and AuraEditor built with only the two old MainMenu warnings. The swarm docs are in the vault at e5766e2.
 

@@ -8,7 +8,7 @@ This page covers the player mech itself (`AMyCharPlayer`, `BP_MyCharMech`, its a
 
 Talal asked for these one at a time. His notes ([[CurrentTODOs]] lists "Respawn func" and "GA_Boost , Cd only comit when in air"; [[21-10-2026]] has "On death Assign new mat for all slots?? ... make cpp func to handle death") show the plan. He asked for the hard landing on 2026-10-22 ("Don't hook landing into it, make a new cpp function in parent") and for the respawn on 2026-11-15: dead players should come back on the platform just ahead of the leading player's, with respawn FX, after a fixed time for now. The death and respawn effects came out of the long "Beam and gunshot Niagara effects" thread, which also made the beam on [[Redo3 Beam and Gun FX]].
 
-State now (origin/redo3): everything is merged. A player who dies (or falls out of the world) disintegrates on every machine, and 5 s later gets a fresh pawn on the nearest platform past the lead, with `NS_Claude_RespawnFX` playing there from 2 s. XP, level, spent points and abilities carry over because the ability system lives on the PlayerState. Still open: ability keys can fire while dead, the TEMP death test hook defaults to 3 s in C++, and the hard landing was never tested in PIE.
+State now (origin/redo3): everything is merged. A player who dies disintegrates on every machine, and 5 s after the death (or after falling out of the world, which destroys the pawn without a death) gets a fresh pawn on the nearest platform past the lead, with `NS_Claude_RespawnFX` playing there from 2 s. XP, level, spent points and abilities carry over because the ability system lives on the PlayerState. Still open: ability keys can fire while dead, the TEMP death test hook defaults to 3 s in C++, and the hard landing was never tested in PIE.
 
 ## Mind map
 
@@ -200,7 +200,7 @@ Seven emitters in one 5.6 s shot: `Body_Cubes`, `Black_Spray`, `Body_Sparks`, `A
 
 - Holes open at about 0.16 s and the body is gone by 1.55 s. About 2600 white and blue cubes are born on the surface over the same time, fall, bounce and pile up. The pile darkens from 2.0 to 3.25 s, the cubes rise and shrink away from 2.9 to 5.3 s, and everything is gone at 5.6 s.
 - **Kick (10-23).** Cubes no longer take the body's velocity. Vertical speed is clamped to -200..100 cm/s, plus a horizontal kick of `User.KickSpeed` 180 cm/s x (1 + `KickSpeedGain` 0.6 x speed / `KickRefSpeed` 600, capped) x a random 0.55 to 1.45. Standing, the kick goes along the mech's +Y; above `KickDirSpeed` 120 cm/s it turns toward the run, up to 1.6x at 6 m/s. The speed comes from `User.DeathVelocity`.
-- Backups `NS_Claude_Disintegrate_BeforeKick` (v2) and `NS_Claude_Disintegrate_V1` were kept by the thread.
+- Backups `NS_Claude_Disintegrate_BeforeKick` (v2) and `NS_Claude_Disintegrate_V1` were kept by the thread on Talal's PC; they are not in the repo.
 
 ![[redo3_mech_disintegrate_stages.jpg]]
 *The v1 death disintegrate in stages, 2026-10-21 (`mech_disintegrate_stages.png`)*
@@ -245,7 +245,7 @@ The constructor also sets `GameStateClass` to `AMyGameState`. `BP_MyGameMode` is
 
 ### Where the player comes back
 
-- **`FindRespawnSpot`.** If the lead has a spline distance (`GetLeadSplineDistance() >= 0`), the candidates are platforms with tiles whose `SplineDistance` is above `max(GetLeadSplineDistance(), GetActivatedSplineDistance())`, so the first choice is never a collapsing platform. They are sorted nearest first; ties between the upper and lower chain go to the platform nearer the lead's. The lead's own platform is the last resort. The new pawn faces away from the lead. If nobody has landed yet, or no platform has room, it uses `FindPlayerStart`.
+- **`FindRespawnSpot`.** If the lead has a spline distance (`GetLeadSplineDistance() >= 0`), the candidates are platforms that have tiles and whose own `SplineDistance` is above `max(GetLeadSplineDistance(), GetActivatedSplineDistance())`, so the first choice is never a collapsing platform. They are sorted nearest first; ties between the upper and lower chain go to the platform nearer the lead's. The lead's own platform is the last resort. The new pawn faces away from the lead. If nobody has landed yet, or no platform has room, it uses `FindPlayerStart`.
 - **`FindRespawnTile`.** Live tiles in order: bridge path tiles first (`PathDistance` 0, no props), then away from the edge (`EdgeDepth` > 0), then nearest the centre. At most 12 tries (`MaxTileTries`).
 - **`FitPawnOnTile`.** Puts the capsule `RespawnHeightAboveTile` above the tile top and calls `UWorld::FindTeleportSpot`. It rejects the spot if the pawn would be pushed off the tile (beyond the tile's `Apothem` times the platform scale) or if it is within two capsule radii of a spot another pending respawn has picked (pawns that have not spawned yet are invisible to `FindTeleportSpot`).
 - **`RespawnPlayer`.** Destroys the dead pawn first (cancel, unwatch, unpossess, destroy) so its capsule does not block the fit test. It re-tests the picked tile; if it fell or is blocked, it picks a new spot and plays the FX again. Then `RestartPlayerAtTransform`; if the controller still has no pawn it falls back to `RestartPlayer`, and logs a warning if that fails too.
@@ -378,7 +378,7 @@ The three images above (`redo3_disintegrate_compare.jpg`, `redo3_mech_disintegra
 - The `GA_Boost` ground check runs only on the locally controlled machine.
 - `BP_MyCharMech`'s `EdgeFogVolume` component has no mesh assigned yet.
 - `M_MasterMechDissolve`'s fixed sun direction and `WhiteBalanceFix` are tuned for StartupMap only.
-- [[CurrentTODOs]] still lists "Respawn func", "GA_Boost , Cd only comit when in air" and "Die implementation" as open, although all three have shipped in some form.
+- [[CurrentTODOs]] still lists "Respawn func" and "GA_Boost , Cd only comit when in air" under InProgress, although respawn has shipped.
 
 ## Related
 

@@ -106,7 +106,7 @@ Public API:
 
 ### Bridge entries
 
-`RegisterBridge` skips a bridge whose start and end locations are still equal (a client can get there before the ends replicate). It samples the deck the same way `AMyHexBridge::ApplyEnds` builds it: a straight line when both tangents are zero, otherwise one cubic Hermite segment cut into `BridgeSegments` (8) straight pieces. The half width is `0.5 x BridgeWidthInHexRadii (0.8) x HexRadius` of an end platform.
+`RegisterBridge` skips a bridge whose start and end locations are still equal (a client can get there before the ends replicate). It samples the planned deck from the replicated ends: a straight line when both tangents are zero, otherwise one cubic Hermite segment cut into `BridgeSegments` (8) straight pieces. That was the curve `AMyHexBridge::ApplyEnds` built when the minimap was written; since `de9336e` `ApplyEnds` also dips a top bridge's middle by `SagRatio` (0.1143) of its length. Seen from above the deck is the same, so only the height stored for a top bridge ignores the dip. The half width is `0.5 x BridgeWidthInHexRadii (0.8) x HexRadius` of an end platform.
 
 ## The texture
 

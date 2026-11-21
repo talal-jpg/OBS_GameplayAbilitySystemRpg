@@ -2,9 +2,9 @@
 
 # Timeline
 
-AuraRedo3 · 155 commits since `fc9a077` · 2026-10-03 to 2026-11-22 · times in UTC+8 (the PC's clock)
+AuraRedo3 · 156 commits since `fc9a077` · `fc9a077`..`2c7d311` · 2026-10-03 to 2026-11-22 · times in UTC+8 (the PC's clock)
 
-Every commit made since the baseline commit `fc9a077` "before start using claude." (2026-10-03 15:46), oldest first, with the page that explains it. 150 commits are on `redo3` (plus 20 merge commits) and 5 more are on the unmerged Burrower branch `claude/project-thread-78otz4`. How the branches and pull requests fit together is on [[Redo3 Branches and PRs]], and which thread did what is on [[Redo3 Threads]].
+Every commit made since the baseline commit `fc9a077` "before start using claude." (2026-10-03 15:46), oldest first, with the page that explains it. All of them are on `redo3` now, with 22 merge commits between them; the last, `2c7d311`, merged the Burrower (PR #8) on 2026-11-22 06:48. How the branches and pull requests fit together is on [[Redo3 Branches and PRs]], and which thread did what is on [[Redo3 Threads]].
 
 > [!note] The 2026-11-15 batch
 > 31 commits are stamped 2026-11-15 14:18, and one more (`1e23b9d`, the glacier ice textures) 15:09. They hold work done on the PC between about 2026-10-18 and 2026-11-15 that had not been committed yet. The "Push local changes to GitHub" thread split it into one commit per topic on that day, so the commit time is when it was saved to git, not when the work happened. The topic pages give the real work dates from the threads.
@@ -36,7 +36,7 @@ timeline
     section Swarm and Burrower, 16 to 22 Nov
         16 Nov : Swarm crash fix, gun damage and tentacles, PR 6
         21 Nov : Segment waves, self buffs and platform avoidance, PR 7 : Burrower mesh and character code
-        22 Nov : Burrower imported, rigged and PIE tested on its own branch
+        22 Nov : Burrower imported, rigged and PIE tested : Burrower merged into redo3, PR 8
 ```
 
 ## Work streams over time
@@ -83,7 +83,7 @@ gantt
 |---|---|---|---|
 | [[Redo3 Spell Menu Fixes]] | 4 | `aaaf14b` 2026-10-03 | `45f0aa8` 2026-10-03 |
 | [[Redo3 Hex Path and Ranking]] | 6 | `17605e3` 2026-10-03 | `b95b254` 2026-10-07 |
-| [[Redo3 Hex Platform PCG]] | 9 | `17605e3` 2026-10-03 | `cd6db8b` 2026-11-15 |
+| [[Redo3 Hex Platform PCG]] | 11 | `17605e3` 2026-10-03 | `cd6db8b` 2026-11-15 |
 | [[Redo3 Hex Bridges]] | 18 | `17605e3` 2026-10-03 | `08a123a` 2026-11-15 |
 | [[Redo3 Path Paving]] | 1 | `5ccdfef` 2026-11-15 | `5ccdfef` 2026-11-15 |
 | [[Redo3 Hex Tile Props]] | 11 | `379dc3b` 2026-10-16 | `3d05747` 2026-11-15 |
@@ -95,7 +95,7 @@ gantt
 | [[Redo3 Beam and Gun FX]] | 13 | `9c04634` 2026-10-04 | `57d2288` 2026-11-15 |
 | [[Redo3 Mech Character]] | 10 | `ab6e9c4` 2026-10-10 | `b3b02ac` 2026-11-15 |
 | [[Redo3 Menus and Settings]] | 9 | `9c04634` 2026-10-04 | `d11e55a` 2026-11-15 |
-| [[Redo3 Burrower]] | 5 | `7fa2585` 2026-11-21 | `9727f1d` 2026-11-22 |
+| [[Redo3 Burrower]] | 6 | `7fa2585` 2026-11-21 | `dbdf818` 2026-11-22 |
 | [[Redo3 Engine Tools and Assets]] | 9 | `b9a224f` 2026-10-10 | `cd6db8b` 2026-11-15 |
 | [[MechSentinel Index]] | 32 | `8dce75b` 2026-11-15 | `99ab259` 2026-11-21 |
 
@@ -127,14 +127,14 @@ The big `e7a2588` commit carries several days of work from the first threads (br
 
 | Time | Commit | What changed | Page |
 |---|---|---|---|
-| 07:02 | `e7a2588` | Rewrite hex bridge pairing, replicate platforms reliably, rank players by path distance, add Niagara damage numbers and muzzle smoke | [[Redo3 Hex Path and Ranking]], [[Redo3 Hex Bridges]], [[Redo3 Beam and Gun FX]], [[Redo3 Menus and Settings]] |
+| 07:02 | `e7a2588` | Rewrite hex bridge pairing, replicate platforms reliably, rank players by path distance, add Niagara damage numbers and muzzle smoke | [[Redo3 Hex Path and Ranking]], [[Redo3 Hex Bridges]], [[Redo3 Beam and Gun FX]], [[Redo3 Menus and Settings]], [[Redo3 Hex Platform PCG]] |
 | 07:19 | `a7bd059` | Scale hex path, PCG layout space and bridge lengths with one HexRadius | [[Redo3 Hex Path and Ranking]], [[Redo3 Hex Platform PCG]], [[Redo3 Hex Bridges]] |
 | 07:24 | `5bec016` | Qualify bridge trace constants so the unity build finds one definition | [[Redo3 Hex Bridges]] |
 | 07:50 | `55f9c66` | Wire the hex PCG graph to layout space and scale bridge trace offsets | [[Redo3 Hex Platform PCG]], [[Redo3 Hex Bridges]] |
 | 21:38 | `157aa06` | Add GA_GrappleSwing, a predicted Spider-Man style grapple swing ability | [[Redo3 Grapple Swing]] |
 | 21:38 | `cbd8c04` | Activate hex platforms up to the ranking leader's distance | [[Redo3 Hex Path and Ranking]] |
 | 23:03 | `3c75a1c` | Collapse platforms faster the further behind the lead they are | [[Redo3 Hex Path and Ranking]] |
-| 23:15 | `b95b254` | Far platforms activate with faster rate , till lead player platform all platforms activate, GA_GrappleSwing_v1 | [[Redo3 Hex Path and Ranking]], [[Redo3 Grapple Swing]] |
+| 23:15 | `b95b254` | Far platforms activate with faster rate , till lead player platform all platforms activate, GA_GrappleSwing_v1 | [[Redo3 Hex Path and Ranking]], [[Redo3 Grapple Swing]], [[Redo3 Hex Platform PCG]] |
 
 ### 2026-10-08 (Thu)
 
@@ -355,7 +355,7 @@ The 31 commits at 14:18 and `1e23b9d` at 15:09 are the batch from the "Push loca
 
 ### 2026-11-21 (Sat)
 
-PR #7 merged the swarm's segment waves at 20:32. The two Burrower commits are on the unmerged Burrower branch.
+PR #7 merged the swarm's segment waves at 20:32. The two Burrower commits were made in the cloud on the Burrower branch `claude/project-thread-78otz4`.
 
 | Time | Commit | What changed | Page |
 |---|---|---|---|
@@ -368,8 +368,8 @@ PR #7 merged the swarm's segment waves at 20:32. The two Burrower commits are on
 | 15:48 | `06fedf9` | Mech Sentinel: processor order comment names the obstacle avoidance | [[MechSentinel Index]] |
 | 15:53 | `419c8ee` | Mech Sentinel docs: damage link, segment waves, curves, self-buffs, obstacles, StartupMap | [[MechSentinel Index]] |
 | 16:33 | `5e35ce4` | Mech Sentinel: review fixes (buff queue cap, platform radius, script save order) | [[MechSentinel Index]] |
-| 16:45 | `7fa2585` | Burrower: UE skeletal mesh FBX with root, Rotor and pipe bone chains (Burrower branch, unmerged) | [[Redo3 Burrower]] |
-| 16:45 | `a414ca9` | Burrower: character, per-player spawner, rotor tile cutting, anim instance, editor docs (Burrower branch, unmerged) | [[Redo3 Burrower]] |
+| 16:45 | `7fa2585` | Burrower: UE skeletal mesh FBX with root, Rotor and pipe bone chains | [[Redo3 Burrower]] |
+| 16:45 | `a414ca9` | Burrower: character, per-player spawner, rotor tile cutting, anim instance, editor docs | [[Redo3 Burrower]] |
 | 20:04 | `c24350b` | Mech Sentinel: StartupMap swarm setup and buff colours in the body and eye materials | [[MechSentinel Index]] |
 | 20:24 | `bdb89a0` | Mech Sentinel docs: StartupMap has one path lane | [[MechSentinel Index]] |
 | 20:31 | `99ab259` | StartupMap: one path lane | [[MechSentinel Index]] |
@@ -377,13 +377,16 @@ PR #7 merged the swarm's segment waves at 20:32. The two Burrower commits are on
 
 ### 2026-11-22 (Sun)
 
-All three commits are on the unmerged Burrower branch `claude/project-thread-78otz4`.
+The Burrower was imported, rigged and tested on Talal's PC in a separate copy of the project, then redo3 (with PR #7) was merged into its branch and PR #8 merged it into redo3 at 06:48. PR #9 (Mech Sentinel damage numbers) was opened at 07:32 and is not merged yet.
 
 | Time | Commit | What changed | Page |
 |---|---|---|---|
-| 00:45 | `5d5f2bc` | Burrower: import SK_Burrower, PA_Burrower, settings, editor scripts (Burrower branch, unmerged) | [[Redo3 Burrower]] |
-| 01:02 | `a52a516` | Burrower: CR_Burrower, ABP_Burrower, BP_Burrower (Burrower branch, unmerged) | [[Redo3 Burrower]] |
-| 01:26 | `9727f1d` | Burrower: PIE tested; Control Rig ragdoll on (fallback off) (Burrower branch, unmerged) | [[Redo3 Burrower]] |
+| 00:45 | `5d5f2bc` | Burrower: import SK_Burrower, PA_Burrower, settings, editor scripts | [[Redo3 Burrower]] |
+| 01:02 | `a52a516` | Burrower: CR_Burrower, ABP_Burrower, BP_Burrower | [[Redo3 Burrower]] |
+| 01:26 | `9727f1d` | Burrower: PIE tested; Control Rig ragdoll on (fallback off) | [[Redo3 Burrower]] |
+| 06:36 | `dacbbda` | *Merge:* Merge redo3 (PR #7) into the Burrower branch | [[Redo3 Branches and PRs]] |
+| 06:47 | `dbdf818` | Burrower harness: never leave stale inbox requests behind | [[Redo3 Burrower]] |
+| 06:48 | `2c7d311` | *Merge:* Merge pull request #8 from talal-jpg/claude/project-thread-78otz4 | [[Redo3 Branches and PRs]] |
 
 ## Related
 

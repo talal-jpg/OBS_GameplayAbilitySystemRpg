@@ -2,9 +2,9 @@
 
 # Changes Index
 
-AuraRedo3 · talal-jpg/AuraRedo2 · `fc9a077`..`68dd9e7` on redo3, plus the Burrower branch to `9727f1d` · 2026-10-03 to 2026-11-22 (UTC+8)
+AuraRedo3 · talal-jpg/AuraRedo2 · `fc9a077`..`2c7d311` on redo3 · 2026-10-03 to 2026-11-22 (UTC+8)
 
-These notes cover every change made to AuraRedo3 since the commit "before start using claude." (`fc9a077`, 2026-10-03 15:46), when Talal started building the game with Claude. In seven weeks that came to 155 commits: 150 on `redo3` plus 5 on the unmerged Burrower branch, made by 54 project threads, together with 51 published artifacts and 281 files in the project's shared folder.
+These notes cover every change made to AuraRedo3 since the commit "before start using claude." (`fc9a077`, 2026-10-03 15:46), when Talal started building the game with Claude. In seven weeks that came to 156 commits, all now on `redo3`; the last pull request, PR #8, merged the Burrower on 2026-11-22. Most of the work was done in 54 project threads (the first commits came from earlier Claude sessions, and some are Talal's own), which also produced 51 published artifacts and 281 files in the project's shared folder.
 
 The game it describes: players race mechs along an endless path of floating hex platforms that grows ahead of them and collapses behind them. The platforms are built by PCG, joined by bridges, dressed with ice, rocks and snow, and break apart into Geometry Collections. The mechs boost, hover, grapple-swing and fight with a beam and a gun, while swarms of Mech Sentinels attack in waves and a Burrower cuts tiles from below. The front end, settings and pause menu were rebuilt as MainMenu3.
 
@@ -78,11 +78,11 @@ flowchart TD
 
 1. The player hosts or joins a session from MainMenu3, which loads StartupMap ([[Redo3 Menus and Settings]]).
 2. On the server, `AMyHexPathSpawner` grows a spline ahead of the players. Each piece becomes an `AMyHexPathSegment` whose PCG graph places `BP_MyHexPlatform` hex platforms, and `UMyHexBridgeSubsystem` joins neighbouring platforms with bridges. One `HexRadius` scales it all ([[Redo3 Hex Path and Ranking]], [[Redo3 Hex Platform PCG]], [[Redo3 Hex Bridges]]).
-3. Each platform builds its tiles and pillars, scatters rocks, ruins and ice on the tiles, and paves the bridge paths with stone ([[Redo3 Hex Tile Props]], [[Redo3 Path Paving]]). The ice look, ink outlines, snow, edge fog and clouds give it its style ([[Redo3 Hex Look and Atmosphere]]), and the minimap draws the platforms and bridges ([[Redo3 Hex Minimap]]).
+3. Each platform builds its tiles and pillars, crowns its rim with ice shards and snow (the earlier rock, ruin and ice cliff layers are kept only as assets), and paves the bridge paths with stone ([[Redo3 Hex Tile Props]], [[Redo3 Path Paving]]). The ice look, ink outlines, snow, edge fog and clouds give it its style ([[Redo3 Hex Look and Atmosphere]]), and the minimap draws the platforms and bridges ([[Redo3 Hex Minimap]]).
 4. The mechs move with boost, hover and the grapple swing, and fight with the beam and the gun ([[Redo3 Grapple Swing]], [[Redo3 Mech Swing Animation]], [[Redo3 Beam and Gun FX]], [[Redo3 Mech Character]]).
 5. When a player lands on a platform, `AMyGameState` ranks everyone by how far along the path they are. Every platform up to the leader's distance starts to collapse, faster the further behind it is ([[Redo3 Hex Path and Ranking]]).
-6. Collapsing tiles break into Geometry Collections near the player and into baked far-break instances further away, and the pillars, props and bridges go with them ([[Redo3 Hex Pillars and Breaking]], [[Redo3 Hex Bridges]]).
-7. Each new path segment starts a Mech Sentinel wave at its corners ([[MechSentinel Path Segment Waves]]). The Burrower, on its own branch, cuts tiles from under a player ([[Redo3 Burrower]]).
+6. Collapsing tiles break into Geometry Collections near the player, and the pillars, props and bridges go with them. Further away they are meant to play baked far-break instances, but those still wait for Talal's baked meshes, so far tiles just vanish for now ([[Redo3 Hex Pillars and Breaking]], [[Redo3 Hex Bridges]]).
+7. Each new path segment starts a Mech Sentinel wave at its corners ([[MechSentinel Path Segment Waves]]). The Burrower spawns behind each player and cuts the tiles under them with its rotor ([[Redo3 Burrower]]).
 8. A player who dies is respawned by `AMyGameMode` on the platform just ahead of the leader, with the respawn effect ([[Redo3 Mech Character]]).
 
 ## Pages in reading order
@@ -90,7 +90,7 @@ flowchart TD
 **History**
 
 1. [[Redo3 Timeline]]: every commit by day since `fc9a077`, with a timeline and a chart of when each area was worked on.
-2. [[Redo3 Branches and PRs]]: the 19 Claude branches, the 7 pull requests, the merges and the unmerged Burrower branch.
+2. [[Redo3 Branches and PRs]]: the 20 Claude branches, the 9 pull requests and the merges.
 3. [[Redo3 Threads]]: all 54 threads, oldest first: what each was asked, what it did, its commits, artifacts and open items.
 
 **Systems**
@@ -109,7 +109,7 @@ flowchart TD
 15. [[Redo3 Beam and Gun FX]]: beam and gun shot Niagara effects, cues, hit impacts and damage numbers.
 16. [[Redo3 Mech Character]]: the mech's abilities, death, ragdoll, hard landing, jetpack and respawn.
 17. [[Redo3 Menus and Settings]]: MainMenu2's graffiti style, then MainMenu3 with its options, key rebinding and pause menu.
-18. [[Redo3 Burrower]]: the Burrower creature, from Blender model to rigged, PIE-tested enemy on its own branch.
+18. [[Redo3 Burrower]]: the Burrower creature, from Blender model to rigged, PIE-tested enemy, merged in PR #8.
 19. [[Redo3 Engine Tools and Assets]]: renderer and Vulkan settings, project config, editor commands, profiling and the Blender MCP airship.
 
 **Outputs**
@@ -141,11 +141,16 @@ It came in through PRs #3, #6 and #7 ([[Redo3 Branches and PRs#Pull requests|pul
 - **Why something was built the way it was**: the system page's "How it changed" section, then the thread on [[Redo3 Threads]].
 - **Changing the size of the path, platforms and bridges**: [[Redo3 Hex Path and Ranking#One HexRadius scales everything]].
 - **Who leads and when platforms collapse**: [[Redo3 Hex Path and Ranking#Player ranking]] and [[Redo3 Hex Path and Ranking#Platform activation and collapse]].
-- **The look of the platforms**: [[Redo3 Hex Look and Atmosphere]].
-- **Performance of the hex world**: [[Redo3 Hex Pillars and Breaking]] and [[Redo3 Engine Tools and Assets]].
-- **Swinging**: [[Redo3 Grapple Swing]], then [[Redo3 Mech Swing Animation]].
-- **Respawn and death**: [[Redo3 Mech Character]].
-- **Menus, options and key bindings**: [[Redo3 Menus and Settings]].
+- **Tuning the bridges**: [[Redo3 Hex Bridges#UMyHexBridgeSettings]].
+- **How tiles, pillars and props break**: [[Redo3 Hex Pillars and Breaking#The pillar break subsystem]], [[Redo3 Hex Pillars and Breaking#Far breaks]] and [[Redo3 Hex Tile Props]].
+- **Testing breaks from the console**: [[Redo3 Hex Pillars and Breaking#Debug commands]].
+- **The look of the platforms**: [[Redo3 Hex Look and Atmosphere#Ice look and ink outlines]], [[Redo3 Hex Look and Atmosphere#Snow build-up]] and [[Redo3 Hex Look and Atmosphere#Edge fog]].
+- **What was tried and dropped in the look**: [[Redo3 Hex Look and Atmosphere#Tried and dropped]].
+- **Performance of the hex world**: [[Redo3 Hex Pillars and Breaking#The optimisation pass]], [[Redo3 Hex Pillars and Breaking#CPU profile findings]] and [[Redo3 Engine Tools and Assets]].
+- **Tuning the swing**: [[Redo3 Grapple Swing#Key tuning]], then [[Redo3 Mech Swing Animation]].
+- **Death and respawn**: [[Redo3 Mech Character#Mech death and disintegrate]] and [[Redo3 Mech Character#Respawn]].
+- **Key bindings and options**: [[Redo3 Menus and Settings#Key rebinding and the pause input]] and [[Redo3 Menus and Settings#Options and saved settings]].
+- **What the Burrower merge brought**: [[Redo3 Burrower#What the merge brought]] and [[Redo3 Branches and PRs#The burrower branch]].
 - **Enemies**: [[MechSentinel Index]] and [[Redo3 Burrower]].
 - **Finding an artifact or a render**: [[Redo3 Artifacts Index]].
 
@@ -154,13 +159,12 @@ It came in through PRs #3, #6 and #7 ([[Redo3 Branches and PRs#Pull requests|pul
 | | |
 |---|---|
 | Baseline | `fc9a077` "before start using claude.", 2026-10-03 15:46 |
-| redo3 now | `68dd9e7`, PR #7 merged 2026-11-21 20:32 |
-| Commits | 155: 150 on redo3 (plus 20 merge commits), 5 on the Burrower branch |
-| Files changed on redo3 | 1,095 (959 added, 93 changed, 42 removed, 1 renamed) |
-| C++ under `Source/` | 123 files added and 44 changed, about 46,000 lines added |
-| Content files | 876 assets added or changed under `Content/` |
-| Burrower branch | 66 more files, 18,633 lines, on top of `21ba7cc` |
-| Branches and PRs | 19 Claude branches, 7 pull requests (6 merged, 1 closed) |
+| redo3 now | `2c7d311`, PR #8 merged 2026-11-22 06:48 |
+| Commits | 156, plus 22 merge commits |
+| Files changed on redo3 | 1,156 (1,020 added, 93 changed, 42 removed, 1 renamed) |
+| C++ under `Source/` | 130 files added and 44 changed, about 48,300 lines added |
+| Content files | 883 asset files touched under `Content/` (796 added, 44 changed, 42 removed, 1 renamed) |
+| Branches and PRs | 20 Claude branches, 9 pull requests (7 merged, 1 closed, 1 still open) |
 | Threads | 54 |
 | Artifacts | 51 (25 in the project's Artifacts list, 26 linked from threads) |
 | Shared-folder files | 281, in 21 file notes |

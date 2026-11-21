@@ -74,10 +74,12 @@ mindmap
 flowchart TD
   A["ActivateHexLocal: copy the instance transform and its custom data"] --> R["RemoveHexInstance, add to LocalActivatedTiles"]
   R --> D["GetLocalPlayerDistance2D"]
-  D --> EV["OnHexTileActivated: props, bridges, minimap"]
-  EV --> Q{"Within BreakEffectsMaxDistance, 50 m?"}
-  Q -- "no, within FarBreakMaxDistance 200 m" --> F["PlayFarBreak: FarTopPillar or FarBottomPillar"]
-  Q -- "no, further or no local player" --> N["Instance gone, nothing spawned"]
+  D --> FQ{"Beyond BreakEffectsMaxDistance 50 m, within FarBreakMaxDistance 200 m?"}
+  FQ -- "yes" --> F["PlayFarBreak: FarTopPillar or FarBottomPillar"]
+  FQ -- "no" --> EV["OnHexTileActivated: props, bridges, minimap"]
+  F --> EV
+  EV --> Q{"Within 50 m, with effect?"}
+  Q -- "no: far, late join, further or no local player" --> N["Instance gone, nothing more spawned"]
   Q -- "yes" --> G{"GetPillarCollection returns a GC?"}
   G -- "yes" --> QB["QueueBreak on UMyHexPillarBreakSubsystem"]
   G -- "no" --> SK["Skeletal fall: HexPillarRbd plays RbdAnimSeq"]
@@ -310,7 +312,7 @@ The "CPU profile during play" thread recorded a 207 s PIE (3,445 frames) on 2026
 
 ## Other callers
 
-The Burrower's branch `claude/project-thread-78otz4` (not merged) adds `ActivateTilesInWorldBox(BoxToWorld, BoxExtent)` and `CouldWorldBoxTouchTiles`. On the server it collapses every standing tile whose pillar touches the box through `ActivateHex`, so the break, props, bridges and minimap follow; it does nothing until the bridges are built. The Burrower's rotor calls it ([[Redo3 Burrower]]).
+The Burrower (`a414ca9`, merged into redo3 in PR #8) adds `ActivateTilesInWorldBox(BoxToWorld, BoxExtent)` and `CouldWorldBoxTouchTiles`. On the server it collapses every standing tile whose pillar touches the box through `ActivateHex`, so the break, props, bridges and minimap follow; it does nothing until the bridges are built. The Burrower's rotor calls it ([[Redo3 Burrower]]).
 
 ## Gotchas
 
@@ -328,7 +330,7 @@ The Burrower's branch `claude/project-thread-78otz4` (not merged) adds `Activate
 - **2026-10-18** `fa6ad2f`: Talal's `M_Pillar1` changes with `M_Pillar1Backup`, `HexPillar` and `HexPillarRbd` updates, and `M_Pillar2`. Committed from his working copy by the "Unpushed commits count" thread.
 - **2026-10-20** `6a10353`: every pillar turned so +X faces away from the centre, with the open-side bits in custom data 3 turned into the pillar's frame and the tile infos kept in actor space. Compiled and hot reloaded on Talal's PC, committed on `claude/project-thread-er95f6`, merged into redo3 as `69cdf95` on 2026-11-15 10:23. It left the `M_Pillar1` top texture seams open.
 - **2026-10-20**: the CPU profile, and the distance gate `BreakEffectsMaxDistance` in `ActivateHexLocal` (in git in `b5ff0ef`).
-- **2026-10-23**: the second profile and the Vulkan workaround (`e5d0fec`).
+- **2026-10-23**: the second profile and the Vulkan workaround (in git as `e5d0fec` in the 2026-11-15 batch).
 - **2026-10-24**: the LOD question, two playtests and the optimisation pass, and the bottom chain with `HexPillarBottom`, `HexPillarBottomScaleZ` and the bottom skeletal slots. Nothing was committed in the thread.
 - **2026-10-24 to 10-25**: top pillar GCs v1 to v3 with the break subsystem, ending with three height variants on `M_Pillar2_GC` cut from the closed source, the GCs moved from the constructor to the Blueprint, the far-break ISMs with `MF_HexFarBreakFrame`, and the USD export.
 - **2026-10-26**: the V2.1 ice look with ink in the pillar materials; `HexPillar` on `MI_Pillar2_V2_1` (`cf4ec00`).
@@ -355,7 +357,7 @@ The Burrower's branch `claude/project-thread-78otz4` (not merged) adds `Activate
 - [[Redo3 Threads#Overlapping Geometry Collections|Overlapping Geometry Collections]]: built the bottom pillar GC as PR #5 (`005aca9`, `3e4c700`, `37fe470`).
 - [[Redo3 Threads#Collapsing bridges|Collapsing bridges]]: makes a bridge fall from the end whose tile broke, with its debris near the player only.
 - [[Redo3 Threads#Rocks and ruins on hex tiles|Rocks and ruins on hex tiles]]: documented the tile collapse from `ActivateHexLocal` to the props, and left the pillar materials out of its merge.
-- [[Redo3 Threads#Model, rig and export the burrower creature|Model, rig and export the burrower creature]]: added `ActivateTilesInWorldBox` on its unmerged branch for the rotor.
+- [[Redo3 Threads#Model, rig and export the burrower creature|Model, rig and export the burrower creature]]: added `ActivateTilesInWorldBox` for the rotor, merged in PR #8.
 - [[Redo3 Threads#Push local changes to GitHub|Push local changes to GitHub]]: merged the outward pillars as `69cdf95` and committed the batch from Talal's PC.
 
 ## Artifacts and files
@@ -399,7 +401,6 @@ The Burrower's branch `claude/project-thread-78otz4` (not merged) adds `Activate
 - A `HexPillarBottomScaleZ` other than 1 stretches the bottom GC.
 - The profile's suggestions (shorter debris life, fewer collision bodies on the falling pillars) were not taken up as such.
 - A falling pillar GC piece under Nanite was not checked in a close-up, the top drift look still needs Talal's check, the GPU cost of the ice parallax was never measured, and the `IceDepth` 0.18 override on `MI_SmallPillar_Sculpt` no longer does anything.
-- `ActivateTilesInWorldBox` exists only on the unmerged Burrower branch.
 
 ## Related
 

@@ -4,7 +4,7 @@
 
 AuraRedo3 · redo3 · 17605e3..cd6db8b · 2026-10-03 to 2026-11-15
 
-Every hex platform on the endless path is placed by one PCG graph, `PCG_SplineIHexPlatformsFromSpline`. Each `BP_MyHexPathSegment` that the path spawner adds runs it once, on the server, over its own piece of the path. The graph lays out two chains of platforms: a lower chain of big centre and side platforms ringed by medium and small ones, and an upper chain 15 m higher that complements it. It keeps clear of platforms and bridges that are already in the world, and spawns each platform with its grid size, outline seed, distance along the path and hex radius as property overrides. Every machine then builds the same tiles from those replicated values.
+Every hex platform on the endless path is placed by one PCG graph, `PCG_SplineIHexPlatformsFromSpline`. Each `BP_MyHexPathSegment` that the path spawner adds runs it once, on the server, over its own piece of the path. The graph lays out two chains of platforms: a lower chain of big centre and side platforms ringed by medium and small ones, and an upper chain above it that complements it (15 m up as built; the live graph of 2026-10-22 lifted it 60 m, see [[#The upper chain]]). It keeps clear of platforms and bridges that are already in the world, and spawns each platform with its grid size, outline seed, distance along the path and hex radius as property overrides. Every machine then builds the same tiles from those replicated values.
 
 Talal's asks, in order: on 2026-10-04 the graph "only spawns them in a straight line with only different grid sizes", so he asked for "different streams of the spawner" with a natural layout, offsets in Z and smaller platforms around the big ones, then "the same chain above it which complements the chain below". Next came `SplineDistance` on every platform for the player ranking, then a layout that scales with the hex radius ("right now everything scales right with hex radius of 100"), a tidy graph with sections left to right and named reroutes, and finally a separate actor for the small top platforms that have nothing under them.
 
@@ -92,7 +92,7 @@ flowchart TD
 
 1. `AMyHexPathSpawner::ExtendPath` (server only) grows the path by one segment and spawns `SegmentClass` (`BP_MyHexPathSegment`). Before anything runs it calls `SetLayout(HexRadius, spawner XY)`, `SetPathDistances(start, end)` and `SetSegmentBounds(...)` on it (see [[Redo3 Hex Path and Ranking]]).
 2. `AMyHexPathSegment::InitSegment` writes the new points and tangents into `SegmentSpline` in layout space, sets `PCGComponent->Seed = SegmentIndex` (so neighbouring segments make different random choices) and calls `GenerateLocal(true)`. The component's trigger is `GenerateOnDemand`, so it never runs on load, and the segment has `bReplicates = false`: the graph runs on the server only. Separate segments mean an extension never regenerates, and so never respawns, earlier platforms.
-3. Step 01 reads the segment: `GetSplineData_0` (Self) returns `SegmentSpline`, and seven Get Actor Property nodes read `Seg_PathStartDistance`, `Seg_LayoutDownScale`, `Seg_LayoutDownOffset`, `Seg_LayoutUpScale`, `Seg_LayoutUpOffset`, `Seg_LayoutScale` and `Seg_HexRadius` from the segment's "Hex Path|Scale" properties.
+3. Step 01 reads the segment: `GetSplineData_0` (Self) returns `SegmentSpline`, and seven Get Actor Property nodes read `Seg_PathStartDistance`, `Seg_LayoutDownScale`, `Seg_LayoutDownOffset`, `Seg_LayoutUpScale`, `Seg_LayoutUpOffset`, `Seg_LayoutScale` and `Seg_HexRadius` from the segment's properties (`PathStartDistance` is under "Hex Path", the rest under "Hex Path|Scale").
 4. Steps 02 and 03: `Path_Samples` drops a point every 500 cm along the path, flattened and bounded; ring platforms are only kept within `PathDist` 9000 (90 m) of the path. `Ends_Bounds` puts boxes beyond both segment ends, and the distance to them (`CapD`) stops platforms from reaching into the next segment's space.
 5. Step 04 turns what is already in the world into obstacles: `World_Platforms` (Get Actor Data by tag `HexLower`, Always Requery), `World_Bridges` (every `MyHexBridge` since `86539d1`) and `World_Dummy`, which keeps the set from being empty on the first segment. The points are moved into layout space and flattened into tall columns (bounds Z +-100000), so every overlap test is 2D (`WorldD`).
 6. Steps 05 to 11 build the lower chain: the centre stream, the left and right streams, fit-to-space shrinking, then medium rings around every big platform and small rings around every medium one (numbers in [[#The lower chain]]).
@@ -135,7 +135,7 @@ Only the segment graph decides where things are; everything downstream rebuilds 
 
 ## The segment graph's inputs
 
-The graph reads these with Get Actor Property on Self. All are `VisibleInstanceOnly`, `BlueprintReadOnly` properties of `AMyHexPathSegment` in the category "Hex Path|Scale", set by the spawner before `InitSegment`.
+The graph reads these with Get Actor Property on Self. All are `VisibleInstanceOnly`, `BlueprintReadOnly` properties of `AMyHexPathSegment`, set by the spawner or in `InitSegment`: `PathStartDistance` is in the category "Hex Path", the others in "Hex Path|Scale".
 
 | Property | Default | What it is |
 |---|---|---|
@@ -169,7 +169,7 @@ Gf  = min(Gf, GAl)
 Radius = 175 G + 100        Rm = 175 G + 250
 ```
 
-`CapD` is the distance to the end boxes, `WorldD` the 2D distance to the obstacle columns and `PeerD` the distance between the new platforms. Side platforms also have an `OtherD` limit that keeps them at least 3 m from the centre platforms. `Radius = 175 G + 100` is the platform's half size at radius 100: `AMyHexPlatform::HexToWorld` (pointy-top, R the corner radius) puts tile centres up to `sqrt(3) * R * G` apart from the middle, so a grid of size G spans `sqrt(3) * R * (2G + 1)` in X and `R * (3G + 2)` in Y. Medium and small rings are self-pruned large to small.
+`CapD` is the distance to the end boxes, `WorldD` the 2D distance to the obstacle columns and `PeerD` the distance between the new platforms. Side platforms also have an `OtherD` limit that keeps them at least 3 m from the centre platforms. `Radius = 175 G + 100` is a little more than the platform's half size at radius 100: `AMyHexPlatform::HexToWorld` (pointy-top, R the corner radius) puts tile centres up to `sqrt(3) * R * G` apart from the middle, so a grid of size G spans `sqrt(3) * R * (2G + 1)` in X and `R * (3G + 2)` in Y. Medium and small rings are self-pruned large to small.
 
 Heights: big platforms share one smooth noise of up to +-4 m, and the lower chain's rings mostly step down (-1 to +0.3 times their gap). In the first test, on the four tightest real segments (19 to 22, path seed 17.31), the layout gave 41 platforms with no overlaps and a smallest gap of 2.8 m. Talal later asked for bigger ring height steps but said "don't widen the gaps even if the secondary platforms dont get bridges", so some ring platforms are too steep for a bridge.
 
@@ -199,7 +199,7 @@ Talal's to-do of 2026-10-21 ([[21-10-2026]]) has "small platforms in top chain, 
 
   The graph reserves `(1.75 G + 1) * R` per platform and outline noise trims a platform to about `1.5 * G * R`, so grid size x hex radius would be 2.5 to 5 times too small. Talal chose to pass the size in (GridSize and HexRadius on the spawned actor) instead.
 - **Constraint for a new class:** any `SmallPlatformActor` should be a child of `BP_MyHexPlatform`. The bridge subsystem only registers `AMyHexPlatform`s, the ranking reads `SplineDistance` from them, and a plain actor is not destroyed when the path leaves it behind.
-- **Backup:** `PCG_SplineIHexPlatformsFromSpline_BeforeFloatingActor`, on Talal's PC only (the push thread left every `*_Before*` copy out of git).
+- **Backup:** `PCG_SplineIHexPlatformsFromSpline_BeforeFloatingActor`, on Talal's PC only (the push thread left the untracked `*_Before*` copies out of git).
 
 ![[redo3_floating_platforms_top.jpg]]
 

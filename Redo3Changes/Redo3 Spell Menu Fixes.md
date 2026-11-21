@@ -139,7 +139,7 @@ flowchart TD
 
 - Both getters now `checkf` that an overlay controller was passed in, create the controller with the overlay controller as outer (so it lives as long as the HUD), and store it in `SpellMenuWidgetController` or `AttributeMenuWidgetController`.
 - Both controllers bind with `AddWeakLambda(this, ...)` and `BindWeakLambda(this, ...)`, so a deleted controller is skipped instead of called.
-- `bCallbacksBound` (default `false`) stops repeat `BindCallbacksToDependencies` calls from the menu Blueprints from binding twice. The menu Blueprints call it on every open (assumed from [[Aura Spell Menu Flow]]; the calls are in Blueprint, not C++).
+- `bCallbacksBound` (default `false`) stops repeat `BindCallbacksToDependencies` calls from the menu Blueprints from binding twice. The menu Blueprints call it on every open (the header comment added with the flag says so; the calls are in Blueprint, not C++).
 - The spell menu's equip callback returns early if `MyAbilityInfo` is null.
 - The attribute menu (`UMyAttributeMenuWidgetController`) got the same cache, weak lambdas and `bCallbacksBound`.
 
@@ -165,7 +165,7 @@ The point is taken with `IMyPlayerInterface::Execute_AddToSpellPoints(GetAvatarA
 - **2026-10-03 17:48**, `aaaf14b`: the server becomes the source of truth for equipping. `Server_EquipAbility` loses its `CurrentInputTag` parameter, validates slot, spec and status, unequips the previous owner of the slot, cancels moved abilities, and sets the Equiped status. Adds `SetInputTagOnSpec` and `SetStatusTagOnSpec`, the `GetPrimaryInstance` null checks and the exact tag lookups.
 - **2026-10-03 17:49**, `76625c2`: selection state fixes. `ShouldEnableButtons` stops writing the selection, the equip callback stops re-enabling Equip, `FSelectedAbility::InputTag` is removed, and Equip refuses Locked abilities.
 - **2026-10-03 17:50**, `a63041a`: fixes the crashes from deleted Spell and Attribute menu controllers (cached controllers, weak lambdas, bind-once flag, reset on open, null check on `MyAbilityInfo`).
-- **At `a63041a`**: the [[Redo3 Artifact - Aura Spell Menu Flow]] page describes the code as it stood after this commit. Its line numbers match `a63041a`, and its spend-point section still says `Server_SpendSpellPoint` trusts the client's status, which the next commit fixed.
+- **At `a63041a`**: Talal's vault copy [[Aura Spell Menu Flow]] of the flow page describes the code as it stood after this commit. Its line numbers match `a63041a`, and its spend-point section still says `Server_SpendSpellPoint` trusts the client's status, which the next commit fixed. The published [[Redo3 Artifact - Aura Spell Menu Flow]] was later brought up to date: its line numbers match the code after `45f0aa8`.
 - **2026-10-03 18:07**, `45f0aa8`: validates spell point spending on the server. The RPC loses its `StatusTag` parameter, checks points, spec and status first, takes the point last, and marks the spec dirty on level-up.
 - **2026-10-04**: the first project threads describe the four commits as work already on redo3, and the pinned flow artifact is attached to the project Library.
 
@@ -177,7 +177,7 @@ The point is taken with `IMyPlayerInterface::Execute_AddToSpellPoints(GetAvatarA
 
 ## Artifacts and files
 
-- [[Redo3 Artifact - Aura Spell Menu Flow]]: the pinned claude.ai page with the menu's structure and four flows (opening, selecting a globe, spending a point, equipping into a slot). Talal's vault copy is [[Aura Spell Menu Flow]]. Its spend-point warning is out of date since `45f0aa8`.
+- [[Redo3 Artifact - Aura Spell Menu Flow]]: the pinned claude.ai page with the menu's structure and four flows (opening, selecting a globe, spending a point, equipping into a slot), with line numbers for the code after `45f0aa8`. Talal's vault copy [[Aura Spell Menu Flow]] is the earlier `a63041a` version, so its spend-point warning is out of date.
 
 ## Where it lives
 

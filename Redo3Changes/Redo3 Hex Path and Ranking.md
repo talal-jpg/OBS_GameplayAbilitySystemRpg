@@ -4,11 +4,11 @@
 
 AuraRedo3 · redo3 · 17605e3..b95b254 · 2026-10-03 to 2026-10-07
 
-The endless path is what the game is played on. A server-only actor, `AMyHexPathSpawner`, grows a spline ahead of the players in 100 m pieces. Every piece becomes an `AMyHexPathSegment` whose PCG graph fills it with `BP_MyHexPlatform` hex platforms, and the bridge subsystem joins them. Players run along it, and the platforms they leave behind collapse tile by tile and are finally removed.
+The endless path is what the game is played on. A server-only actor, `AMyHexPathSpawner`, grows a spline ahead of the players in 100 m pieces. Every piece becomes an `AMyHexPathSegment` whose PCG graph fills it with `BP_MyHexPlatform` hex platforms, and the bridge subsystem joins them. Players run along it; every platform up to the one the leader has reached collapses tile by tile, and platforms left far behind are removed.
 
-This page covers the path itself and the rules around it: how far along the path each player is, who leads, when a platform is allowed to start collapsing, how fast it collapses, when it is culled, and how one `HexRadius` scales the whole thing. Talal's asks, in order: platforms must not collapse the moment they spawn but only once the lead lands; "store distance on spline points" and sort the PlayerStates by the platform they are on, where "multiple PlayerStates can be considered leading"; "activate all platforms with dist <= lead players covered dist"; let far-behind platforms collapse at a different rate; and "give me a scaling factor that scales the whole system".
+This page covers the path itself and the rules around it: how far along the path each player is, who leads, when a platform is allowed to start collapsing, how fast it collapses, when it is culled, and how one `HexRadius` scales the whole thing. Talal's asks, in order: platforms must not collapse the moment they spawn but only once the lead lands; "store distance on spline points" and sort the PlayerStates by the platform they are on, where "multiple PlayerStates can be considered leading"; "give me a scaling factor that scales the whole system"; "activate all platforms with dist <= lead players covered dist"; and let far-behind platforms collapse at a different rate.
 
-State now (origin/redo3): all of it shipped. `AMyGameState` ranks the players by the `SplineDistance` of the platform each last landed on, every platform up to the leader's distance is activated, platforms further behind the lead collapse faster, and `AMyHexPathSpawner::HexRadius` scales path, PCG layout and bridges together. The respawn system and the Mech Sentinel swarm both hook into the path and the ranking. None of the threads reports a two-player playtest of the ranking or the activation rule.
+State now (origin/redo3): all of it shipped. `AMyGameState` ranks the players by the `SplineDistance` of the platform each last landed on, every platform up to the leader's distance is activated, platforms further behind the lead collapse faster, and `AMyHexPathSpawner::HexRadius` scales path, PCG layout and bridges together. The respawn system and the Mech Sentinel swarm both hook into the path and the ranking. Talal's PIE log in the ranking thread showed both players' landings reaching the ranking code, but no thread reports a two-player playtest of the activation rule or the collapse timing.
 
 ## Mind map
 
@@ -317,7 +317,7 @@ Read it as the original setup, not the current one: the real assets are `BP_MyHe
 ## Artifacts and files
 
 - [[Redo3 Artifact - Lead-Landing Collapse Map]]: clickable mind map of the lead-landing collapse and culling changes by class, the life of one platform, the collapse and cull gates, and the new tunables (state of 2026-10-04, before the ranking leader).
-- [[Redo3 Artifact - Hex Platform Flow]]: the pinned mind map from 2026-10-07 of the whole system from `BeginPlay`, 10 branches and 178 nodes (path, PCG layout, platform build, bridges, collapse, culling, ranking).
+- [[Redo3 Artifact - Hex Platform Flow]]: the pinned mind map from 2026-10-07 of the whole platform and bridge system from `BeginPlay`, every function and important variable, 10 branches and 178 nodes.
 - [[Redo3 Artifact - Hex Path and Bridges]]: pinned artifact from an earlier session about the `17605e3` system; its content was not summarised for these notes.
 - [[Redo3 Artifact - Hex Path Setup Steps]]: pinned artifact from an earlier session; its title matches `steps.md`, and its content was not summarised for these notes.
 - [[Redo3 Artifact - Hex Platform PCG Walkthrough]]: the platform graph step by step, including how `SplineDistance` and the layout-space values reach each platform.
@@ -347,7 +347,7 @@ Top-down preview of the natural platform layout along the path, from the layout 
 
 ## Open items
 
-- No thread reports a multiplayer playtest of the ranking, the activation up to the leader or the distance-based collapse interval; `e7a2588` itself says the collapse, culling and ranking were untested in multiplayer PIE.
+- No thread reports a multiplayer playtest of the activation up to the leader or the distance-based collapse interval (the ranking thread only saw both players' landings reach the code in Talal's PIE log); `e7a2588` itself says the collapse, culling and ranking were untested in multiplayer PIE.
 - `ChainLength` is still a `constexpr` 15 with a TODO to scale it by grid size.
 - The leaders are not shown in the HUD yet (TODO in `UpdatePlayerRanking`, and "Show Leading Player/s" on Talal's 12-10-2026 list); the debug `PrintString`s are still on.
 - The path spline is never trimmed.

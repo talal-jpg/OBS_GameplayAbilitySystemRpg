@@ -6,6 +6,9 @@ claude.ai Artifact · report · updated 2026-11-21 · [open the artifact](https:
 
 A Claude Docs report on importing, rigging and play-testing the Burrower enemy in UE 5.8. The work was pushed to branch claude/project-thread-78otz4 in commits 5d5f2bc, a52a516 and 9727f1d, on top of 7fa2585 (the UE skeletal mesh FBX) and a414ca9 (BurrowerCharacter, the per-player spawner, rotor tile cutting and BurrowerAnimInstance). It was built in a separate copy (_BurrowerWork) so the user's AuraRedo3 working copy was not touched. The report lists every asset in /Game/Assets/Enemies/Burrower/ and gives the results of a listen-server plus one-client PIE test on StartupMap. It also records where the work departed from the recipe and what is still open. The branch is unmerged: it starts from redo3 before PR #7, so it needs a merge through a pull request.
 
+> [!note] Since this report
+> The branch was merged into redo3 in PR #8 (`2c7d311`, 2026-11-22 06:48), after redo3 with PR #7 was merged into it (`dacbbda`). See [[Redo3 Burrower]] and [[Redo3 Branches and PRs#The burrower branch]].
+
 ## What it shows
 
 - Branch claude/project-thread-78otz4, commits 5d5f2bc (SK_Burrower, PA_Burrower, settings, editor scripts), a52a516 (CR_Burrower, ABP_Burrower, BP_Burrower) and 9727f1d (PIE tested, Control Rig ragdoll on). Not merged into redo3.

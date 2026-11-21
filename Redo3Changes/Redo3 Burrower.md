@@ -2,13 +2,13 @@
 
 # Burrower
 
-AuraRedo3 · claude/project-thread-78otz4 (not merged) · 7fa2585..9727f1d · 2026-11-21 to 2026-11-22
+AuraRedo3 · redo3 since PR #8 (branch claude/project-thread-78otz4) · 7fa2585..dbdf818 · 2026-11-21 to 2026-11-22
 
 The Burrower is a 20 m fish-like burrowing machine with a spinning cutter rotor in its mouth. In the game it appears behind each player, flies after them through the hex platforms and eats the tiles under their feet with its rotor, so the player has to keep moving. It takes damage from every player ability like the other enemies, falls into a Control Rig ragdoll when it dies, and a new one comes after an interval. Its body swings in a travelling sine wave and the hoses on its back and flanks swing with physics.
 
 It was built in two halves by one thread, [[Redo3 Threads#Model, rig and export the burrower creature|Model, rig and export the burrower creature]]. From 2026-11-05 to 2026-11-12 the creature was modelled and rigged in Blender in the cloud from Talal's vault note [[horizon fish like burrower]]: segmentation in three passes, a 45-part model, a USD for Houdini and a 5-joint rig. On 2026-11-21 Talal asked for the Unreal side: a rotor bone, an import, and a C++ enemy deriving from `AMyEnemyChar` that spawns behind each player, follows them, uses GAS, ragdolls in the Control Rig, swings its pipes with Control Rig dynamics, waves its body like the third part of the YouTube video `_Fp2nJuU7Q0` at 5:40, and collapses hex tiles with a padded box on the rotor. The C++ and the FBX were written in the cloud (`7fa2585`, `a414ca9`); the import, physics asset, Control Rig, Anim Blueprint, Blueprint and a scripted PIE test were done on Talal's PC in a separate copy of the project (`5d5f2bc`, `a52a516`, `9727f1d`).
 
-State now: everything is on the branch `claude/project-thread-78otz4` (tip `9727f1d`, 5 commits on top of `21ba7cc`) and **not in redo3**. A PIE run with a listen server and one client passed every check. The branch starts before PR #7, so it needs a merge through a pull request, which was offered and not opened. The corpse falls through the tiles, the mesh has one grey material and no UVs, and Nanite is off on it. The `.uasset` files are binary: their detail here comes from the commit messages, the build scripts, the docs in `Docs/Burrower/` and the build report.
+State now: the Burrower is **in redo3**. It was built on the branch `claude/project-thread-78otz4` (5 commits on top of `21ba7cc`), and a PIE run with a listen server and one client passed every check. On 2026-11-22 the thread merged the new redo3 (with the swarm's PR #7) into the branch as `dacbbda` without conflicts, rebuilt, passed the 9 PIE checks again, added the harness fix `dbdf818` and merged PR #8 as `2c7d311` at 06:48. It then brought Talal's local AuraRedo3 up to the new redo3, keeping his uncommitted changes. The corpse falls through the tiles, the mesh has one grey material and no UVs, and Nanite is off on it. The `.uasset` files are binary: their detail here comes from the commit messages, the build scripts, the docs in `Docs/Burrower/` and the build report.
 
 ## Mind map
 
@@ -53,7 +53,7 @@ mindmap
       Shared Unreal lock
       Docs folder
     State
-      Unmerged branch
+      Merged in PR 8
       Corpse falls through tiles
 ```
 
@@ -239,7 +239,7 @@ How `UpdateFollow` steers: yaw and pitch turn toward the goal separately, each c
 - Players are polled, not bound by delegates, and keyed by a weak `APlayerState`, which survives respawns. Each `FPlayerEntry` holds the last living pawn, the living Burrowers (weak pointers), the countdown and a death count.
 - A new pawn counts as a respawn: the countdown becomes at least `PlayerRespawnGrace` and the Burrowers are retargeted. A player with no living pawn leaves their Burrower waiting with a null target. A player who leaves takes their living Burrowers with them.
 - Auto-spawning needs `bEnabled`, an allowed map, and a GameMode that is an `AMyGameMode` with `DA_MyEnemyCharacterClassInfo` set (`HasEnemyClassInfo`, one warning otherwise), because the attributes and the kill's XP read it.
-- `SpawnBehind` uses `SpawnActorDeferred` with `AlwaysSpawn` and calls `MarkSpawnedBySubsystem()` and `SetTargetPlayer()` before `FinishSpawning`. If the class is not loaded yet it retries after 1 s.
+- `SpawnBehind` uses `SpawnActorDeferred` with `AlwaysSpawn` and calls `MarkSpawnedBySubsystem()` and `SetTargetPlayer()` before `FinishSpawning`. `ResolveBurrowerClass` loads the class synchronously when it is set but not loaded, and warns once when it is unset. When a spawn fails for any reason (no class, or no actor), the tick tries again after 1 s instead of `SpawnInterval`.
 
 `UBurrowerSettings` (`Config = Game`, `DefaultConfig`, Project Settings > Game > Burrower, header only):
 
@@ -328,15 +328,15 @@ The PIE test (`pie/bw_pie_test.py`, described in `pie/README.md`) is a frame-by-
 
 Results from the build report: one Burrower per player spawned 30 m behind and closed to about 11 m; the body wave reached 289 cm sideways at the tail; the rotor spun at 720 deg/s; 31 tiles were cut with the same counts on server and client; gunfire took health from 220 to 217; `Aura.Burrower.KillAll` ragdolled it on both machines and a new one came after 8 s. The deviations from the recipe were the legacy importer, the float Sin and Cos fix, the Use Pin boxes ticked through UI automation, and skipping recipe step 5.2 (the rig's speed gate), because the C++ already scales the amplitude with speed.
 
-## What merging would bring
+## What the merge brought
 
-The branch starts at `21ba7cc` (PR #6), before PR #7 (`68dd9e7`). Merging it into redo3 would add:
+The branch started at `21ba7cc` (PR #6), before PR #7 (`68dd9e7`), so redo3 was merged into it first (`dacbbda`), then PR #8 (`2c7d311`) added to redo3:
 
-- `Source/Aura/{Public,Private}/Burrower/` (character, spawn subsystem, settings, anim instance) and the `ActivateTilesInWorldBox` section in `MyHexPlatform`. PR #7 also changed `MyHexPlatform.h` and `.cpp` (the sentinel obstacle), in other functions; the merge has not been tried.
+- `Source/Aura/{Public,Private}/Burrower/` (character, spawn subsystem, settings, anim instance) and the `ActivateTilesInWorldBox` section in `MyHexPlatform`. PR #7 also changed `MyHexPlatform.h` and `.cpp` (the sentinel obstacle `RefreshSentinelObstacle`), in other functions, and the two merged without conflicts.
 - `AIModule` in `Aura.Build.cs`, `ControlRigPhysics` in `Aura.uproject`, and the `[/Script/Aura.BurrowerSettings]` and `DirectoriesToAlwaysCook` lines in `DefaultGame.ini`.
-- The six assets above, `SourceArt/Burrower/` and `Docs/Burrower/`.
+- The seven assets above, `SourceArt/Burrower/` and `Docs/Burrower/`.
 
-With `bEnabled` true and `AllowedMaps` empty, every player on a listen server or standalone game would then get a Burrower 10 s after their first pawn, on any map whose GameMode is an `AMyGameMode` with `DA_MyEnemyCharacterClassInfo` set. Because the cut goes through `ActivateHex`, redo3's sentinel obstacle refresh in `ActivateHexLocal` would also follow tiles the rotor cuts ([[MechSentinel Movement and Avoidance]]).
+With `bEnabled` true and `AllowedMaps` empty, every player on a listen server or standalone game now gets a Burrower 10 s after their first pawn, on any map whose GameMode is an `AMyGameMode` with `DA_MyEnemyCharacterClassInfo` set; `Aura.Burrower.SpawnNow` spawns one at once. Because the cut goes through `ActivateHex`, redo3's sentinel obstacle refresh in `ActivateHexLocal` also follows tiles the rotor cuts ([[MechSentinel Movement and Avoidance]]).
 
 ## How it changed
 
@@ -349,11 +349,14 @@ With `bEnabled` true and `AllowedMaps` empty, every player on a listen server or
 - **2026-11-22 00:45**, `5d5f2bc`: on Talal's PC in the `_BurrowerWork` clone: `SK_Burrower`, `SKEL_Burrower`, `M_Burrower_Grey` and `PA_Burrower` imported and built, the settings in `DefaultGame.ini`, and the editor scripts for steps 2 to 8 with the inbox harness, the stub linter and the Control Rig API notes.
 - **2026-11-22 01:02**, `a52a516`: `CR_Burrower`, `ABP_Burrower` and `BP_Burrower` (still with the mesh ragdoll fallback on), the float permutation fix in `bw_cr_helpers`, `bw_05b_use_pin_ui`, and `quit_and_release.sh`.
 - **2026-11-22 01:26**, `9727f1d`: the PIE test passed. `BP_Burrower` switches `bUseMeshRagdollFallback` off so the Control Rig ragdoll takes the corpse on both machines; the gun and Control Rig ragdoll test variants; `quit_and_release.sh` matches Unreal processes by name and closes only the Burrower asset editors.
-- **2026-11-21** (UTC): the build report was published. The branch was offered as a pull request, which was not opened.
+- **2026-11-22**, after `9727f1d`: the build report was published (2026-11-21 in UTC) and the branch was offered as a pull request.
+- **2026-11-22 06:36**, `dacbbda`: Talal asked to pull and update redo3 locally too. The thread first merged the new redo3 (PR #7, the swarm's segment waves) into the Burrower branch in `_BurrowerWork`. There were no conflicts; the only shared files were `MyHexPlatform.h` and `.cpp`, with independent additions. The editor build was clean and the 9 PIE checks passed again.
+- **2026-11-22 06:47**, `dbdf818`: `harness/inbox.sh` removes its request on timeout and `launch.sh` clears old requests, because a quit request queued while no editor ran had quit the next editor at startup.
+- **2026-11-22 06:48**, `2c7d311`: PR #8 "Burrower: per-player chaser with Control Rig wave, rotor tile cutting and ragdoll" merged into redo3. The thread then backed up Talal's uncommitted changes, fast-forwarded his AuraRedo3 to redo3, pulled the LFS files and rebuilt the editor; `GE_GunShootDamage` and the staged `MyHexPlatform.h` comment were kept.
 
 ## Threads that worked on it
 
-- [[Redo3 Threads#Model, rig and export the burrower creature|Model, rig and export the burrower creature]]: did all of it, from the segmentation and the Blender model and rigs to the C++, the editor session in the separate clone, the PIE test and the build report.
+- [[Redo3 Threads#Model, rig and export the burrower creature|Model, rig and export the burrower creature]]: did all of it, from the segmentation and the Blender model and rigs to the C++, the editor session in the separate clone, the PIE test, the build report, and the merge into redo3 in PR #8.
 - [[Redo3 Threads#Spawn scaling waves on path segments|Spawn scaling waves on path segments]]: the Mech Sentinel thread that shared Unreal on Talal's PC through the `.ue_lock` protocol and went first.
 - [[Redo3 Threads#Keep PC awake until tasks finish (1st)|Keep PC awake until tasks finish (1st)]]: blocked sleep on Talal's PC while the swarm and Burrower threads worked.
 
@@ -378,7 +381,7 @@ With `bEnabled` true and `AllowedMaps` empty, every player on a listen server or
 
 ## Where it lives
 
-All on the branch `claude/project-thread-78otz4`; read it with `git show origin/claude/project-thread-78otz4:<path>`.
+On redo3 since PR #8 (`2c7d311`); read it with `git show origin/redo3:<path>`. The branch `claude/project-thread-78otz4` still exists and holds the same files.
 
 | What | Path |
 |---|---|
@@ -396,7 +399,7 @@ All on the branch `claude/project-thread-78otz4`; read it with `git show origin/
 
 ## Open items
 
-- The branch is not merged into redo3; the pull request was offered and not opened. A merge must bring the LFS assets along.
+- The working copy `_BurrowerWork` and the backup `_AuraRedo3_backup_20261121T224938Z` are still on Talal's PC; the thread said they can be deleted once he is happy with the merge.
 - The corpse falls through the tiles after death. The recipe already doubted whether the ragdoll's static world collision sees individual ISM tile instances.
 - The FBX has no UVs and every slot uses `M_Burrower_Grey`; there is no final material.
 - Nanite is off on the 1.23M-triangle `SK_Burrower`; `bw_02_nanite.py` would turn it on but was not run.

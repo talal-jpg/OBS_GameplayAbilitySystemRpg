@@ -23,7 +23,7 @@ An interactive mind map (subtitle 'AuraRedo3 · hex path, platforms and bridges'
 
 ## Commits it documents
 
-- `e7a2588` Rewrite hex bridge pairing, replicate platforms reliably, rank players by path distance, add Niagara damage numbers and muzzle smoke · [[Redo3 Hex Path and Ranking]], [[Redo3 Hex Bridges]], [[Redo3 Beam and Gun FX]], [[Redo3 Menus and Settings]]
+- `e7a2588` Rewrite hex bridge pairing, replicate platforms reliably, rank players by path distance, add Niagara damage numbers and muzzle smoke · [[Redo3 Hex Path and Ranking]], [[Redo3 Hex Bridges]], [[Redo3 Beam and Gun FX]], [[Redo3 Menus and Settings]], [[Redo3 Hex Platform PCG]]
 - `a7bd059` Scale hex path, PCG layout space and bridge lengths with one HexRadius · [[Redo3 Hex Path and Ranking]], [[Redo3 Hex Platform PCG]], [[Redo3 Hex Bridges]]
 - `5bec016` Qualify bridge trace constants so the unity build finds one definition · [[Redo3 Hex Bridges]]
 - `55f9c66` Wire the hex PCG graph to layout space and scale bridge trace offsets · [[Redo3 Hex Platform PCG]], [[Redo3 Hex Bridges]]

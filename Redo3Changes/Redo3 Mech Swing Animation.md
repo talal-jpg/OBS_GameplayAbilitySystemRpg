@@ -73,10 +73,10 @@ flowchart TD
 
 `3a3b09f` only declared and defined the tag (`UE_DECLARE_GAMEPLAY_TAG_EXTERN(Event_Swing)` in `MyGameplayTags.h`, `UE_DEFINE_GAMEPLAY_TAG(Event_Swing, "Event.Swing")` in `MyGameplayTags.cpp`) and made the anim instance listen for it. Adding the tag to the ASC was left to the ability, and the advice changed on the way:
 
+- The thread's first advice, in chat while the section was being built: set it in `Poll` while the source's phase is Swing, clear it in `EndAbility`. The reviewed design lists this (from its feasibility review) as rejected, because tagging at hook launch lets the arm raise overlap the hook flight.
 - `Docs/CR_Mech_SwingSection.md` section 4.1 ("Talal said he will add the tag"): `SetLooseGameplayTagCount(MyTags::Event_Swing, 1)` in `StartSwing` right after the root motion source is applied, so the 0.2 s arm raise overlaps the hook flight, and back to 0 in `Poll` when the swing is over, in `OnServerRejected` and in `EndAbility`. Use the Set...Count call so the count cannot drift.
 - Not `ActivationOwnedTags`: the ability is also active while searching, after a rejection and while Spent with the button held, so the mech would hang from a raised hand on the ground.
 - Not a gameplay event: `RegisterGameplayTagEvent` counts owned tags only.
-- The thread's later note: set it in `Poll` while the source's phase is Swing, clear it in `EndAbility`.
 - Loose tags do not replicate, so other players' copies would never see it. To show it on other screens: `ActivationOwnedTags` with replication, or `AddReplicatedLooseGameplayTag`.
 
 None of these calls is in `GA_GrappleSwing2.cpp` or anywhere else in the C++ on redo3. The only place left is a Blueprint, most likely `GA_BPGrappleSwing2`, which `808d60c` and `d334e10` changed; it cannot be read from the repo. `Config/DefaultGame.ini` has `ReplicateActivationOwnedTags=True` (already in the baseline), so if the Blueprint uses `ActivationOwnedTags` the tag would reach other machines, but would also be on while searching, as the doc warned. This is unconfirmed.
@@ -90,7 +90,7 @@ Two details of the C++:
 
 ## GetGrappleSwing2Phase
 
-A static, `BlueprintPure` function on `UGA_GrappleSwing2` (category Grapple): `GetGrappleSwing2Phase(const ACharacter* Character, float& OutPhase)`. It looks for an `FRootMotionSource_GrappleSwing2` in the character's `CurrentRootMotion` and returns where the character is in the arc. The header says it works on the owner and the server, like `GetGrappleSwing2State`.
+A static, `BlueprintPure` function on `UGA_GrappleSwing2` (category Grapple): `GetGrappleSwing2Phase(const ACharacter* Character, float& OutPhase)`. It looks for an `FRootMotionSource_GrappleSwing2` in its movement component's `CurrentRootMotion` and returns where the character is in the arc. The header says it works on the owner and the server, like `GetGrappleSwing2State`.
 
 | Value | Where |
 |---|---|
@@ -136,7 +136,7 @@ The thread's answer on cost: it replicates on the character's net updates, only 
 
 `/Game/Assets/Characters/Mech/CR_Mech` is the mech's Control Rig. Before the swing work its Forwards Solve ran one sequence with five parts: A beam and flying (chest pose and physics steps), B shooting arm IK, C shooting recoil, D the GA_Beam hit (chest simulated, add force, step), and E foot lock traces and full body IK. Its Construction Event spawns a physics solver owned by `root0`, instantiates the bodies from `SKM_Mech_Physics` and sets every body Simulated except `root0` and `chest`, which are Kinematic.
 
-`ff14587` (2026-10-10 15:49, committed on Talal's PC) added the swing section, nodes named `Swing_*` at the bottom of the graph. From the commit and the doc's status note:
+`ff14587` (2026-10-10 15:49, committed on Talal's PC) added the swing section, nodes named `Swing_*` at the bottom of the graph. From the commit, the doc's status note and the thread:
 
 - A `Branch(bIsSwinging)` at the start of Forwards Solve. While swinging, the flying, beam, shooting and foot IK parts are skipped.
 - The right hand (`RA_point_4`, and `RA_point_1`, which a review said to keep kinematic) is made Kinematic and placed 105 cm straight above the right shoulder.

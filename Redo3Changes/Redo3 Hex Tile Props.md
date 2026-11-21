@@ -299,7 +299,7 @@ From the optimisation pass of 2026-10-24 ([[Redo3 Hex Pillars and Breaking#The o
 - **2026-10-16** `7f31267`: Talal found the layout unnatural, so the AncientTechCity cliffs, huge rocks, rocks and rock patches came in with `M_PropRock`, and the graph got noise patches, a rim bonus, size classes, cross-class pruning and patches under big rocks. Merged into redo3 as `e71e986` (09:10) without `M_Pillar1`, `M_Pillar2`, `StartupMap` and the pack.
 - **2026-10-17** `6e7c02a`: the second component `HexTileProps2` with `PCG_HexTileProps2`, the twelve kitbashed ice meshes with GCs, `TilePropsPCG`'s graph cleared and 12 new `PropBreakables`.
 - **2026-10-17** `6444429`: bridge paths (`RegisterPathBridge`, `PathDistance`, `PathDirection`), the Path pin, props generated `PropsBridgeWait` after `BeginPlay` and again when bridges change, the three ice mountains and the walkway floor. Six more `PropBreakables`.
-- **2026-10-17** `7a6f01e`: a review (`BridgePaths_Review.md`) found 6 bugs in the path logic, all fixed here: the snapshot grid, server-owned replicated `PathStartTiles`, `bPathFrozen`, the first fallen tile cancelling a pending regeneration, retained starts for destroyed bridges, no pending generation brought forward, clear bridge end tiles and straight hex distance. A PIE re-test on 211 platforms passed. Also Nanite off on the prop GCs and the kitbash levels.
+- **2026-10-17** `7a6f01e`: a review (`BridgePaths_Review.md`) found 6 bugs in the path logic, all fixed here. The commit's review fixes: the snapshot grid, server-owned replicated `PathStartTiles`, `bPathFrozen`, the first fallen tile cancelling a pending regeneration, retained starts for destroyed bridges, no pending generation brought forward, clear bridge end tiles and straight hex distance. A PIE re-test on 211 platforms passed. Also Nanite off on the prop GCs and the kitbash levels.
 - **2026-10-18** `677acf1`: ice mountain 01 re-kitbashed and rebuilt, and `PCG_HexTileProps2` tweaks. Committed with `fa6ad2f` by the "Unpushed commits count" thread.
 - **2026-10-18** `cedd511`: the two marketplace packs git-ignored.
 - **2026-10-18** `79bed11`: `PCG_HexTileProps3`, the ice shard crown, on `HexTileProps2`, with seven new meshes and GCs (`PropBreakables` 38 to 45).
@@ -361,7 +361,7 @@ From the optimisation pass of 2026-10-24 ([[Redo3 Hex Pillars and Breaking#The o
 - Big Props3 clusters still overhang the outer edge, and small platforms (under about 20 tiles) only get skirts.
 - The self-ignoring PropDebris channel for overlapping debris was an answer only.
 - Whether `BrokenPropImpulse` reaches the debris is unconfirmed (see [[#SpawnBrokenProp]]).
-- `FarPropMeshes` needs Talal's baked far-break meshes; on 2026-10-25 the Blueprint slots were empty and the far break used the placeholder material `M_HexFarBreakPlaceholder`.
+- `FarPropMeshes` needs Talal's baked far-break meshes; on 2026-10-25 the Blueprint slots were empty, so in the game far props still vanished, and the far-break test ran with the placeholder material `M_HexFarBreakPlaceholder`.
 - The distance gate was not tested in PIE in its own thread.
 - A fresh clone has no AncientTechCity or FrozenNorseEnvironment content; the ice props need it reimported from Fab.
 - The build and kitbash scripts are only on Talal's PC (`Saved/ClaudeTools`).

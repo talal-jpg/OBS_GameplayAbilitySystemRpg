@@ -349,8 +349,8 @@ On 2026-10-07 Talal reported that bigger platforms overlapped and then got no br
 ## How it changed
 
 - **2026-10-03** `17605e3`: the bridge subsystem, built in an earlier Claude session with the growing path. Platforms register in `BeginPlay`; batches after `BuildDelay`; a coarse grid; one straight bridge per pair from the `CandidateEdgesPerPlatform` (4) closest facing edges (`MinFacingDot` 0.5), checked against `sin(MaxSlopeDegrees)` and traced both ways like `AMyHexBridgeBuilder`. `AMyHexBridge` with replicated ends and `HandleEndTileCollapsed`; the subsystem called `StartCollapsing` on every platform right after the batch. `BP_MyHexBridge`, `steps.md`, and `bDrawDebug=True`.
-- **2026-10-04** (uncommitted then, in `e7a2588`): the earlier session's lead-landing work, rebuilt by "Mind map of hex collapse changes" for the Lead-Landing Collapse Map. `ProcessPendingPlatforms` calls `NotifyBridgesReady()` instead of `StartCollapsing()`, the root cause of platforms collapsing about 0.1 s after spawning. Bridges bind to both platforms' `OnEndPlay`, register in their bridge lists and destroy themselves if an end platform was already culled; a player within 300 cm of a bridge keeps both ends alive.
-- **2026-10-05 to 10-06** (committed 2026-10-07 07:02 in `e7a2588`): the natural placement rewrite. `FPlanner` with its nine passes, curved decks (`StartTangent`, `EndTangent`), bursts and revalidation, the new settings, and the lead pawn, path spline and cull budget on the subsystem. "Commit and push current state" committed it with the rest of that week's work and noted it was untested in multiplayer PIE.
+- **2026-10-04** (uncommitted then, in `e7a2588`): the earlier session's lead-landing work, rebuilt by "Mind map of hex collapse changes" for the Lead-Landing Collapse Map. `ProcessPendingPlatforms` calls `NotifyBridgesReady()` instead of `StartCollapsing()`, the root cause of platforms collapsing about 0.1 s after spawning. Bridges bind to both platforms' `OnEndPlay`, register in their bridge lists and destroy themselves if an end platform was already culled; a player within 300 cm of a bridge keeps both ends alive. The same work put the lead pawn (then the host's pawn), the path spline registry and the cull budget on the subsystem.
+- **2026-10-05 to 10-06** (committed 2026-10-07 07:02 in `e7a2588`): the natural placement rewrite. `FPlanner` with its nine passes, curved decks (`StartTangent`, `EndTangent`), bursts and revalidation, and the new settings. "Commit and push current state" committed it with the rest of that week's work and noted it was untested in multiplayer PIE.
 - **2026-10-07** `a7bd059`, `5bec016`, `55f9c66`: bridge lengths, then trace offsets, scale with HexRadius; the unity build clash fixed.
 - **2026-10-07**: the rail offsets in `PCG_SplineISMs` follow each point's rotation (committed on 2026-10-10 in `b1f17f2`). Later that day Talal's `b95b254` made the lead pawn the top of the ranking.
 - **2026-10-13** `4c227a0`: `PCG_Bridge`, `M_BridgeWood` and `B_BridgeTorchFire`. The thread's question whether to point `BP_MyHexBridge` at it got no answer.
@@ -368,7 +368,7 @@ On 2026-10-07 Talal reported that bigger platforms overlapped and then got no br
 - **2026-10-30** (in `ac1b069`): fog fade on the stone bridge materials.
 - **2026-10-31** (committed 2026-11-15 in `0cc1993`): stone bridges back at v1 width, their own GCs, torches at both ends.
 - **2026-11-01** (committed 2026-11-15 in `08a123a`): `B_BridgeTorchFire` loses its fire Niagara.
-- **2026-11-15**: the "Push local changes to GitHub" thread split Talal's working copy into topic commits, among them the three above and `5d2fd5b`, whose ini hunk turned `bDrawDebug` and `bAllowCrossChain` off and set `MaxBridgeLength=9000`.
+- **2026-11-15**: the "Push local changes to GitHub" thread split Talal's working copy into topic commits, among them `3d05747`, `ac1b069`, `0cc1993`, `08a123a` and `5d2fd5b`, whose ini hunk turned `bDrawDebug` and `bAllowCrossChain` off and set `MaxBridgeLength=9000`.
 
 ## Threads that worked on it
 
@@ -395,8 +395,8 @@ On 2026-10-07 Talal reported that bigger platforms overlapped and then got no br
 - [[Redo3 Artifact - Lead-Landing Collapse Map]]: the 2026-10-04 map of the changes that made platforms wait for their bridges and the lead, with the bridge's end-platform bindings.
 - [[Redo3 Artifact - Hex platforms - LODs vs switching instances off]]: the 2026-10-24 analysis with the triangle shares of the stone bridge kit and the wooden bridge cubes, and the draw-distance advice for `AMyHexBridge`.
 - [[Redo3 Artifact - Hex platform optimization - what changed]]: the 2026-10-24 pass, with the stone bridge debris limits, the lighter GCs and the torch and bridge draw distances.
-- [[Redo3 Artifact - Hex Path and Bridges]]: pinned from an earlier session; by its name about the path and bridge system of `17605e3`. Its content was not summarised for these notes.
-- [[Redo3 Artifact - Hex Path Setup Steps]]: pinned from the same earlier session; not summarised. The repo's `steps.md`, "Hex Path and Bridges: Setup Steps", is that session's setup guide.
+- [[Redo3 Artifact - Hex Path and Bridges]]: pinned from an earlier session; a walkthrough of the first version (`17605e3`): the path spawner, segments, bridge subsystem, bridge actor and settings, with a structure diagram, a sequence diagram of one path extension, four flows with code line references and a table of defaults.
+- [[Redo3 Artifact - Hex Path Setup Steps]]: pinned from the same earlier session; a nine-step setup checklist that mirrors the repo's `steps.md`, "Hex Path and Bridges: Setup Steps".
 - [[Redo3 Files - Hex Path and Bridges]]: the wooden bridge captures `curve.png` and `cap5.png`, and the collapse captures `collapse_bottom.png`, `collapse_bottom2.png`, `collapse_narrow.png` and `collapse_top.png` (the last shows no collapse, because the test command missed the bridge).
 
 ## Where it lives

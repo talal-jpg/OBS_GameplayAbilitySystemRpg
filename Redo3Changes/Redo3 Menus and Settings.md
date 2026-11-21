@@ -4,7 +4,7 @@
 
 AuraRedo3 · redo3 · 9c04634..d11e55a · 2026-10-04 to 2026-11-15
 
-The front end is everything around the game itself: the main menu map `MM_MainMenu` (the Game Default Map), where `BP_MM_MainMenu` puts a menu widget on screen; the online sessions it hosts, finds and joins through `UMultiplayerSessionsSubsystem` (Steam or EOS); the Esc menu in game; and the Options screen with its saved settings and rebindable keys.
+The front end is everything around the game itself: the main menu map `MM_MainMenu` (the Game Default Map), where `BP_MM_MainMenu` puts a menu widget on screen; the online sessions it hosts, finds and joins through `UMultiplayerSessionsSubsystem` (Steam is the `DefaultPlatformService`; the EOS plugins are enabled too); the Esc menu in game; and the Options screen with its saved settings and rebindable keys.
 
 It changed in two rounds. In October 2026 the existing `UMainMenu2` got a graffiti look: a C++ hover effect on its buttons, graffiti button materials, a UI material library, the Bomr font, a halftone material and a mech splash image. Then on 2026-10-30 Talal asked for a complete menu system like the Far Far West main menu, with all its options, as a new `MainMenu3` class that keeps the widget-switcher convention and may improve the sessions subsystem. He then asked for mock-ups of every screen and finally for all widgets to be built and hooked up in the style of the Persona 5 menus, with yellow in place of red. The C++ came as PR #2 (`c4b51bd` to `477dba4`); the widgets, fonts, sound classes and input hook-up were built on Talal's PC the same day and committed in the 2026-11-15 batch (`5d2fd5b`, `d11e55a`).
 
@@ -211,7 +211,7 @@ The rendering CVars are set with `ECVF_SetByGameSetting`, which outranks the sca
 - `DefaultInput.ini` turns on Enhanced Input user settings (`bEnableUserSettings=True`), and `AMyPlayerController2::SetupInputComponent` adds its mapping context with `bNotifyUserSettings`, so saved binds apply in game.
 - `UMyMenuSettings` (Project Settings > Game > Aura Menu, saved to `DefaultGame.ini`) names the sound mix, the five sound classes and `RebindableMappingContexts`. Since `5d2fd5b` that is `/Game/Level/PlayerInput/IMC_PlayerMappings`, `SMix_MenuVolume`, and `SC_Master`, `SC_Music`, `SC_Effects`, `SC_Voice`, `SC_Interface` in `/Game/Level/Audio/`.
 - `RebuildKeyBindingRows` registers each listed context with the user settings (the main menu has no gameplay controller that would), reads `GetActiveKeyProfile()` (`477dba4`; `GetCurrentKeyProfile` is deprecated), and makes one `UKeyBindingRow3` per mapping row, sorted by category, then by name. A row's name and category come from its first mapping, read with an iterator (`f2ddd92`, the clang fix).
-- `UKeyBindingRow3` has two keyboard and mouse selectors and one gamepad selector (default slots First, Second, Third; `Refresh` sorts the row's mappings by their default key to find each selector's slot) and a reset button. `USettingsMenu3::RebindKey` calls `MapPlayerKey`, `ResetKeyRow` calls `ResetAllPlayerKeysInRow`, and both call `ApplySettings`. Failure reasons show in the hint text.
+- `UKeyBindingRow3` has two keyboard and mouse selectors and one gamepad selector (default slots First, Second, Third; `Refresh` sorts the row's mappings into keyboard and mouse or gamepad by their default key to find each selector's slot) and a reset button. `USettingsMenu3::RebindKey` calls `MapPlayerKey`, `ResetKeyRow` calls `ResetAllPlayerKeysInRow`, and both call `ApplySettings`. Failure reasons show in the hint text.
 - `5d2fd5b` added `IA_Pause` (Escape, Gamepad Special Right) to `IMC_PlayerMappings` and gave the other mappings Player Mappable Key Settings with names and categories. Per the thread, Move was split into forward, back, left and right, and `IA_Pause` is not rebindable. `d11e55a` set `IA_Pause` and `PauseMenuClass = WBP_PauseMenu3` on `BP_MyPlayerController2`.
 
 ## Sessions subsystem changes
@@ -234,7 +234,7 @@ Other behaviour:
 
 - `JoinSession` now destroys a leftover session before joining instead of failing with AlreadyInSession, and an accepted invite travels by itself, so it also works in game with no menu open.
 - `HandleNetworkFailure` and `HandleTravelFailure` destroy the stale session after a dropped connection or failed travel and store a readable reason. A listen server ignores its clients timing out.
-- Join codes are 6 characters from `ABCDEFGHJKLMNPQRSTUVWXYZ23456789` (no I, O, 0 or 1). Code Only lobbies are still advertised but carry `Listed = 0`, so only a code lookup shows them. Friends Only sets `bAllowJoinViaPresenceFriendsOnly`, which the Steam OSS turns into a friends-only lobby.
+- Unchanged from the baseline: join codes are 6 characters from `ABCDEFGHJKLMNPQRSTUVWXYZ23456789` (no I, O, 0 or 1). Code Only lobbies are still advertised but carry `Listed = 0`, so only a code lookup shows them. Friends Only sets `bAllowJoinViaPresenceFriendsOnly`, which the Steam OSS turns into a friends-only lobby.
 - Sessions still advertise and filter on `GameName = AuraRedo3`, as at the baseline (see [[MatchType set to AuraRedo3 , will filter on find with this and show that session]]). New keys and fields: `AuraSessionKeys::LobbyName`, `FAuraHostSettings::LobbyName` and `bAllowJoinInProgress`, `FAuraSessionInfo::LobbyName`, `Privacy` and `bAllowJoinInProgress`.
 - `AMyGameMode::PreLogin` refuses banned players and joins past the player limit with `CheckJoinAllowed`'s message. `AMyPlayerController2::ClientWasKicked` keeps the reason and returns to the main menu.
 
@@ -304,7 +304,7 @@ What `d11e55a` built: `M_UI_Slab` with `MI_UI_Slab_Ring`, `MI_UI_Slab_Tag` and `
 
 - The four small layout bugs from the test pass are not fixed, and the Render Scale option shows 0%.
 - The style pass was never built: `MPC_UI`, `M_UI_Plate`, `M_UI_Burst`, `M_UI_Dots`, `M_UI_Stripes` and `WBP_RansomWord` / `WBP_RansomLetter` are not in the repo. Talal has not reviewed the font choice.
-- `DefaultEngine.ini` pins `sg.GlobalIlluminationQuality` and `sg.ReflectionQuality` at 1 in `[ConsoleVariables]` (from `82f5399`), so the Options boxes for GI and reflection quality cannot change them.
+- `DefaultEngine.ini` pins `sg.GlobalIlluminationQuality` and `sg.ReflectionQuality` at 1 in `[ConsoleVariables]` (from `82f5399`), which probably overrides what the Options boxes for GI and reflection quality set. Not tested in game.
 - The style guide asks for the OFL texts to ship with packaged builds (under `Content/Licenses/Fonts/` with a `DirectoriesToAlwaysStageAsNonUFS` entry). On redo3 they sit in `ThirdPartyFonts/` and `DefaultGame.ini` has no staging entry.
 - `OnlineStatusText` turns red when the online service is unreachable but is not set back when it returns (noted in the style guide's optional C++ changes, confirmed in `RefreshOnlineStatus`).
 - Friends Only lobbies cannot be found by code, and there is no "allow join in progress" checkbox because `AMyGameMode::PostLogin` starts the session as soon as the host arrives (setup guide's known limits).

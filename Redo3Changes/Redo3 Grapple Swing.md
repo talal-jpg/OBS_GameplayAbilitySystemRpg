@@ -174,7 +174,7 @@ sequenceDiagram
 - it is less than `MinAnchorHeight` (250) above `AttachPos`;
 - the rope line from the capsule to the anchor is blocked;
 - there is no simple collision under the anchor along its normal (the same check the server makes, added to the client in `9d4ae99`);
-- the floor under the anchor is too close: the anchor must be at least `MinRopeLength + HalfHeight + GroundClearance` above it (400 + 88 + 120 = 608 cm).
+- the floor under the anchor is too close: the anchor must be at least `MinRopeLength + HalfHeight + GroundClearance` above it (400 + 88 + 120 = 608 cm with an 88 cm capsule half height, the code's fallback value).
 
 Survivors are scored on aim, height (ideal 900, fading out above 2200), how far ahead along `MoveDirH` they are, elevation near 50 degrees, rope length near 1300 and underside surfaces, plus `CrosshairBonus` 0.5 for the crosshair hit. The weights and every default are in the doc's tuning reference.
 
@@ -195,7 +195,7 @@ The first v2 build hooked nothing ("nothing happens on activate"). The hex platf
 
 ## Search direction
 
-The fan rays and the "ahead" score follow `Ctx.MoveDirH`, a horizontal direction. Which direction that is changed four times:
+The fan rays and the "ahead" score follow `Ctx.MoveDirH`, a horizontal direction. Which direction that is has changed three times since the original rule:
 
 | Commit | Rule | Why |
 |---|---|---|
