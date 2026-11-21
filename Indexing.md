@@ -13,6 +13,7 @@
 [[networking]]
 [[commonui]]
 [[MassEntity]]
+[[MechSentinel Index]]
 
 [[NoteTakingGameDesign]]
 [[GFXRefs]]
