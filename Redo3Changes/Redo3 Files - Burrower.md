@@ -18,8 +18,8 @@ Explained on: [[Redo3 Burrower]].
 
 ## Files
 
-| File | Size | Date | Thread | What it is |
-|---|---|---|---|---|
+| File                 | Size   | Date       | Thread                                                                                                     | What it is                                                 |
+| -------------------- | ------ | ---------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------- |
 | `Burrower/README.md` | 2.4 KB | 2026-11-12 | [[Redo3 Threads#Model, rig and export the burrower creature\|Model, rig and export the burrower creature]] | Model readme: parts, levels, USD attributes, export notes. |
 
 ## Related

@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Indexing.md",
+                "file": "Redo3Changes/Redo3 Burrower.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Indexing"
+              "title": "Redo3 Burrower"
             }
           }
         ]
@@ -176,6 +176,8 @@
   },
   "active": "e5cd5d3f5fbf77c8",
   "lastOpenFiles": [
+    "Redo3Changes/Redo3 Files - Burrower.md",
+    "Indexing.md",
     "TODOs3.md",
     "Redo3Changes/attachments/redo3_v2_side_bent.jpg",
     "Redo3Changes/attachments/redo3_uv_layout_final_view.jpg",
@@ -211,8 +213,6 @@
     "Redo3Changes/Redo3 Files - Mech Death and Respawn FX.md",
     "Redo3Changes/Redo3 Files - Hex Tile Props.md",
     "Redo3Changes/Redo3 Files - Hex Platform PCG.md",
-    "Redo3Changes/Redo3 Files - Hex Path and Bridges.md",
-    "Redo3Changes/Redo3 Files - Hex Minimap.md",
     "Redo3Changes",
     "Untitled.base",
     "Untitled 2.base",
