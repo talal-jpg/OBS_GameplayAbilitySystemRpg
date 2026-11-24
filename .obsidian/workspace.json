@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "TODOs3.md",
+                "file": "TODOs.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "TODOs3"
+              "title": "TODOs"
             }
           }
         ]
@@ -41,9 +41,7 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false,
-                "showSearch": false,
-                "searchQuery": ""
+                "autoReveal": false
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -76,8 +74,7 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -179,17 +176,8 @@
   },
   "active": "e5cd5d3f5fbf77c8",
   "lastOpenFiles": [
+    "TODOs7.md",
     "TODOs.md",
-    "TODOs4.md",
-    "TODOs6.md",
-    "CurrentTODOs.md",
-    "Indexing.md",
-    "ToBeSortedIdeas.md",
-    "GFXRefs.md",
-    "techArtInspiration/Resources.md",
-    "Redo3Changes/Redo3 Burrower.md",
-    "Redo3Changes/Redo3 Files - Burrower.md",
-    "TODOs3.md",
     "Redo3Changes/attachments/redo3_v2_side_bent.jpg",
     "Redo3Changes/attachments/redo3_uv_layout_final_view.jpg",
     "Redo3Changes/attachments/redo3_top_snow_off_on.jpg",
@@ -216,14 +204,23 @@
     "Redo3Changes/Redo3 Hex Look and Atmosphere.md",
     "Redo3Changes/Redo3 Hex Bridges.md",
     "Redo3Changes/Redo3 Grapple Swing.md",
+    "Redo3Changes/Redo3 Files - Talal Uploads.md",
+    "Redo3Changes/Redo3 Files - Snow and Ice Pillar Materials.md",
+    "Redo3Changes/Redo3 Files - Profiling Reports.md",
+    "Redo3Changes/Redo3 Files - Path Paving.md",
+    "Redo3Changes/Redo3 Files - Mech Sentinel.md",
+    "Redo3Changes/Redo3 Files - Mech Death and Respawn FX.md",
+    "Redo3Changes/Redo3 Files - Hex Tile Props.md",
+    "Redo3Changes/Redo3 Files - Hex Platform PCG.md",
+    "Redo3Changes/Redo3 Files - Hex Path and Bridges.md",
     "Redo3Changes",
+    "MechSentinelSwarm",
     "Untitled.base",
     "Untitled 2.base",
     "Untitled 1.base",
     "Spline Mesh Visual",
     "techArtInspiration",
     "HandWrittenNotes/Exec Calc_260215_170351 (2).pdf",
-    "HandWrittenNotes/Replicated Swarm_260219_192108 (2).pdf",
-    "HandWrittenNotes/Ability Activation in GAS Predictively_260216_230542 (2).pdf"
+    "HandWrittenNotes/Replicated Swarm_260219_192108 (2).pdf"
   ]
 }
